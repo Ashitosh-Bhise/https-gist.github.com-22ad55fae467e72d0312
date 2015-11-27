@@ -1,5 +1,7 @@
 CSS
 
+https://gist.github.com/jedfoster/4596858
+
 1. What are the pros and cons of using absolute positioning?
 2. What is the difference between display: inline; and display: inline-block;?
 3. What is box model?
@@ -85,7 +87,7 @@ CSS
 79. Is there any reason you'd want to use translate() instead of absolute positioning, or vice-versa? And why?
 80. What, if any preprocessor do you use? (Sass, LESS, Stylus)
 81. Do you subscribe to any particular CSS structure? (SMACSS, OOCSS)
-
+82. Sass mixins?
 
 HTML
 
