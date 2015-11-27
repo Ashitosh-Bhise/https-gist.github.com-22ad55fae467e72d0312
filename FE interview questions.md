@@ -105,7 +105,7 @@ HTML
 14. 
 
 
-https://gist.github.com/jedfoster/4596858
-https://github.com/TIY-Austin-Front-End-Engineering/css-specificity
-https://github.com/andyshora/front-end-interview-questions
-https://github.com/khan4019/front-end-Interview-Questions
+- https://gist.github.com/jedfoster/4596858
+- https://github.com/TIY-Austin-Front-End-Engineering/css-specificity
+- https://github.com/andyshora/front-end-interview-questions
+- https://github.com/khan4019/front-end-Interview-Questions
