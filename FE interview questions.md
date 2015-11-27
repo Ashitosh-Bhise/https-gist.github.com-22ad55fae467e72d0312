@@ -1,7 +1,5 @@
 CSS
 
-https://gist.github.com/jedfoster/4596858
-
 1. What are the pros and cons of using absolute positioning?
 2. What is the difference between display: inline; and display: inline-block;?
 3. What is box model?
@@ -104,3 +102,10 @@ HTML
 11. Why is it generally a good idea to position CSS <link>s between <head></head> and JS <script>s just before </body>? Do you know any exceptions?
 12. What is progressive rendering?
 13. Have you used different HTML templating languages before?
+14. 
+
+
+https://gist.github.com/jedfoster/4596858
+https://github.com/TIY-Austin-Front-End-Engineering/css-specificity
+https://github.com/andyshora/front-end-interview-questions
+https://github.com/khan4019/front-end-Interview-Questions
