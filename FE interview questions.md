@@ -2,6 +2,7 @@
 - https://gist.github.com/jedfoster/4596858
 - https://github.com/TIY-Austin-Front-End-Engineering/css-specificity
 - https://github.com/h5bp/Front-end-Developer-Interview-Questions/tree/master/Translations/Serbian
+- http://rmurphey.com/blog/2012/04/12/a-baseline-for-front-end-developers
 - https://github.com/andyshora/front-end-interview-questions
 - https://github.com/khan4019/front-end-Interview-Questions
 
