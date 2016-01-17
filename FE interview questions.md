@@ -1,10 +1,29 @@
 * TODO
+- https://developer.mozilla.org/en-US/docs/Web/HTML
+- https://developer.mozilla.org/en/docs/Web/CSS/Specificity
+- https://css-tricks.com/search-results/?q=Difference+Between+
+- http://css3files.com/2015/10/23/15-common-css-interviews-questions-and-answers/
+- http://www.codeproject.com/Articles/702051/important-HTML-Interview-questions-with-answe
+- http://webdesign.about.com/od/webdesignhtmlatoz/a/frequently-asked-questions-about-web-design-html-css-and-web-development.htm
+- http://webdesign.about.com/od/css/a/aa011606.htm
+- http://www.skilledup.com/articles/html-html5-interview-questions-answers
+- https://www.smashingmagazine.com/2013/01/preparing-front-end-job-interview/
+- http://learntocodewith.me/web-dev/front-end-developer-skills/
+- https://www.quora.com/What-should-a-modern-front-end-developer-know-in-2015
+- https://css-tricks.com/front-end-development-is-development/
 - https://gist.github.com/jedfoster/4596858
 - https://github.com/TIY-Austin-Front-End-Engineering/css-specificity
 - https://github.com/h5bp/Front-end-Developer-Interview-Questions/tree/master/Translations/Serbian
 - http://rmurphey.com/blog/2012/04/12/a-baseline-for-front-end-developers
 - https://github.com/andyshora/front-end-interview-questions
 - https://github.com/khan4019/front-end-Interview-Questions
+- http://www.impressivewebs.com/css-terms-definitions/
+- http://nimbupani.com/css-vocabulary.html
+- http://skillcrush.com/2015/03/26/99-tech-terms/
+- https://www.smashingmagazine.com/2007/07/css-specificity-things-you-should-know/
+- https://www.themuse.com/advice/10-tech-terms-youve-definitely-heard-but-probably-dont-know-the-meaning-of
+- http://code.tutsplus.com/tutorials/the-30-css-selectors-you-must-memorize--net-16048
+- https://developer.mozilla.org/en-US/docs/Web/CSS/Common_CSS_Questions
 
 CSS
 
