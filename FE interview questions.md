@@ -128,6 +128,18 @@ body {
 }
 /* ends with the closing curly brace above */
 ```
+85. What is Declaration Block
+
+- A declaration block is the section of CSS where the property/value pairs appear. In the example below, everything found between the curly braces (not including the comments) is a declaration block:
+```html
+body {
+  font-family: Arial, sans-serif; /* starts with this line */
+  color: #555;
+  font-size: 14px;
+  line-height: 20px; /* ends here, before the closing curly brace */
+}
+```
+
 
 
 HTML
