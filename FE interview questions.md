@@ -7,6 +7,7 @@ in progress...
 - http://www.codeproject.com/Articles/702051/important-HTML-Interview-questions-with-answe
 - http://webdesign.about.com/od/webdesignhtmlatoz/a/frequently-asked-questions-about-web-design-html-css-and-web-development.htm
 - http://webdesign.about.com/od/css/a/aa011606.htm
+- http://ipestov.com/22-essential-css-recipes/
 - http://www.skilledup.com/articles/html-html5-interview-questions-answers
 - https://www.smashingmagazine.com/2013/01/preparing-front-end-job-interview/
 - http://learntocodewith.me/web-dev/front-end-developer-skills/
