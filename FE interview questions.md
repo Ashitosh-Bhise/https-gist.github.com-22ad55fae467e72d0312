@@ -29,6 +29,17 @@ in progress...
 
 CSS
 
+* What is CSS?
+    - CSS stands for Cascading Style Sheet.
+
+* How can you integrate/import CSS on a web page?
+    - Inline 
+        ```html <p style="color:blue">Hello CSS</p>```
+    - Internal 
+        ```html <style> p{color:blue}  </style>```
+    - External
+        ```html <link rel="stylesheet" type="text/css" href="style.css"```
+
 1. What are the pros and cons of using absolute positioning?
 2. What is the difference between display: inline; and display: inline-block;?
 3. What is box model?
@@ -118,7 +129,7 @@ CSS
 83. What is browser Compatibility?
 84. What is At-Rule
 
-    - An at-rule has nothing to do with Star Wars. An at-rule is an instruction given in a CSS document using the @ character. An at-rule could have a declaration block or a simple string of text. The example below has two different at-rules:
+    - An at-rule is an instruction given in a CSS document using the @ character. An at-rule could have a declaration block or a simple string of text. The example below has two different at-rules:
 ```html
 @import url(secondary.css);
 
