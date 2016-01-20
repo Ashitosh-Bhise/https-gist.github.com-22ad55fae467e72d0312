@@ -34,19 +34,19 @@ CSS
 
 * How can you integrate/import CSS on a web page?
     - Inline 
-        ```html 
+        ```
             <p style="color:blue">
                 Hello CSS
             </p>
         ```
     - Internal 
-        ```html 
+        ```
             <style> 
                 p{color:blue}
             </style>
         ```
     - External
-        ```html
+        ```
             <link rel="stylesheet" type="text/css" href="style.css"
         ```
 
