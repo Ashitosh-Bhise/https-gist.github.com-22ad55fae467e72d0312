@@ -116,6 +116,17 @@ CSS
 81. Do you subscribe to any particular CSS structure? (SMACSS, OOCSS)
 82. Sass mixins?
 83. What is browser Compatibility?
+84. What is Rule Set?
+`A rule set is a single section of CSS including the selector, the curly braces, and the different lines with properties and values. The code in the example below comprises one rule set:
+
+/* the rule set starts with the line below */
+body {
+  font-family: Arial, sans-serif;
+  color: #555;
+  font-size: 14px;
+}
+/* ends with the closing curly brace above */`
+
 
 HTML
 
