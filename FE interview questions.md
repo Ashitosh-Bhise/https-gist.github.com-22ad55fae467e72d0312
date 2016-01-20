@@ -116,6 +116,20 @@ CSS
 81. Do you subscribe to any particular CSS structure? (SMACSS, OOCSS)
 82. Sass mixins?
 83. What is browser Compatibility?
+84. What is At-Rule
+
+    - An at-rule has nothing to do with Star Wars. An at-rule is an instruction given in a CSS document using the @ character. An at-rule could have a declaration block or a simple string of text. The example below has two different at-rules:
+```html
+@import url(secondary.css);
+
+@media print {
+  #container {
+    width: 500px;
+  }
+}
+```
+    - The at-rule is not just the “@media” or “@import” part at the beginning; the entire instruction comprises the complete at-rule.
+
 84. What is Combinator selector
 
     - A combinator is the character in a selector that connects two selectors together. There are four types of combinators. These four combinators help create descendant selectors (with a space character), child selectors (with the “>” character), adjacent sibling selectors (with the “+” character), and general sibling selectors (with the “~” character). To dispel any confusion, here are those four combinators in use:
