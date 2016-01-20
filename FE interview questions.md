@@ -130,7 +130,7 @@ body {
 ```
 85. What is Declaration Block
 
-- A declaration block is the section of CSS where the property/value pairs appear. In the example below, everything found between the curly braces (not including the comments) is a declaration block:
+    - A declaration block is the section of CSS where the property/value pairs appear. In the example below, everything found between the curly braces (not including the comments) is a declaration block:
 ```html
 body {
   font-family: Arial, sans-serif; /* starts with this line */
@@ -139,6 +139,20 @@ body {
   line-height: 20px; /* ends here, before the closing curly brace */
 }
 ```
+86. What is Universal Selector
+
+    - The universal selector matches any element within the context in which it’s placed in a selector. In the example below, the * character is the universal selector:
+```html
+/* the asterisk character is the universal selector */
+.navigation ul * {
+  width: 100px;
+  float: left;
+}
+```
+
+    - So, any element that appears as a child descendant of the unordered list element inside an element that has a class of “navigation” will receive the declared styles.
+
+    - Universal selectors are generally discouraged for performance reasons.
 
 
 
