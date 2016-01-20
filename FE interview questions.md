@@ -19,18 +19,29 @@ in progress...
 - http://rmurphey.com/blog/2012/04/12/a-baseline-for-front-end-developers
 - https://github.com/andyshora/front-end-interview-questions
 - https://github.com/khan4019/front-end-Interview-Questions
-- http://www.impressivewebs.com/css-terms-definitions/
 - http://nimbupani.com/css-vocabulary.html
 - http://skillcrush.com/2015/03/26/99-tech-terms/
 - https://www.smashingmagazine.com/2007/07/css-specificity-things-you-should-know/
 - https://www.themuse.com/advice/10-tech-terms-youve-definitely-heard-but-probably-dont-know-the-meaning-of
 - http://code.tutsplus.com/tutorials/the-30-css-selectors-you-must-memorize--net-16048
 - https://developer.mozilla.org/en-US/docs/Web/CSS/Common_CSS_Questions
+- http://www.developersfeed.com/top-25-css-interview-questions-with-answers/
+- http://css-stars.com/css-interview-questions/
+- http://dglobaltech.com/css-interview-questions-and-answers-for-experienced-15-common-questions/
+- http://www.skilledup.com/articles/25-css-interview-questions-answers
+- http://www.tutorialspoint.com/css/css_interview_questions.htm
+- http://www.toptal.com/css/interview-questions
+- http://career.guru99.com/top-50-csscascading-style-sheet-interview-questions/
 
 CSS
 
 * What is CSS?
     - CSS stands for Cascading Style Sheet.
+    - Styles define how to display HTML elements
+    - Styles were added to HTML 4.0 to solve a problem
+    - External Style Sheets can save a lot of work
+    - External Style Sheets are stored in CSS files
+
 
 * How can you integrate/import CSS on a web page?
     - Inline, used to style only a small piece of code
