@@ -34,11 +34,21 @@ CSS
 
 * How can you integrate/import CSS on a web page?
     - Inline 
-        ```html <p style="color:blue">Hello CSS</p>```
+        ```html 
+            <p style="color:blue">
+                Hello CSS
+            </p>
+        ```
     - Internal 
-        ```html <style> p{color:blue}  </style>```
+        ```html 
+            <style> 
+                p{color:blue}
+            </style>
+        ```
     - External
-        ```html <link rel="stylesheet" type="text/css" href="style.css"```
+        ```html
+            <link rel="stylesheet" type="text/css" href="style.css"
+        ```
 
 1. What are the pros and cons of using absolute positioning?
 2. What is the difference between display: inline; and display: inline-block;?
