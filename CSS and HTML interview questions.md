@@ -490,7 +490,7 @@ p::first-line {
 
 
 * Tell what each of these tags do, if there are alternatives, which are preferable, why?
-
+```css
     <em>
     <b>
     <abbr>
@@ -500,7 +500,7 @@ p::first-line {
     <link>
     <strong>
     <article>
-    
+```    
 
 * What is At-Rule
     - An at-rule is an instruction given in a CSS document using the ```@``` character. An at-rule could have a declaration block or a simple string of text. The example below has two different at-rules:
