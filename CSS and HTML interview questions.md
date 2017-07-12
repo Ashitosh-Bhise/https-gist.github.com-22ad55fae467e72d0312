@@ -1085,9 +1085,11 @@ img { display: block ; }
         
 * Where should we place Javascript files - top OR bottom. What are the advantages and disadvantages of either method. Where would you use these (Google webfonts you need to place on top + jQuery down or top)
         
+        
 ---
-# Behavioral
+### Behavioral
 ---
+
 
 * What are your biggest strengths? Weaknesses?
 
