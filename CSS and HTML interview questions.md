@@ -1088,7 +1088,6 @@ img { display: block ; }
 ---
 Behavioral
 ---
-=========================================================================================
 
 * What are your biggest strengths? Weaknesses?
 
@@ -1117,7 +1116,7 @@ Behavioral
 * Are there any questions that we didn’t ask you that we should have?
 
 
-=========================================================================================
+---
 
 * Why did you choose to learn FE?
 
@@ -1206,7 +1205,7 @@ Behavioral
 * When was the last time you got something wrong?  How did you know?  What did you learn from it?
 
 
-=========================================================================================
+---
 
 * Can you describe your workflow when you create a web page?
 
@@ -1386,9 +1385,9 @@ Behavioral
 * Do your best to describe the process from the time you type in a website's URL to it finishing loading on your screen.
 
 
-=========================================================================================
-# Version Control
-_________________________________________________________________________________________
+---
+### Version Control
+---
 
 
 * What is your preferred version control software? 
@@ -1404,9 +1403,9 @@ ________________________________________________________________________________
 * What are build tools good for? Which ones are you familiar with?
 
 
-=========================================================================================
-# Agile
-_________________________________________________________________________________________
+---
+###Agile
+---
 
 * Do you have experience working in an agile team?
 
@@ -1418,7 +1417,7 @@ ________________________________________________________________________________
 
 * Have you worked with QA? How you QA/test your code?
 
-----------------------------------------------------------------------------------------------
+---
 
 * How did you communicate progress in your previous role?  Did that process always work?  What could have been done differently to keep everyone on the same page?
 
