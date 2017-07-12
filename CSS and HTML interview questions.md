@@ -513,7 +513,7 @@ p::first-line {
   }
 }
 ```
-    - The at-rule is not just the ```@media``` or ```@import``` part at the beginning; the entire instruction comprises the complete at-rule.
+The at-rule is not just the ```@media``` or ```@import``` part at the beginning; the entire instruction comprises the complete at-rule.
 
 
 * What is Combinator selector
