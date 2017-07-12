@@ -31,8 +31,7 @@
 
         
 * What is Selector? 
-    The way you declare which elements the styles should apply to. There are different kinds of selectors:
-
+    - The way you declare which elements the styles should apply to. There are different kinds of selectors:
         - Class: The most commonly used selector. E.g. “.cloudy” to select an element with classname cloudy. 
             There can be more than 1 element with the same classname.
         
@@ -133,14 +132,12 @@
 
 
 * Describe z-index and how stacking context is formed.
-    - An element with greater stack order is always in front of an element with a lower stack order. z-index only works on positioned elements. 
-    The default stack order of non-positioned elements is their order in the document.
+    - An element with greater stack order is always in front of an element with a lower stack order. z-index only works on positioned elements. The default stack order of non-positioned elements is their order in the document.
     
 
 * What is the purpose of the z-index and how is it used?
 
-    - The z-index helps specify the stack order of positioned elements that may overlap one another. 
-    The z-index default value is zero, and can take on either a positive or negative number.
+    - The z-index helps specify the stack order of positioned elements that may overlap one another. The z-index default value is zero, and can take on either a positive or negative number.
 
     - An element with a higher z-index is always stacked above than a lower index.
 
@@ -153,9 +150,7 @@
     
 
 * How does z-index relate to positioning
-    - The z-index property specifies the stack order of elements.
-    An element with a higher z-index/stack order is always rendered in front of an element with a lower z-index/stack order on the screen. 
-    Z-index will only work on elements that have a specified position (position:absolute, position:relative, or position:fixed).
+    - The z-index property specifies the stack order of elements. An element with a higher z-index/stack order is always rendered in front of an element with a lower z-index/stack order on the screen. Z-index will only work on elements that have a specified position (position:absolute, position:relative, or position:fixed).
 
 
 * What existing CSS frameworks have you used locally, or in production? How would you change/improve them?
