@@ -1039,9 +1039,9 @@ img { display: block ; }
     
 * What is the difference between Canvas and SVG graphics?    
 
-* What is the difference between a <span> and a <div>?
-    - <div> is a block level element which means it will render it on it's own line with a width of a 100% of the parent element.
-    - <span> is an inline element which means it will render on the same line as the previous element, if it is also an inline element, and it's width will be determined by it's content.
+* What is the difference between a ```<span>``` and a ```<div>```?
+    - ```<div>``` is a block level element which means it will render it on it's own line with a width of a 100% of the parent element.
+    - ```<span>``` is an inline element which means it will render on the same line as the previous element, if it is also an inline element, and it's width will be determined by it's content.
 
 
 * Name 5 common block-level and inline HTML elements.
@@ -1055,7 +1055,7 @@ img { display: block ; }
 
 * Define semantic markup. What are the semantic meanings for ```<section>, <article>, <aside>, <nav>, <header>, <footer>``` and when/how should each be used in structuring html markup?
 
-* What is the difference between (<i> and <em>) and (<b>, <strong>) and how will screen-readers react the to each tag?
+* What is the difference between (```<i>``` and ```<em>```) and (```<b>```, ```<strong>```) and how will screen-readers react the to each tag?
     
 * What is the purpose of aria attributes?
     
@@ -1067,7 +1067,7 @@ img { display: block ; }
  
 * What is the purpose of Charset meta tag?
 
-* What does async and defer refer in script tag ? Describe the difference between <script>, <script async> and <script defer>
+* What does async and defer refer in script tag ? Describe the difference between ```<script>```, ```<script async>``` and ```<script defer>```
     - Async: Downloads the script file during HTML parsing and will pause the HTML parser to execute it when it has finished downloading.
 
     - Defer: Defer downloads the script file during HTML parsing and will only execute it after the HTML parser has completed. Not all browsers support this.
@@ -1086,7 +1086,7 @@ img { display: block ; }
 * Where should we place Javascript files - top OR bottom. What are the advantages and disadvantages of either method. Where would you use these (Google webfonts you need to place on top + jQuery down or top)
         
 ---
-Behavioral
+# Behavioral
 ---
 
 * What are your biggest strengths? Weaknesses?
