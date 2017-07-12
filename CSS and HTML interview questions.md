@@ -1051,7 +1051,7 @@ img { display: block ; }
 * What are semantic and non-semantic elements?
     - A semantic element clearly describes its meaning to both the browser and the developer.
   
-    - non-semantic elements: <div> and <span> - Tells nothing about its content. semantic elements: <form>, <table>, and <article> - Clearly defines its content.
+    - non-semantic elements: <div> and <span> - Tells nothing about its content. semantic elements: ```<form>, <table>, and <article>``` - Clearly defines its content.
 
 * Define semantic markup. What are the semantic meanings for ```<section>, <article>, <aside>, <nav>, <header>, <footer>``` and when/how should each be used in structuring html markup?
 
