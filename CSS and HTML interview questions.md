@@ -920,8 +920,6 @@ img { display: block ; }
               border-color: red;
             }
         ```
-        
-
         - %placeholder are classes that aren’t output when your SCSS is compiled
             ```css
             %awesome {
