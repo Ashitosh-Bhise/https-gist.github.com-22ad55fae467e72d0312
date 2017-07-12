@@ -959,3 +959,490 @@ img { display: block ; }
 * What are some of the common accessibility pitfalls when developing a website? How would you go about fixing them?
 
 
+---
+### HTML
+---
+
+* What does a doctype do?
+
+* What happens when DOCTYPE is not given
+    - The web page is rendered in quirks mode. 
+    The web browsers engines use quirks mode to support older browsers which does not follow the * W3C spec.
+    
+    In quirks mode CSS class and id names are case insensitive. In standards mode they are case sensitive.
+
+* What's the difference between standards mode and quirks mode?
+
+* What's the difference between HTML and XHTML?
+
+* Why html5 doctype does not have a DTD definition?
+
+* Why html5 doctype does not have a DTD definition?
+    
+    - HTML5 is no longer based on SGML (Standard Generalized Markup Language) which actually requires a DTD for parsing/serializing, so we don't require a DTD anymore.
+  
+    
+* What does the lang attribute in html do?
+    
+    - Helps in styling pages bu using them in css :lang() pseudo class Spelling and grammar checkers Languade detection by search engines
+
+
+* What is desktop first and mobile first design approach
+    - Desktop first : 
+        General selectors and styles designed to make the site look good on DESKTOP screens defined globally. But they affect all devices, and must be overridden by max-width media queries targeting minimum screen size
+
+    - Mobile First : 
+        General selectors and styles designed to make the site look good on small MOBILE screens go here. But they affect all devices, and must be overridden by min-width media queries targeting maximum scrren size
+    
+    In desktop first approach the media queries will be written with respect to max-width whereas in mobile first approach media queries will be written with respect to min-width
+    
+
+* Are there any problems with serving pages as application/xhtml+xml?
+
+* How do you serve a page with content in multiple languages?
+
+* What kind of things must you be wary of when design or developing for multilingual sites?
+
+* What are data- attributes good for?
+    - The HTML5 data attribute lets you assign custom data to an element. When we want to store more information/data about the element when no suitable HTML5 element or attribute exists
+
+* Consider HTML5 as an open web platform. What are the building blocks of HTML5?
+
+* Describe the difference between a cookie, sessionStorage and localStorage.
+
+* Describe the difference between <script>, <script async> and <script defer>.
+
+* Why is it generally a good idea to position CSS <link>s between <head></head> and JS <script>s just before </body>? Do you know any exceptions?
+
+* What is progressive rendering?
+
+* Have you used different HTML templating languages before? what did you like about them?
+
+* Why does invalid HTML work?
+
+* What is XHTML?
+    - https://www.thoughtco.com/what-is-xhtml-3464702
+    
+* What is a Favicon? Where are favicons displayed?
+    
+* Are HTML 5 tags case sensitive?
+    
+* Why must the ID attribute be unique on each page?
+    
+* What is a blockquote?
+    
+* What is a meta tag?
+    
+* How many cookies can you use on one website?
+
+* How big can a web cookie be?
+    
+* What is the difference between Canvas and SVG graphics?    
+
+* What is the difference between a <span> and a <div>?
+    - <div> is a block level element which means it will render it on it's own line with a width of a 100% of the parent element.
+    - <span> is an inline element which means it will render on the same line as the previous element, if it is also an inline element, and it's width will be determined by it's content.
+
+
+* Name 5 common block-level and inline HTML elements.
+    - block elements: <h1>, <p>, <ul>, <ol>, <li>,
+    - inline elements: <span>, <a>, <strong>, <i>, <img>
+
+* What are semantic and non-semantic elements?
+    - A semantic element clearly describes its meaning to both the browser and the developer.
+  
+    - non-semantic elements: <div> and <span> - Tells nothing about its content. semantic elements: <form>, <table>, and <article> - Clearly defines its content.
+
+* Define semantic markup. What are the semantic meanings for <section>, <article>, <aside>, <nav>, <header>, <footer> and when/how should each be used in structuring html markup?
+
+* What is the difference between (<i> and <em>) and (<b>, <strong>) and how will screen-readers react the to each tag?
+    
+* What is the purpose of aria attributes?
+    
+* Explain what inline styles and javascript are and when they are appropriate to use.
+
+* When is it acceptable to use font tags?
+
+* What is the purpose of meta tags?
+ 
+* What is the purpose of Charset meta tag?
+
+* What does async and defer refer in script tag ? Describe the difference between <script>, <script async> and <script defer>
+    - Async: Downloads the script file during HTML parsing and will pause the HTML parser to execute it when it has finished downloading.
+
+    - Defer: Defer downloads the script file during HTML parsing and will only execute it after the HTML parser has completed. Not all browsers support this.
+    
+
+* Experience with website optimization?
+
+* How to handle form validation?
+
+* What is viewport?
+
+* What are some of the building blocks of HTML5?
+
+* What is the difference between cookies, sessionStorage and localStorage?
+        
+* Where should we place Javascript files - top OR bottom. What are the advantages and disadvantages of either method. Where would you use these (Google webfonts you need to place on top + jQuery down or top)
+        
+---
+Behavioral
+---
+=========================================================================================
+
+* What are your biggest strengths? Weaknesses?
+
+
+* What is your greatest achievement?
+   
+
+* Tell me about 3 times you have failed. 
+    // Almost anyone can come up with 1 or 2, but it can be hard to think of 3. 
+    // Be sure to wait and be quiet while the candidate thinks and ponders the answer 
+    // I often feel like the most insightful answers come towards the end of this question.
+    
+    
+* How did you prepare for this interview?
+
+
+* What are some of your hobbies or passions outside of work? How did you first get into them?
+
+
+* What is your availability?
+
+
+* Do you consider yourself weird? Why or why not?
+
+
+* Are there any questions that we didn’t ask you that we should have?
+
+
+=========================================================================================
+
+* Why did you choose to learn FE?
+
+
+* How did you learn to code?
+
+
+* What sort of project are you looking for?    
+
+
+* Give me an example of a goal you set for yourself and how you achieved it.
+
+
+* If money weren’t an issue and you had to work on a project for 3 months, what would you create?
+
+
+* Where do you see yourself/ What do you want to do in 3/5 years? What kind of environment? How would this job fit into your plan and help you toward your goals?
+
+
+* If you could master one technology this year, what would it be?
+
+
+* What was your greatest challenge in FE?
+
+
+* What was your favorite part about FE?
+
+
+* What excites or interests you about coding?
+
+
+* What has been the hardest part about learning to code so far?
+
+
+* What did you learn yesterday/this week?
+
+
+* What are 3 big contributors to your success?  Who inspires you in the front-end community?
+
+
+* What is the last technical book you read?
+
+
+* What sort of websites or blogs do you read regularly? What do you like about them?
+
+
+* Do you use Git, GitHub?
+
+
+* Tell me about a time you improved a tool, task, or project you were working on. What was the circumstances? Why did you do it?  Do you have any other examples?
+
+
+* Do you have any side projects? What kind?
+
+
+* What's the coolest thing/project you've ever coded, what are you most proud of?
+
+
+* What is a recent technical challenge you experienced and how did you solve it?
+
+
+* Talk about your preferred development environment. 
+
+
+* What tools you use in regular workflow? 
+
+
+* What tools do you use for your day to day work? Language, IDEs/editors, version control, build systems, provisioning, etc.?
+
+
+* Which version control systems are you familiar with?
+
+
+* How do you stay on up-to-date with current web trends/innovations, latest front-end technologies and best practices? how do you decide what to invest time into and what not to?
+
+
+* What are some things you like about the developer tools you use?
+
+
+* What is a recent challenges you experienced and how did you solved those?
+
+
+* What was the last new technology or tool you learned?  Where did you learn about it?  Have you used it since?
+
+
+* When was the last time you got something wrong?  How did you know?  What did you learn from it?
+
+
+=========================================================================================
+
+* Can you describe your workflow when you create a web page?
+
+
+* If you have 5 different stylesheets, how would you best integrate them into the site?
+
+
+* Can you describe the difference between progressive enhancement and graceful degradation?
+
+
+* How would you optimize a website's assets/resources?
+
+
+* How many resources will a browser download from a given domain at a time?
+
+
+* Name 3 ways to decrease page load (perceived or actual load time).
+
+
+* If you jumped on a project and they used tabs and you used spaces, what would you do?
+
+
+* What is Flash of Unstyled Content? How do you avoid FOUC?
+
+
+* Explain what ARIA and screenreaders are, and how to make a website accessible.
+
+
+* Explain some of the pros and cons for CSS animations versus JavaScript animations.
+
+
+* What does CORS stand for and what issue does it address?
+
+
+* Describe how you would create a simple slideshow page.
+
+
+* What's your favorite feature of Internet Explorer?
+
+
+* What UI, Security, Performance, SEO, Maintainability or Technology considerations do you make while building a web application or site?
+
+
+* Some people write good HTML, some people write bad HTML. What do you consider to be good HTML?
+
+
+* Tell me about a responsive project you have worked on recently?
+
+
+* Do you have any personal projects? Tell me about them.
+
+
+* Ways to decrease page load?
+
+
+* What tools do you use to test your code's performance?
+
+
+* How many resources will a browser download from a given domain at a time?
+
+
+* How would you optimize a website's assets/resources?
+
+
+* Can you talk about how you have considered performance when developing a website?
+
+
+* What performance issues do you anticipate when building a website?
+
+
+* How would you go about troubleshooting a slow website?
+
+
+* What are some ways to prevent web browser caching?
+
+
+* How do you do browser compatibility testing?
+
+
+* What is your favorite browser?  What sort of tools do you use to debug websites?
+
+
+* What do you think of “hacks”? When should they be used in your code and when should they be avoided?
+
+
+* What are the advantages of client side rendering vs. server side rendering? If you were building our site which would you use and why?
+
+
+* How do you test the performance of your code and/or web pages?
+
+
+* What is Flash of unstyled content?
+
+
+* How to avoid Flash of unstyled content.
+
+
+* How does the browser rendering engine work?
+
+    - In order to render content the browser has to go through a series of steps:
+
+        Document Object Model(DOM)
+        
+        CSS object model(CSSOM)
+        
+        Render Tree
+        
+        Layout
+        
+        Paint.
+    
+
+* Can you explain the difference between GET and POST?
+    - https://stackoverflow.com/questions/3477333/what-is-the-difference-between-post-and-get    
+        
+
+* What is the DOM? How does the DOM work? Explain in as much detail as possible.
+
+
+* What is the SAME ORIGIN POLICY
+
+
+* Comparision of browsers like Chrome, Firefox, Internet explorer, Safari etc
+    - Chrome: 
+        Layout rendering engine - Webkit. 
+        Jscript engine - V8
+
+    - Firefox: 
+        Layout rendering engine - Gecko. 
+        Jscript engine - Spider monkey
+        
+    - Internet explorer: 
+        Layout rendering engine - Trident. 
+        Jscript engine - Chakra
+        
+    - Safari:
+        Layout rendering engine - Webkit. 
+        Jscript engine - JavascriptCore i.e Nitro
+
+
+* Open up your last project, explain your code and thought process.
+    // This is probably one of my favorite and most important questions. 
+    // When I hire I like to hire candidates who are very passionate about what they do, 
+    // and so programming isn’t something they just do at their job. 
+    // They are actually passionate about it and pursue their own projects outside of work.
+    
+    
+* Teach me about something for the next 10 minutes.  
+    // You are looking for them to select a topic they know 
+    // I generally don’t care if they are technical or not
+    // and how well they communicate and break things down.
+
+
+* Explain the concept of cloud computing to my older (not-very-technical) mother. 
+    // I actually had to do this in real life and it was harder than I expected. 
+    // Another example is explain a database to someone’s grandparents.
+    
+    
+* In as much detail as you like, explain what happens when I type "google.com" into my browser's address bar and press enter.    
+  
+    
+* How would you explain the Internet to a child?  
+
+
+* Explain the importance of standards and standards bodies.
+  
+  
+* What happens when somebody hits the URL in browser?
+
+
+* What are HTTP methods? List all HTTP methods that you know, and explain them.
+
+
+* Why has it been better to serve site assets from multiple domains?
+
+
+* Do your best to describe the process from the time you type in a website's URL to it finishing loading on your screen.
+
+
+=========================================================================================
+# Version Control
+_________________________________________________________________________________________
+
+
+* What is your preferred version control software? 
+
+* Do you have experience working on a project versioned with Git?
+
+* What is your opinion on pull requests (and code reviews)?
+
+* What is the difference between Git and Github?
+
+* What would you consider an effective Git workflow?
+
+* What are build tools good for? Which ones are you familiar with?
+
+
+=========================================================================================
+# Agile
+_________________________________________________________________________________________
+
+* Do you have experience working in an agile team?
+
+* Do you work in sprints, or using the kanban approach? 
+
+* Do you have a preference, and why?
+
+* Work in Agile / Scrum?
+
+* Have you worked with QA? How you QA/test your code?
+
+----------------------------------------------------------------------------------------------
+
+* How did you communicate progress in your previous role?  Did that process always work?  What could have been done differently to keep everyone on the same page?
+
+* Tell me about a time when you had a miscommunication at work.  What happened?  If you could do it all over again would you alter your actions?  Why or why not?
+
+* Have you ever disagreed with your boss or manager?  What did you do?  If you haven’t had this happen, imagine that it did, how would you handle this situation?
+
+* Give me an example of a time when you were able to communicate and work with another person even when they may not have personally liked you (or vice versa).
+
+* How well do you work on teams?
+
+* What did you like/not like about your last job?
+
+* What would your peers and instructors say about you?
+
+* Do you still write code in your job? Do you love it? 
+    // This is more targeted at managers or leaders, 
+    // since many do not need to be writing code to do their jobs. 
+    // Hopefully this question could lead to an interesting conversation on role, etc.
+
+* Why do you want to work at [company name]? Have you used our products? Is there a particular area or feature that got you excited?
+
+* Give an example of when you completed a task without being asked. Can you give me another example?  Another?
+
+* If you were hiring someone in this role, what would you look for?  What sort of interview questions would you ask? Do you have a favorite question?
+
+
