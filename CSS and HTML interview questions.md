@@ -888,7 +888,7 @@ img { display: block ; }
     
     * Explain the @include, @mixin, @function functions and how they are used. What is %placeholder
         
-        - @mixin: A mixin lets you make groups of CSS declarations that you want to reuse throughout your site
+        - ```@mixin``` A mixin lets you make groups of CSS declarations that you want to reuse throughout your site
 
             ```css
             @mixin border-radius($radius) {
@@ -902,7 +902,7 @@ img { display: block ; }
             ```
             
 
-        - @extend directive provides a simple way to allow a selector to inherit/extend the styles of another one.
+        - ```@extend``` directive provides a simple way to allow a selector to inherit/extend the styles of another one.
             ```css
             .message {
               border: 1px solid #ccc;
@@ -920,7 +920,8 @@ img { display: block ; }
               border-color: red;
             }
         ```
-        - %placeholder are classes that aren’t output when your SCSS is compiled
+        
+        - ```%placeholder``` are classes that aren’t output when your SCSS is compiled
             ```css
             %awesome {
                 width: 100%;
