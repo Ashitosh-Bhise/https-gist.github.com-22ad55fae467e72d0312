@@ -503,9 +503,8 @@ p::first-line {
     
 
 * What is At-Rule
-
-    - An at-rule is an instruction given in a CSS document using the @ character. An at-rule could have a declaration block or a simple string of text. The example below has two different at-rules:
-```html
+    - An at-rule is an instruction given in a CSS document using the ```@``` character. An at-rule could have a declaration block or a simple string of text. The example below has two different at-rules:
+```css
 @import url(secondary.css);
 
 @media print {
@@ -514,13 +513,13 @@ p::first-line {
   }
 }
 ```
-    - The at-rule is not just the “@media” or “@import” part at the beginning; the entire instruction comprises the complete at-rule.
+    - The at-rule is not just the ```@media``` or ```@import``` part at the beginning; the entire instruction comprises the complete at-rule.
 
 
 * What is Combinator selector
 
-    - A combinator is the character in a selector that connects two selectors together. There are four types of combinators. These four combinators help create descendant selectors (with a space character), child selectors (with the “>” character), adjacent sibling selectors (with the “+” character), and general sibling selectors (with the “~” character). To dispel any confusion, here are those four combinators in use:
-```html
+    - A combinator is the character in a selector that connects two selectors together. There are four types of combinators. These four combinators help create descendant selectors (with a space character), child selectors (with the ```>``` character), adjacent sibling selectors (with the ```+``` character), and general sibling selectors (with the ```~``` character). To dispel any confusion, here are those four combinators in use:
+```css
 /* In all 4 examples */
 /* whatever appears between "div" and "p" is a combinator */
 /* in the first example, the combinator is a space character */
