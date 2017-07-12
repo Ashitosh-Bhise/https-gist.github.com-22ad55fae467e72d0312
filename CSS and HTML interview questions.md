@@ -903,7 +903,6 @@ img { display: block ; }
             
 
         - @extend directive provides a simple way to allow a selector to inherit/extend the styles of another one.
-
             ```css
             .message {
               border: 1px solid #ccc;
@@ -924,7 +923,6 @@ img { display: block ; }
         
 
         - %placeholder are classes that aren’t output when your SCSS is compiled
-
             ```css
             %awesome {
                 width: 100%;
