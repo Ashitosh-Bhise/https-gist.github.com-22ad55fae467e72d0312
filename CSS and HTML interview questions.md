@@ -890,6 +890,7 @@ img { display: block ; }
         
         - @mixin: A mixin lets you make groups of CSS declarations that you want to reuse throughout your site
 
+            ```css
             @mixin border-radius($radius) {
               -webkit-border-radius: $radius;
                  -moz-border-radius: $radius;
@@ -898,10 +899,12 @@ img { display: block ; }
             }
             
             .box { @include border-radius(10px); }
+            ```
             
 
         - @extend directive provides a simple way to allow a selector to inherit/extend the styles of another one.
 
+            ```css
             .message {
               border: 1px solid #ccc;
               padding: 10px;
@@ -917,11 +920,12 @@ img { display: block ; }
               @extend .message;
               border-color: red;
             }
-        
+        ```
         
 
         - %placeholder are classes that aren’t output when your SCSS is compiled
 
+            ```css
             %awesome {
                 width: 100%;
                 height: 100%;
@@ -932,13 +936,14 @@ img { display: block ; }
             p {
                 @extend %awesome;
             }
-            
+            ```
             Output
-            
+            ```css
             body, p {
                 width: 100%;
                 height: 100%;
             }
+            ```
 
 
 * What are some considerations in selecting font sizes? // This question is focused on accessibility
