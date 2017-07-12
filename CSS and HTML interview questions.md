@@ -857,7 +857,7 @@ img { display: block ; }
     https://css-tricks.com/almanac/properties/w/whitespace/
 
 
-* What is <pre> ?
+* What is ```<pre>``` ?
 
 
 * How is ```<b>``` different from ```<strong>``` ?
