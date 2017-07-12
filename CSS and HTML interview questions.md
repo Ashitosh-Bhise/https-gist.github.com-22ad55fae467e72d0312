@@ -860,7 +860,7 @@ img { display: block ; }
 * What is <pre> ?
 
 
-* How is <b> different from <strong> ?
+* How is ```<b>``` different from ```<strong>``` ?
     
 
 * What does minification do?
