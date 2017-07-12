@@ -921,8 +921,9 @@ img { display: block ; }
               @extend .message;
               border-color: red;
             }
-        ```
-        
+            ```
+            
+
         - ```%placeholder``` are classes that aren’t output when your SCSS is compiled
             ```css
             %awesome {
@@ -936,8 +937,9 @@ img { display: block ; }
                 @extend %awesome;
             }
             ```
-            Output
+            
             ```css
+            /** Output **/
             body, p {
                 width: 100%;
                 height: 100%;
