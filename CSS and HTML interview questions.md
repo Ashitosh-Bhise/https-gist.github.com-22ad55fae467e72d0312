@@ -1045,8 +1045,8 @@ img { display: block ; }
 
 
 * Name 5 common block-level and inline HTML elements.
-    - block elements: "<h1>, <p>, <ul>, <ol>, <li>",
-    - inline elements: "<span>, <a>, <strong>, <i>, <img>"
+    - block elements "<h1>, <p>, <ul>, <ol>, <li>",
+    - inline elements "<span>, <a>, <strong>, <i>, <img>"
 
 * What are semantic and non-semantic elements?
     - A semantic element clearly describes its meaning to both the browser and the developer.
