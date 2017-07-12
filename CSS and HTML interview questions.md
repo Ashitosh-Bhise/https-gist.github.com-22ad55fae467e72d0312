@@ -1053,7 +1053,7 @@ img { display: block ; }
   
     - non-semantic elements: <div> and <span> - Tells nothing about its content. semantic elements: <form>, <table>, and <article> - Clearly defines its content.
 
-* Define semantic markup. What are the semantic meanings for <section>, <article>, <aside>, <nav>, <header>, <footer> and when/how should each be used in structuring html markup?
+* Define semantic markup. What are the semantic meanings for ```<section>, <article>, <aside>, <nav>, <header>, <footer>``` and when/how should each be used in structuring html markup?
 
 * What is the difference between (<i> and <em>) and (<b>, <strong>) and how will screen-readers react the to each tag?
     
