@@ -897,7 +897,9 @@ img { display: block ; }
                   -ms-border-radius: $radius;
                       border-radius: $radius;
             }
-            
+            ```
+
+            ```css
             .box { @include border-radius(10px); }
             ```
             
