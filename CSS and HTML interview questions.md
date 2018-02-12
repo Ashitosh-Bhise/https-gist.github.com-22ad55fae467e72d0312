@@ -1447,3 +1447,4 @@ img { display: block ; }
 * If you were hiring someone in this role, what would you look for?  What sort of interview questions would you ask? Do you have a favorite question?
 
 
+https://github.com/yangshun/front-end-interview-handbook
