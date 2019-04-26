@@ -477,15 +477,15 @@
 ---
 #### Tell what each of these tags do, if there are alternatives, which are preferable, why?
 ```css
-    <em>
-    <b>
-    <abbr>
-    <nav>
-    <i>
-    <j>
-    <link>
-    <strong>
-    <article>
+<em>
+<b>
+<abbr>
+<nav>
+<i>
+<j>
+<link>
+<strong>
+<article>
 ```    
 ---
 #### What is At-Rule
@@ -551,9 +551,9 @@ body {
 ```css
 <div class="red">Hi, I'm Blue</div>
 
-div.red    {color:green}
-div        {font-weight:bold}
-.red       {color:yellow;font-weight:normal}
+div.red { color: green; }
+div { font-weight: bold; }
+.red { color: yellow; font-weight: normal; }
 ```
 ---
 #### What is Declaration
