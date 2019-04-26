@@ -963,7 +963,19 @@ img { display: block ; }
 ### HTML
 ---
 
-* What does a doctype do?
+* What does a DOCTYPE do?
+
+    - DOCTYPE is an abbreviation for **DOCument TYPE**.  
+    A DOCTYPE is always associated to a **DTD** - for **Document Type Definition**.  
+
+    A DTD defines how documents of a certain type should be structured (i.e. a `button` can contain a `span` but not a `div`), whereas a DOCTYPE declares what DTD a document *supposedly* respects (i.e. this document respects the HTML DTD).  
+
+    For webpages, the DOCTYPE declaration is required. It is used to tell user agents what version of the HTML specifications your document respects.  
+    Once a user agent has recognized a correct DOCTYPE, it will trigger the **no-quirks mode** matching this DOCTYPE for reading the document.  
+    If a user agent doesn't recognize a correct DOCTYPE, it will trigger the **quirks mode**.
+
+    The DOCTYPE declaration for the HTML5 standards is `<!DOCTYPE html>`.
+
 
 * What happens when DOCTYPE is not given
     - The web page is rendered in quirks mode. 
@@ -1001,7 +1013,29 @@ img { display: block ; }
 
 * How do you serve a page with content in multiple languages?
 
+    -  The question is a little vague, I will assume that it is asking about the most common case, which is how to serve a page with content available in multiple languages, but the content within the page should be displayed only in one consistent language.
+
+    - When an HTTP request is made to a server, the requesting user agent usually sends information about language preferences, such as in the `Accept-Language` header. The server can then use this information to return a version of the document in the appropriate language if such an alternative is available. The returned HTML document should also declare the `lang` attribute in the `<html>` tag, such as `<html lang="en">...</html>`.
+
+    In the back end, the HTML markup will contain `i18n` placeholders and content for the specific language stored in YML or JSON formats. The server then dynamically generates the HTML page with content in that particular language, usually with the help of a back end framework.
+
 * What kind of things must you be wary of when design or developing for multilingual sites?
+
+    - Use `lang` attribute in your HTML.
+    
+    - Directing users to their native language - Allow a user to change his country/language easily without hassle.
+    
+    - Text in images is not a scalable approach - Placing text in an image is still a popular way to get good-looking, non-system fonts to display on any computer. However, to translate image text, each string of text will need to have a separate image created for each language. Anything more than a handful of replacements like this can quickly get out of control.
+    
+    - Restrictive words/sentence length - Some content can be longer when written in another language. Be wary of layout or overflow issues in the design. It's best to avoid designing where the amount of text would make or break a design. Character counts come into play with things like headlines, labels, and buttons. They are less of an issue with free-flowing text such as body text or comments.
+    
+    - Be mindful of how colors are perceived - Colors are perceived differently across languages and cultures. The design should use color appropriately.
+    
+    - Formatting dates and currencies - Calendar dates are sometimes presented in different ways. Eg. "May 31, 2012" in the U.S. vs. "31 May 2012" in parts of Europe.
+
+    - Do not concatenate translated strings - Do not do anything like `"The date today is " + date`. It will break in languages with different word order. Use a template string with parameters substitution for each language instead. For example, look at the following two sentences in English and Chinese respectively: `I will travel on {% date %}` and `{% date %} 我会出发`. Note that the position of the variable is different due to grammar rules of the language.
+
+    - Language reading direction - In English, we read from left-to-right, top-to-bottom, in traditional Japanese, text is read up-to-down, right-to-left.
 
 * What are data- attributes good for?
     - The HTML5 data attribute lets you assign custom data to an element. When we want to store more information/data about the element when no suitable HTML5 element or attribute exists
@@ -1009,6 +1043,20 @@ img { display: block ; }
 * Consider HTML5 as an open web platform. What are the building blocks of HTML5?
 
 * Describe the difference between a cookie, sessionStorage and localStorage.
+
+
+All the above-mentioned technologies are key-value storage mechanisms on the client side. They are only able to store values as strings.
+
+|                                        | `cookie`                                                 | `localStorage` | `sessionStorage` |
+| -------------------------------------- | -------------------------------------------------------- | -------------- | ---------------- |
+| Initiator                              | Client or server. Server can use `Set-Cookie` header     | Client         | Client           |
+| Expiry                                 | Manually set                                             | Forever        | On tab close     |
+| Persistent across browser sessions     | Depends on whether expiration is set                     | Yes            | No               |
+| Sent to server with every HTTP request | Cookies are automatically being sent via `Cookie` header | No             | No               |
+| Capacity (per domain)                  | 4kb                                                      | 5MB            | 5MB              |
+| Accessibility                          | Any window                                               | Any window     | Same tab         |
+
+
 
 * Describe the difference between <script>, <script async> and <script defer>.
 
@@ -1232,6 +1280,8 @@ img { display: block ; }
 
 * What is Flash of Unstyled Content? How do you avoid FOUC?
 
+* What is Flash of Unstyled Text? How do you avoid FOUT?
+
 
 * Explain what ARIA and screenreaders are, and how to make a website accessible.
 
@@ -1445,6 +1495,3 @@ img { display: block ; }
 * Give an example of when you completed a task without being asked. Can you give me another example?  Another?
 
 * If you were hiring someone in this role, what would you look for?  What sort of interview questions would you ask? Do you have a favorite question?
-
-
-https://github.com/yangshun/front-end-interview-handbook
