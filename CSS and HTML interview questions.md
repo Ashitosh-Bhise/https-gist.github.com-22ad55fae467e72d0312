@@ -116,23 +116,23 @@
 ---
 #### Explain the difference between "visibility: hidden;" and "display: none;"? What are the pros and cons of using “display:none”?
 
-* visibility: hidden simply hides the element but it will occupy space and affect the layout of the document.
+* ```visibility: hidden``` simply hides the element but it will occupy space and affect the layout of the document.
 
-* display: none also hides the element but will not occupy space. It will not affect the layout of the document.
+* ```display: none``` also hides the element but will not occupy space. It will not affect the layout of the document.
     
 
 ---
-#### Describe z-index and how stacking context is formed.
-* An element with greater stack order is always in front of an element with a lower stack order. z-index only works on positioned elements. The default stack order of non-positioned elements is their order in the document.
+#### Describe ```z-index``` and how stacking context is formed.
+* An element with greater stack order is always in front of an element with a lower stack order. ```z-index``` only works on positioned elements. The default stack order of non-positioned elements is their order in the document.
     
 ---
-#### What is the purpose of the z-index and how is it used?
+#### What is the purpose of the ```z-index``` and how is it used?
 
-* The z-index helps specify the stack order of positioned elements that may overlap one another. The z-index default value is zero, and can take on either a positive or negative number.
+* The ```z-index``` helps specify the stack order of positioned elements that may overlap one another. The ```z-index``` default value is zero, and can take on either a positive or negative number.
 
-* An element with a higher z-index is always stacked above than a lower index.
+* An element with a higher ```z-index``` is always stacked above than a lower index.
 
-* Z-Index can take the following values:
+* ```z-index``` can take the following values:
 
    * Auto: Sets the stack order equal to its parents.
    * Number: Orders the stack order.
@@ -140,8 +140,8 @@
    * Inherit: Inherits this property from its parent element.
     
 ---
-#### How does z-index relate to positioning
-* The z-index property specifies the stack order of elements. An element with a higher z-index/stack order is always rendered in front of an element with a lower z-index/stack order on the screen. Z-index will only work on elements that have a specified position (position:absolute, position:relative, or position:fixed).
+#### How does ```z-index``` relate to positioning
+* The ```z-index``` property specifies the stack order of elements. An element with a higher ```z-index```/stack order is always rendered in front of an element with a lower ```z-index```/stack order on the screen. ```z-index``` will only work on elements that have a specified position (position:absolute, position:relative, or position:fixed).
 
 ---
 #### What existing CSS frameworks have you used locally, or in production? How would you change/improve them?
@@ -166,7 +166,7 @@
     
 * ```Static``` default for every single page element. The only reason you would ever set an element to position: static is to forcefully-remove some positioning that got applied to an element outside of your control.
     
-* ```Relative``` means "relative to itself". Setting position: relative; on an element and no other positioning attributes, it will no effect on it's positioning. It allows the use of z-index on the element and it limits the scope of absolutely positioned child elements. Any child element will be absolutely positioned within that block.
+* ```Relative``` means "relative to itself". Setting position: relative; on an element and no other positioning attributes, it will no effect on it's positioning. It allows the use of ```z-index``` on the element and it limits the scope of absolutely positioned child elements. Any child element will be absolutely positioned within that block.
     
 * ```Absolute``` positions the element exactly where you want it rrelative to the next parent element with relative (or absolute) positioning. If there is no such parent, it will default all the way back up to the <html> element.
     
@@ -333,9 +333,6 @@
 #### Provide an example of content-box vs border-box box-sizing
 
 ---
-#### What is ```{ box-sizing: border-box; }```? What are advantages?
-
----
 #### What is the difference between RGBa and HSLa? When would you use one vs the other?
 
 ---
@@ -430,7 +427,7 @@
     ```border-box``` includes the padding and border, but not the margin in the inner dimension.
 
 ---
-#### What does #### { box-sizing: border-box; } do? What are its advantages?
+#### What does  ```{ box-sizing: border-box; }``` do? What are its advantages?
 * Make every element in the document include the padding and border in the element's inner dimensions; 
     making it easier to reason about the layout of elements on the page.
 
@@ -444,7 +441,7 @@
 #### Can you explain the differences between em, rem, px?
 
 ---
-#### What's #target.
+#### What's ```#target```.
 
 ---
 #### What existing CSS frameworks have you used locally, or in production? How would you change/improve them?
@@ -532,7 +529,7 @@ div~p {
 #### What is RuleSet?
 * A rule set is a single section of CSS including the selector, the curly braces, and the different lines with properties and values. The code in the example below comprises one rule set:
 
-```html
+```css
 /*  the rule set starts with the line below */
 body {
   font-family: Arial, sans-serif;
@@ -543,21 +540,21 @@ body {
 ```
 ---
 #### Provide CSS so that three lines are displayed``` red, then green, then blue (2):
-
-    <div class="rgb">
-        <span>Red</span>
-        <span>Green<b>Blue</b></span>
-    </div>
-
+```css
+<div class="rgb">
+    <span>Red</span>
+    <span>Green<b>Blue</b></span>
+</div>
+```
 ---
 #### Provided following HTML and CSS, what will be displayed (1)?
+```css
+<div class="red">Hi, I'm Blue</div>
 
-    <div class="red">Hi, I'm Blue</div>
-
-    div.red    {color:green}
-    div        {font-weight:bold}
-    .red       {color:yellow;font-weight:normal}
-
+div.red    {color:green}
+div        {font-weight:bold}
+.red       {color:yellow;font-weight:normal}
+```
 ---
 #### What is Declaration
 * The set of property names and values like: background: red;
@@ -567,7 +564,7 @@ body {
 #### What is Declaration Block
 
 * A declaration block is the section of CSS where the property/value pairs appear. In the example below, everything found between the curly braces (not including the comments) is a declaration block:
-```html
+```css
 body {
   font-family: Arial, sans-serif; /*  starts with this line */
   color: #555;
@@ -580,7 +577,7 @@ body {
 
 * The universal selector matches any element within the context in which it’s placed in a selector. 
     In the example below, the #### character is the universal selector:
-```html
+```css
 /*  the asterisk character is the universal selector */
 .navigation ul #### {
   width: 100px;
@@ -878,23 +875,23 @@ img { display: block ; }
 
 #### Explain the @include, @mixin, @function functions and how they are used. What is %placeholder
     
-*```@mixin``` A mixin lets you make groups of CSS declarations that you want to reuse throughout your site
+* ```@mixin``` A mixin lets you make groups of CSS declarations that you want to reuse throughout your site
 
-        ```css
-        @mixin border-radius($radius) {
-          -webkit-border-radius: $radius;
-             -moz-border-radius: $radius;
-              -ms-border-radius: $radius;
-                  border-radius: $radius;
-        }
-        ```
+```css
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+          border-radius: $radius;
+}
+```
 
-        ```css
-        .box { @include border-radius(10px); }
-        ```
+```css
+.box { @include border-radius(10px); }
+```
         
 
-*```@extend``` directive provides a simple way to allow a selector to inherit/extend the styles of another one.
+* ```@extend``` directive provides a simple way to allow a selector to inherit/extend the styles of another one.
 ```css
 .message {
   border: 1px solid #ccc;
