@@ -32,35 +32,27 @@
 ---
 #### What is Selector? 
 * The way you declare which elements the styles should apply to. There are different kinds of selectors:
-        - Class: The most commonly used selector. E.g. “.cloudy” to select an element with classname cloudy. There can be more than 1 element with the same classname.
+    * Class: The most commonly used selector. E.g. “.cloudy” to select an element with classname cloudy. There can be more than 1 element with the same classname.
 
-        - ID: Use this sparingly. You cannot reuse an ID within the same page and used only to identify an element uniquely. E.g. ```<div id=lovelyweather></div>```
+    * ID: Use this sparingly. You cannot reuse an ID within the same page and used only to identify an element uniquely. E.g. ```<div id=lovelyweather></div>```
     
-        - Attribute Selector: If you use any attribute other than class or id to identify an element in a stylesheet, you would be using Attribute Selectors. You can also do basic pattern matching within an attribute selector (so if you would like to do basic pattern matching for selectors using class or ID attributes, you would want to use attribute selectors).
+    * Attribute Selector: If you use any attribute other than class or id to identify an element in a stylesheet, you would be using Attribute Selectors. You can also do basic pattern matching within an attribute selector (so if you would like to do basic pattern matching for selectors using class or ID attributes, you would want to use attribute selectors).
     
-        - Pseudo-Classes: Classes that are applied to elements based on information that is not present in the markup, e.g. :first-child or :last-child. Do note that the selectors are parsed from right to left (see the demo). You cannot use section article:first-child to select the first occurrence of article, if the first child of section is h1 and not article. Likewise with the :nth-child, and :last-child pseudo-classes.
+    * Pseudo-Classes: Classes that are applied to elements based on information that is not present in the markup, e.g. :first-child or :last-child. Do note that the selectors are parsed from right to left (see the demo). You cannot use section article:first-child to select the first occurrence of article, if the first child of section is h1 and not article. Likewise with the :nth-child, and :last-child pseudo-classes.
     
-        - Pseudo-Elements Pseudo-elements differ from Pseudo-Classes in that they actually create an element in the document tree. This is almost the first instance of CSS modifying the HTML document tree. You should ideally use pseudo-elements with “::” instead of “:” (but most browsers accept “:” notation for CSS 2.1 pseudo-elements). Pseudo-elements are: ::first-line, ::first-letter, ::before, ::after (See the demo for how pseudo-elements work).
+    * Pseudo-Elements Pseudo-elements differ from Pseudo-Classes in that they actually create an element in the document tree. This is almost the first instance of CSS modifying the HTML document tree. You should ideally use pseudo-elements with “::” instead of “:” (but most browsers accept “:” notation for CSS 2.1 pseudo-elements). Pseudo-elements are: ```::first-line```, ```::first-letter```, ```::before```, ```::after``` (See the demo for how pseudo-elements work).
         
 ---
 #### What are Combinators?
 * The selection of an element based on its occurrence in relation to another element (chosen by the choice of combinator: whitespace, >, +, or ~). You can have:
-
-
-    #### Descendant Combinator
-    ** This is the most common usage, e.g. #lovelyweather h1.
-    
-    
-    #### Child Combinator
-    ** Select an element if it is a direct child of another element (and not a grandchild of that element).
-    
-    
-    #### Adjacent Sibling Combinator
-    ** The element that is immediately adjacent to another element.
-
-
-    #### General Sibling Combinator
-    ** The element that is adjacent, but not immediately to another element.
+    * Descendant Combinator
+        * This is the most common usage, e.g. #lovelyweather h1.
+    * Child Combinator
+        * Select an element if it is a direct child of another element (and not a grandchild of that element).
+    * Adjacent Sibling Combinator
+        * The element that is immediately adjacent to another element.
+    * General Sibling Combinator
+        * The element that is adjacent, but not immediately to another element.
         
 ---
 #### Why background and color are the separate properties if they should always be set together?
@@ -97,10 +89,10 @@
 #### What is the CSS Box model and what are its elements?
 * The CSS box model is used to define the design and layout of elements of CSS.
 * The elements are:
-   ** Margin
-   ** Border
-   ** Padding
-   ** Content
+   * Margin
+   * Border
+   * Padding
+   * Content
    
     ---
 #### What is the float property and what float do.
@@ -142,10 +134,10 @@
 
 * Z-Index can take the following values:
 
-   ** Auto: Sets the stack order equal to its parents.
-   ** Number: Orders the stack order.
-   ** Initial: Sets this property to its default value (0).
-   ** Inherit: Inherits this property from its parent element.
+   * Auto: Sets the stack order equal to its parents.
+   * Number: Orders the stack order.
+   * Initial: Sets this property to its default value (0).
+   * Inherit: Inherits this property from its parent element.
     
 ---
 #### How does z-index relate to positioning
@@ -195,14 +187,14 @@
         force a line break after the block element
         
 * Inline elements:
-    ** respect left & right margins and padding, but not top & bottom
-    ** cannot have a width and height set
-    ** allow other elements to sit to their left and right.
+    * respect left & right margins and padding, but not top & bottom
+    * cannot have a width and height set
+    * allow other elements to sit to their left and right.
         
 * Inline-block elements:
-    ** allow other elements to sit to their left and right
-    ** respect top & bottom margins and padding
-    ** respect height and width
+    * allow other elements to sit to their left and right
+    * respect top & bottom margins and padding
+    * respect height and width
 
 
 ---
@@ -247,12 +239,12 @@
         Style the first letter, or line, of an element
         Insert content before, or after, the content of an element
     
-```css
-p::first-line {
-    color: #ff0000;
-    font-variant: small-caps;
-}
-```
+    ```css
+    p::first-line {
+        color: #ff0000;
+        font-variant: small-caps;
+    }
+    ```
 
 ---
 #### What is pseudo element? what is pseudo class?
@@ -281,7 +273,6 @@ p::first-line {
 
     ```Content``` The content of the box, where text and images appear
     
-    
     ```Padding``` A transparent area surrounding the content (i.e., the amount of space between the border and the content)
     
     ```Border``` A border surrounding the padding (if any) and content
@@ -289,36 +280,35 @@ p::first-line {
     ```Margin``` A transparent area surrounding the border (i.e., the amount of space between the border and any neighboring elements)
 
     ```css
-    /####       top   right  bottom left  */
+    /* top   right  bottom left  */
     padding: 25px  50px   75px   100px;
     
-    /#### same padding on all 4 sides: */
+    /* same padding on all 4 sides: */
     padding: 25px;
     
-    /#### top/bottom padding 25px; right/left padding 50px */
+    /* top/bottom padding 25px; right/left padding 50px */
     padding: 25px 50px;
     
-    /#### top padding 25px; right/left padding 50px; bottom padding 75px */
+    /* top padding 25px; right/left padding 50px; bottom padding 75px */
     padding: 25px 50px 75px;
     ```
 ---
 #### Explain what elements will match each of the following CSS selectors:
-    div, ```p``` Selects all <div> elements and all <p> elements
-    div ```p``` Selects all <p> elements that are anywhere inside a <div> element
-    div > ```p``` Selects all <p> elements where the immediate parent is a <div> element
-    div + ```p``` Selects all <p> elements that are placed immediately after a <div> element
-    div ~ ```p``` Selects all <p> elements that are anywhere preceded by a <div> element
+* div, ```p``` Selects all ```<div>``` elements and all <p> elements
+* div ```p``` Selects all ```<p>``` elements that are anywhere inside a <div> element
+* div > ```p``` Selects all ```<p>``` elements where the immediate parent is a <div> element
+* div + ```p``` Selects all ```<p>``` elements that are placed immediately after a <div> element
+* div ~ ```p``` Selects all ```<p>``` elements that are anywhere preceded by a <div> element
 
 ---
 #### Explain the meaning of each of these CSS units for expressing length:
-
-    ```cm``` centimeters
-    ```em``` elements (i.e., relative to the font-size of the element; e.g., 2 em means 2 times the current font size)
-    ```in``` inches
-    ```mm``` millimeters
-    ```pc``` picas (1 pc = 12 pt = 1/6th of an inch)
-    ```pt``` points (1 pt = 1/72nd of an inch)
-    ```px``` pixels (1 px = 1/96th of an inch)
+```cm``` centimeters
+```em``` elements (i.e., relative to the font-size of the element; e.g., 2 em means 2 times the current font size)
+```in``` inches
+```mm``` millimeters
+```pc``` picas (1 pc = 12 pt = 1/6th of an inch)
+```pt``` points (1 pt = 1/72nd of an inch)
+```px``` pixels (1 px = 1/96th of an inch)
 
 ---
 #### Which values (units) could be used for width?
@@ -326,14 +316,14 @@ p::first-line {
 ---
 #### In CSS3, how would you select:
 
-    Every <a> element whose href attribute value begins with “https”.
-        a[href^="https"]
-        
-    Every <a> element whose href attribute value ends with “.pdf”.
-        a[href$=".pdf"]
-        
-    Every <a> element whose href attribute value contains the substring “css”.
-        a[href*="css"]
+* Every ```<a>``` element whose href attribute value begins with “https”.
+    * a[href^="https"]
+    
+* Every ```<a>``` element whose href attribute value ends with “.pdf”.
+    * a[href$=".pdf"]
+    
+* Every ```<a>``` element whose href attribute value contains the substring “css”.
+    * a[href*="css"]
 
 
 ---
@@ -343,7 +333,7 @@ p::first-line {
 #### Provide an example of content-box vs border-box box-sizing
 
 ---
-#### What is #### { box-sizing: border-box; }? What are advantages?
+#### What is ```{ box-sizing: border-box; }```? What are advantages?
 
 ---
 #### What is the difference between RGBa and HSLa? When would you use one vs the other?
@@ -519,9 +509,9 @@ The at-rule is not just the ```@media``` or ```@import``` part at the beginning;
 
 * A combinator is the character in a selector that connects two selectors together. There are four types of combinators. These four combinators help create descendant selectors (with a space character), child selectors (with the ```>``` character), adjacent sibling selectors (with the ```+``` character), and general sibling selectors (with the ```~``` character). To dispel any confusion, here are those four combinators in use:
 ```css
-/#### In all 4 examples */
-/#### whatever appears between "div" and "p" is a combinator */
-/#### in the first example, the combinator is a space character */
+/*  In all 4 examples */
+/*  whatever appears between "div" and "p" is a combinator */
+/*  in the first example, the combinator is a space character */
 div p {
   color: #222;
 }
@@ -543,13 +533,13 @@ div~p {
 * A rule set is a single section of CSS including the selector, the curly braces, and the different lines with properties and values. The code in the example below comprises one rule set:
 
 ```html
-/#### the rule set starts with the line below */
+/*  the rule set starts with the line below */
 body {
   font-family: Arial, sans-serif;
   color: #555;
   font-size: 14px;
 }
-/#### ends with the closing curly brace above */
+/*  ends with the closing curly brace above */
 ```
 ---
 #### Provide CSS so that three lines are displayed``` red, then green, then blue (2):
@@ -579,10 +569,10 @@ body {
 * A declaration block is the section of CSS where the property/value pairs appear. In the example below, everything found between the curly braces (not including the comments) is a declaration block:
 ```html
 body {
-  font-family: Arial, sans-serif; /#### starts with this line */
+  font-family: Arial, sans-serif; /*  starts with this line */
   color: #555;
   font-size: 14px;
-  line-height: 20px; /#### ends here, before the closing curly brace */
+  line-height: 20px; /*  ends here, before the closing curly brace */
 }
 ```
 ---
@@ -591,7 +581,7 @@ body {
 * The universal selector matches any element within the context in which it’s placed in a selector. 
     In the example below, the #### character is the universal selector:
 ```html
-/#### the asterisk character is the universal selector */
+/*  the asterisk character is the universal selector */
 .navigation ul #### {
   width: 100px;
   float: left;
@@ -611,7 +601,7 @@ img { display: block ; }
 
 ---
 #### How comments can be added in CSS?
-* The comments in CSS can be added with /#### and */.
+* The comments in CSS can be added with /*  and */.
     
 ---
 #### Define Attribute Selector ?
@@ -905,46 +895,46 @@ img { display: block ; }
         
 
 *```@extend``` directive provides a simple way to allow a selector to inherit/extend the styles of another one.
-        ```css
-        .message {
-          border: 1px solid #ccc;
-          padding: 10px;
-          color: #333;
-        }
-        
-        .success {
-          @extend .message;
-          border-color: green;
-        }
+```css
+.message {
+  border: 1px solid #ccc;
+  padding: 10px;
+  color: #333;
+}
 
-        .error {
-          @extend .message;
-          border-color: red;
-        }
-        ```
+.success {
+  @extend .message;
+  border-color: green;
+}
+
+.error {
+  @extend .message;
+  border-color: red;
+}
+```
         
 
-*```%placeholder``` are classes that aren’t output when your SCSS is compiled
-        ```css
-        %awesome {
-            width: 100%;
-            height: 100%;
-        }
-        body {
-            @extend %awesome;
-        }
-        p {
-            @extend %awesome;
-        }
-        ```
-        
-        ```css
-        /*#### Output ```/
-        body, p {
-            width: 100%;
-            height: 100%;
-        }
-        ```
+```%placeholder``` are classes that aren’t output when your SCSS is compiled
+```css
+%awesome {
+    width: 100%;
+    height: 100%;
+}
+body {
+    @extend %awesome;
+}
+p {
+    @extend %awesome;
+}
+```
+
+```css
+/*#### Output ```/
+body, p {
+    width: 100%;
+    height: 100%;
+}
+```
 
 ---
 #### What are some considerations in selecting font sizes? // This question is focused on accessibility
@@ -1017,7 +1007,7 @@ img { display: block ; }
 
 * When an HTTP request is made to a server, the requesting user agent usually sends information about language preferences, such as in the `Accept-Language` header. The server can then use this information to return a version of the document in the appropriate language if such an alternative is available. The returned HTML document should also declare the `lang` attribute in the `<html>` tag, such as `<html lang="en">...</html>`.
 
-    In the back end, the HTML markup will contain `i18n` placeholders and content for the specific language stored in YML or JSON formats. The server then dynamically generates the HTML page with content in that particular language, usually with the help of a back end framework.
+* In the back end, the HTML markup will contain `i18n` placeholders and content for the specific language stored in YML or JSON formats. The server then dynamically generates the HTML page with content in that particular language, usually with the help of a back end framework.
 ---
 #### What kind of things must you be wary of when design or developing for multilingual sites?
 
@@ -1042,18 +1032,18 @@ img { display: block ; }
 ---
 #### Consider HTML5 as an open web platform. What are the building blocks of HTML5?
 ---
-#### Describe the difference between a cookie, sessionStorage and localStorage.
-* All the above-mentioned technologies are key-value storage mechanisms on the client side. They are only able to store values as strings.
+#### Describe the difference between a `cookie`, `sessionStorage` and `localStorage`.
+
+All the above-mentioned technologies are key-value storage mechanisms on the client side. They are only able to store values as strings.
 
 |                                        | `cookie`                                                 | `localStorage` | `sessionStorage` |
-| -------------------------------------* | -------------------------------------------------------* | -------------* | ---------------* |
+| -------------------------------------- | -------------------------------------------------------- | -------------- | ---------------- |
 | Initiator                              | Client or server. Server can use `Set-Cookie` header     | Client         | Client           |
 | Expiry                                 | Manually set                                             | Forever        | On tab close     |
 | Persistent across browser sessions     | Depends on whether expiration is set                     | Yes            | No               |
 | Sent to server with every HTTP request | Cookies are automatically being sent via `Cookie` header | No             | No               |
 | Capacity (per domain)                  | 4kb                                                      | 5MB            | 5MB              |
 | Accessibility                          | Any window                                               | Any window     | Same tab         |
-
 
 ---
 #### Describe the difference between <script>, <script async> and <script defer>.
@@ -1110,7 +1100,7 @@ img { display: block ; }
 #### When is it acceptable to use font tags?
 ---
 #### What is the purpose of meta tags?
- ---
+---
 #### What is the purpose of Charset meta tag?
 ---
 #### What does async and defer refer in script tag ? Describe the difference between ```<script>```, ```<script async>``` and ```<script defer>```
@@ -1128,11 +1118,11 @@ img { display: block ; }
 #### What are some of the building blocks of HTML5?
 ---
 #### What is the difference between cookies, sessionStorage and localStorage?
-    ---
+---
 #### Where should we place Javascript ```files``` top OR bottom. What are the advantages and disadvantages of either method. Where would you use these (Google webfonts you need to place on top + jQuery down or top)
         
         
-------
+---
 #### Behavioral
 ---
 
@@ -1357,15 +1347,15 @@ img { display: block ; }
 
 * In order to render content the browser has to go through a series of steps:
 
-        Document Object Model(DOM)
+    * Document Object Model(DOM)
         
-        CSS object model(CSSOM)
+    * CSS object model(CSSOM)
         
-        Render Tree
+    * Render Tree
         
-        Layout
+    * Layout
         
-        Paint.
+    * Paint.
     
 ---
 #### Can you explain the difference between GET and POST?
@@ -1380,20 +1370,20 @@ img { display: block ; }
 ---
 #### Comparision of browsers like Chrome, Firefox, Internet explorer, Safari etc
 * Chrome: 
-        Layout rendering ```engine``` Webkit. 
-        Jscript engine``` V8
+    * Layout rendering ```engine``` Webkit. 
+    * Jscript engine``` V8
 
 * Firefox: 
-        Layout rendering ```engine``` Gecko. 
-        Jscript engine``` Spider monkey
+    * Layout rendering ```engine``` Gecko. 
+    * Jscript engine``` Spider monkey
         
 * Internet explorer: 
-        Layout rendering engine``` Trident. 
-        Jscript engine``` Chakra
+    * Layout rendering engine``` Trident. 
+    * Jscript engine``` Chakra
         
 * Safari:
-        Layout rendering ```engine``` Webkit. 
-        Jscript engine``` JavascriptCore i.e Nitro
+    * Layout rendering ```engine``` Webkit. 
+    * Jscript engine``` JavascriptCore i.e Nitro
 
 ---
 #### Open up your last project, explain your code and thought process.
