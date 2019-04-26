@@ -625,6 +625,10 @@ img { display: block ; }
 ---
 #### What is progressive rendering?
 
+    * Progressive rendering is the name given to techniques used to improve the performance of a webpage (in particular, improve perceived load time) to render content for display as quickly as possible.
+
+    * It used to be much more prevalent in the days before broadband internet but it is still used in modern development as mobile data connections are becoming increasingly popular (and unreliable)!
+
     http://stackoverflow.com/questions/33651166/what-is-progressive-rendering
     
 ---
@@ -1046,10 +1050,27 @@ All the above-mentioned technologies are key-value storage mechanisms on the cli
 #### Describe the difference between <script>, <script async> and <script defer>.
 ---
 #### Why is it generally a good idea to position CSS <link>s between <head></head> and JS <script>s just before </body>? Do you know any exceptions?
+**Placing `<link>`s in the `<head>`**
+
+Putting `<link>`s in the head is part of proper specification in building an optimized website. When a page first loads, HTML and CSS are being parsed simultaneously; HTML creates the DOM (Document Object Model) and CSS creates the CSSOM (CSS Object Model). Both are needed to create the visuals in a website, allowing for a quick "first meaningful paint" timing. This progressive rendering is a category optimization sites are measured in their performance scores. Putting stylesheets near the bottom of the document is what prohibits progressive rendering in many browsers. Some browsers block rendering to avoid having to repaint elements of the page if their styles change. The user is then stuck viewing a blank white page. Other times there can be flashes of unstyled content (FOUC), which can shows a webpage with no styling applied. 
+
+**Placing `<script>`s just before `</body>`**
+
+`<script>`s block HTML parsing while they are being downloaded and executed. Placing the scripts at the bottom will allow the HTML to be parsed and displayed to the user first.
+
+An exception for positioning of `<script>`s at the bottom is when your script contains `document.write()`, but these days it's not a good practice to use `document.write()`. Also, placing `<script>`s at the bottom means that the browser cannot start downloading the scripts until the entire document is parsed. This ensures your code that needs to manipulate DOM elements will not throw and error and halt the entire script. If you need to put `<script>` in the `<head>`, use the `defer` attribute, which will achieve the same effect of downloading and running the script only after the HTML is parsed.
+
+###### References
+
+* https://developer.yahoo.com/performance/rules.html#css_top
+* https://www.techrepublic.com/blog/web-designer/how-to-prevent-flash-of-unstyled-content-on-your-websites/
+* https://developers.google.com/web/fundamentals/performance/critical-rendering-path/    
 ---
 #### What is progressive rendering?
 ---
 #### Have you used different HTML templating languages before? what did you like about them?
+---
+#### Why you would use a srcset attribute in an image tag? Explain the process the browser uses when evaluating the content of this attribute.
 ---
 #### Why does invalid HTML work?
 ---
