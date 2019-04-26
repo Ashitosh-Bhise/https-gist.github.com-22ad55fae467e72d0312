@@ -32,16 +32,16 @@
 ---
 #### What is Selector? 
 * The way you declare which elements the styles should apply to. There are different kinds of selectors:
-   ``` Class: The most commonly used selector. E.g. “.cloudy” to select an element with classname cloudy. 
+   ** Class: The most commonly used selector. E.g. “.cloudy” to select an element with classname cloudy. 
             There can be more than 1 element with the same classname.
         
-   ``` ID: Use this sparingly. You cannot reuse an ID within the same page and used only to identify an element uniquely. E.g. <div id=lovelyweather></div>
+   ** ID: Use this sparingly. You cannot reuse an ID within the same page and used only to identify an element uniquely. E.g. ```<div id=lovelyweather></div>```
         
-   ``` Attribute Selector: If you use any attribute other than class or id to identify an element in a stylesheet, you would be using Attribute Selectors. You can also do basic pattern matching within an attribute selector (so if you would like to do basic pattern matching for selectors using class or ID attributes, you would want to use attribute selectors).
+   ** Attribute Selector: If you use any attribute other than class or id to identify an element in a stylesheet, you would be using Attribute Selectors. You can also do basic pattern matching within an attribute selector (so if you would like to do basic pattern matching for selectors using class or ID attributes, you would want to use attribute selectors).
         
-   ``` Pseudo-Classes: Classes that are applied to elements based on information that is not present in the markup, e.g. :first-child or :last-child. Do note that the selectors are parsed from right to left (see the demo). You cannot use section article:first-child to select the first occurrence of article, if the first child of section is h1 and not article. Likewise with the :nth-child, and :last-child pseudo-classes.
+   ** Pseudo-Classes: Classes that are applied to elements based on information that is not present in the markup, e.g. :first-child or :last-child. Do note that the selectors are parsed from right to left (see the demo). You cannot use section article:first-child to select the first occurrence of article, if the first child of section is h1 and not article. Likewise with the :nth-child, and :last-child pseudo-classes.
         
-   ``` Pseudo-Elements Pseudo-elements differ from Pseudo-Classes in that they actually create an element in the document tree. This is almost the first instance of CSS modifying the HTML document tree. You should ideally use pseudo-elements with “::” instead of “:” (but most browsers accept “:” notation for CSS 2.1 pseudo-elements). Pseudo-elements are: ::first-line, ::first-letter, ::before, ::after (See the demo for how pseudo-elements work).
+   ** Pseudo-Elements Pseudo-elements differ from Pseudo-Classes in that they actually create an element in the document tree. This is almost the first instance of CSS modifying the HTML document tree. You should ideally use pseudo-elements with “::” instead of “:” (but most browsers accept “:” notation for CSS 2.1 pseudo-elements). Pseudo-elements are: ::first-line, ::first-letter, ::before, ::after (See the demo for how pseudo-elements work).
         
 ---
 #### What are Combinators?
@@ -49,19 +49,19 @@
 
 
     #### Descendant Combinator
-   ``` This is the most common usage, e.g. #lovelyweather h1.
+    ** This is the most common usage, e.g. #lovelyweather h1.
     
     
     #### Child Combinator
-   ``` Select an element if it is a direct child of another element (and not a grandchild of that element).
+    ** Select an element if it is a direct child of another element (and not a grandchild of that element).
     
     
     #### Adjacent Sibling Combinator
-   ``` The element that is immediately adjacent to another element.
+    ** The element that is immediately adjacent to another element.
 
 
     #### General Sibling Combinator
-   ``` The element that is adjacent, but not immediately to another element.
+    ** The element that is adjacent, but not immediately to another element.
         
 ---
 #### Why background and color are the separate properties if they should always be set together?
@@ -98,10 +98,10 @@
 #### What is the CSS Box model and what are its elements?
 * The CSS box model is used to define the design and layout of elements of CSS.
 * The elements are:
-   ``` Margin
-   ``` Border
-   ``` Padding
-   ``` Content
+   ** Margin
+   ** Border
+   ** Padding
+   ** Content
    
     ---
 #### What is the float property and what float do.
@@ -143,10 +143,10 @@
 
 * Z-Index can take the following values:
 
-   ``` Auto: Sets the stack order equal to its parents.
-   ``` Number: Orders the stack order.
-   ``` Initial: Sets this property to its default value (0).
-   ``` Inherit: Inherits this property from its parent element.
+   ** Auto: Sets the stack order equal to its parents.
+   ** Number: Orders the stack order.
+   ** Initial: Sets this property to its default value (0).
+   ** Inherit: Inherits this property from its parent element.
     
 ---
 #### How does z-index relate to positioning
@@ -196,14 +196,14 @@
         force a line break after the block element
         
 * Inline elements:
-        respect left & right margins and padding, but not top & bottom
-        cannot have a width and height set
-        allow other elements to sit to their left and right.
+    ** respect left & right margins and padding, but not top & bottom
+    ** cannot have a width and height set
+    ** allow other elements to sit to their left and right.
         
 * Inline-block elements:
-        allow other elements to sit to their left and right
-        respect top & bottom margins and padding
-        respect height and width
+    ** allow other elements to sit to their left and right
+    ** respect top & bottom margins and padding
+    ** respect height and width
 
 
 ---
