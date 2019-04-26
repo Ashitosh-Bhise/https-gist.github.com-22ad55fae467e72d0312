@@ -10,21 +10,21 @@
 
 ### Where to define styles? How can you integrate/import CSS on a web page?
     * Inline, used to style only a small piece of code
-        ```
-            <p style="color:blue">
-                Hello CSS
-            </p>
-        ```
+    ```
+        <p style="color:blue">
+            Hello CSS
+        </p>
+    ```
     * Internal/Embedded, style sheets are put between the <head>...</head>
-        ```
-            <style> 
-                p{color:blue}
-            </style>
-        ```
+    ```
+        <style> 
+            p{color:blue}
+        </style>
+    ```
     * External
-        ```
-            <link rel="stylesheet" type="text/css" href="style.css"
-        ```
+    ```
+        <link rel="stylesheet" type="text/css" href="style.css"
+    ```
 
 ### What is Property?
     * The style that you are applying to a selector, e.g. border.         
