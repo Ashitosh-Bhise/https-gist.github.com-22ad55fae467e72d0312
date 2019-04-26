@@ -32,16 +32,16 @@
 ---
 #### What is Selector? 
 * The way you declare which elements the styles should apply to. There are different kinds of selectors:
-   ** Class: The most commonly used selector. E.g. “.cloudy” to select an element with classname cloudy. 
+   ``` Class: The most commonly used selector. E.g. “.cloudy” to select an element with classname cloudy. 
             There can be more than 1 element with the same classname.
         
-   ** ID: Use this sparingly. You cannot reuse an ID within the same page and used only to identify an element uniquely. E.g. <div id=lovelyweather></div>
+   ``` ID: Use this sparingly. You cannot reuse an ID within the same page and used only to identify an element uniquely. E.g. <div id=lovelyweather></div>
         
-   ** Attribute Selector: If you use any attribute other than class or id to identify an element in a stylesheet, you would be using Attribute Selectors. You can also do basic pattern matching within an attribute selector (so if you would like to do basic pattern matching for selectors using class or ID attributes, you would want to use attribute selectors).
+   ``` Attribute Selector: If you use any attribute other than class or id to identify an element in a stylesheet, you would be using Attribute Selectors. You can also do basic pattern matching within an attribute selector (so if you would like to do basic pattern matching for selectors using class or ID attributes, you would want to use attribute selectors).
         
-   ** Pseudo-Classes: Classes that are applied to elements based on information that is not present in the markup, e.g. :first-child or :last-child. Do note that the selectors are parsed from right to left (see the demo). You cannot use section article:first-child to select the first occurrence of article, if the first child of section is h1 and not article. Likewise with the :nth-child, and :last-child pseudo-classes.
+   ``` Pseudo-Classes: Classes that are applied to elements based on information that is not present in the markup, e.g. :first-child or :last-child. Do note that the selectors are parsed from right to left (see the demo). You cannot use section article:first-child to select the first occurrence of article, if the first child of section is h1 and not article. Likewise with the :nth-child, and :last-child pseudo-classes.
         
-   ** Pseudo-Elements Pseudo-elements differ from Pseudo-Classes in that they actually create an element in the document tree. This is almost the first instance of CSS modifying the HTML document tree. You should ideally use pseudo-elements with “::” instead of “:” (but most browsers accept “:” notation for CSS 2.1 pseudo-elements). Pseudo-elements are: ::first-line, ::first-letter, ::before, ::after (See the demo for how pseudo-elements work).
+   ``` Pseudo-Elements Pseudo-elements differ from Pseudo-Classes in that they actually create an element in the document tree. This is almost the first instance of CSS modifying the HTML document tree. You should ideally use pseudo-elements with “::” instead of “:” (but most browsers accept “:” notation for CSS 2.1 pseudo-elements). Pseudo-elements are: ::first-line, ::first-letter, ::before, ::after (See the demo for how pseudo-elements work).
         
 ---
 #### What are Combinators?
@@ -49,19 +49,19 @@
 
 
     #### Descendant Combinator
-   ** This is the most common usage, e.g. #lovelyweather h1.
+   ``` This is the most common usage, e.g. #lovelyweather h1.
     
     
     #### Child Combinator
-   ** Select an element if it is a direct child of another element (and not a grandchild of that element).
+   ``` Select an element if it is a direct child of another element (and not a grandchild of that element).
     
     
     #### Adjacent Sibling Combinator
-   ** The element that is immediately adjacent to another element.
+   ``` The element that is immediately adjacent to another element.
 
 
     #### General Sibling Combinator
-   ** The element that is adjacent, but not immediately to another element.
+   ``` The element that is adjacent, but not immediately to another element.
         
 ---
 #### Why background and color are the separate properties if they should always be set together?
@@ -98,10 +98,10 @@
 #### What is the CSS Box model and what are its elements?
 * The CSS box model is used to define the design and layout of elements of CSS.
 * The elements are:
-   ** Margin
-   ** Border
-   ** Padding
-   ** Content
+   ``` Margin
+   ``` Border
+   ``` Padding
+   ``` Content
    
     ---
 #### What is the float property and what float do.
@@ -143,10 +143,10 @@
 
 * Z-Index can take the following values:
 
-   ** Auto: Sets the stack order equal to its parents.
-   ** Number: Orders the stack order.
-   ** Initial: Sets this property to its default value (0).
-   ** Inherit: Inherits this property from its parent element.
+   ``` Auto: Sets the stack order equal to its parents.
+   ``` Number: Orders the stack order.
+   ``` Initial: Sets this property to its default value (0).
+   ``` Inherit: Inherits this property from its parent element.
     
 ---
 #### How does z-index relate to positioning
@@ -173,13 +173,13 @@
 ---
 #### What's the difference between a relative, fixed, absolute and statically positioned element?
     
-* **Static** default for every single page element. The only reason you would ever set an element to position: static is to forcefully-remove some positioning that got applied to an element outside of your control.
+* ```Static``` default for every single page element. The only reason you would ever set an element to position: static is to forcefully-remove some positioning that got applied to an element outside of your control.
     
-* **Relative** means "relative to itself". Setting position: relative; on an element and no other positioning attributes, it will no effect on it's positioning. It allows the use of z-index on the element and it limits the scope of absolutely positioned child elements. Any child element will be absolutely positioned within that block.
+* ```Relative``` means "relative to itself". Setting position: relative; on an element and no other positioning attributes, it will no effect on it's positioning. It allows the use of z-index on the element and it limits the scope of absolutely positioned child elements. Any child element will be absolutely positioned within that block.
     
-* **Absolute** positions the element exactly where you want it rrelative to the next parent element with relative (or absolute) positioning. If there is no such parent, it will default all the way back up to the <html> element.
+* ```Absolute``` positions the element exactly where you want it rrelative to the next parent element with relative (or absolute) positioning. If there is no such parent, it will default all the way back up to the <html> element.
     
-* **Fixed** positioned relative to the viewport, or the browser window itself. regardless of scroll position.
+* ```Fixed``` positioned relative to the viewport, or the browser window itself. regardless of scroll position.
 
 
 ---
@@ -280,14 +280,14 @@ p::first-line {
 #### Explain the CSS “box model” and the layout components that it consists of. Provide some usage examples.
 * The CSS box model is a rectangular layout paradigm for HTML elements that consists of the following:
 
-    **Content** The content of the box, where text and images appear
+    ```Content``` The content of the box, where text and images appear
     
     
-    **Padding** A transparent area surrounding the content (i.e., the amount of space between the border and the content)
+    ```Padding``` A transparent area surrounding the content (i.e., the amount of space between the border and the content)
     
-    **Border** A border surrounding the padding (if any) and content
+    ```Border``` A border surrounding the padding (if any) and content
     
-    **Margin** A transparent area surrounding the border (i.e., the amount of space between the border and any neighboring elements)
+    ```Margin``` A transparent area surrounding the border (i.e., the amount of space between the border and any neighboring elements)
 
     ```css
     /####       top   right  bottom left  */
@@ -304,22 +304,22 @@ p::first-line {
     ```
 ---
 #### Explain what elements will match each of the following CSS selectors:
-    div, **p** Selects all <div> elements and all <p> elements
-    div **p** Selects all <p> elements that are anywhere inside a <div> element
-    div > **p** Selects all <p> elements where the immediate parent is a <div> element
-    div + **p** Selects all <p> elements that are placed immediately after a <div> element
-    div ~ **p** Selects all <p> elements that are anywhere preceded by a <div> element
+    div, ```p``` Selects all <div> elements and all <p> elements
+    div ```p``` Selects all <p> elements that are anywhere inside a <div> element
+    div > ```p``` Selects all <p> elements where the immediate parent is a <div> element
+    div + ```p``` Selects all <p> elements that are placed immediately after a <div> element
+    div ~ ```p``` Selects all <p> elements that are anywhere preceded by a <div> element
 
 ---
 #### Explain the meaning of each of these CSS units for expressing length:
 
-    **cm** centimeters
-    **em** elements (i.e., relative to the font-size of the element; e.g., 2 em means 2 times the current font size)
-    **in** inches
-    **mm** millimeters
-    **pc** picas (1 pc = 12 pt = 1/6th of an inch)
-    **pt** points (1 pt = 1/72nd of an inch)
-    **px** pixels (1 px = 1/96th of an inch)
+    ```cm``` centimeters
+    ```em``` elements (i.e., relative to the font-size of the element; e.g., 2 em means 2 times the current font size)
+    ```in``` inches
+    ```mm``` millimeters
+    ```pc``` picas (1 pc = 12 pt = 1/6th of an inch)
+    ```pt``` points (1 pt = 1/72nd of an inch)
+    ```px``` pixels (1 px = 1/96th of an inch)
 
 ---
 #### Which values (units) could be used for width?
@@ -437,8 +437,8 @@ p::first-line {
 #### Explain your understanding of the box model and how you would tell the browser in CSS to render your layout in different box models.
 * The content of the space taken by an element. Each element has an inner and outer height/width calculated based on the content, padding, border and margin.
 
-    **content-box** default. Excludes padding, border and margin from the inner dimensions.
-    **border-box** includes the padding and border, but not the margin in the inner dimension.
+    ```content-box``` default. Excludes padding, border and margin from the inner dimensions.
+    ```border-box``` includes the padding and border, but not the margin in the inner dimension.
 
 ---
 #### What does #### { box-sizing: border-box; } do? What are its advantages?
@@ -553,7 +553,7 @@ body {
 /#### ends with the closing curly brace above */
 ```
 ---
-#### Provide CSS so that three lines are displayed** red, then green, then blue (2):
+#### Provide CSS so that three lines are displayed``` red, then green, then blue (2):
 
     <div class="rgb">
         <span>Red</span>
@@ -806,10 +806,10 @@ img { display: block ; }
 ---
 #### Describe Floats and Flexbox and how each works. Why Flexbox is a better solution for web layouts?
     
-* **Floats** specifies that an element should be taken from the normal flow and placed along the left or right side of its container, 
+* ```Floats``` specifies that an element should be taken from the normal flow and placed along the left or right side of its container, 
     where text and inline elements will wrap around it.
     
-* **Flexbox** consists of flex containers and flex items. Flex containers wrap a set of flex items and define how they are laid out. 
+* ```Flexbox``` consists of flex containers and flex items. Flex containers wrap a set of flex items and define how they are laid out. 
     Flex items has properites that define how they interact with sibling flex elements and can also be flex containers themselves.
 
 ---
@@ -889,7 +889,7 @@ img { display: block ; }
 
 #### Explain the @include, @mixin, @function functions and how they are used. What is %placeholder
     
-** ```@mixin``` A mixin lets you make groups of CSS declarations that you want to reuse throughout your site
+*```@mixin``` A mixin lets you make groups of CSS declarations that you want to reuse throughout your site
 
         ```css
         @mixin border-radius($radius) {
@@ -905,7 +905,7 @@ img { display: block ; }
         ```
         
 
-** ```@extend``` directive provides a simple way to allow a selector to inherit/extend the styles of another one.
+*```@extend``` directive provides a simple way to allow a selector to inherit/extend the styles of another one.
         ```css
         .message {
           border: 1px solid #ccc;
@@ -917,7 +917,7 @@ img { display: block ; }
           @extend .message;
           border-color: green;
         }
-        
+
         .error {
           @extend .message;
           border-color: red;
@@ -925,7 +925,7 @@ img { display: block ; }
         ```
         
 
-** ```%placeholder``` are classes that aren’t output when your SCSS is compiled
+*```%placeholder``` are classes that aren’t output when your SCSS is compiled
         ```css
         %awesome {
             width: 100%;
@@ -940,7 +940,7 @@ img { display: block ; }
         ```
         
         ```css
-        /*#### Output **/
+        /*#### Output ```/
         body, p {
             width: 100%;
             height: 100%;
@@ -966,14 +966,14 @@ img { display: block ; }
 ---
 #### What does a DOCTYPE do?
 
-* DOCTYPE is an abbreviation for **DOCument TYPE**.  
-    A DOCTYPE is always associated to a **DTD*####** for **Document Type Definition**.  
+* DOCTYPE is an abbreviation for ```DOCument TYPE```.  
+    A DOCTYPE is always associated to a ```DTD*####``` for ```Document Type Definition```.  
 
-    A DTD defines how documents of a certain type should be structured (i.e. a `button` can contain a `span` but not a `div`), whereas a DOCTYPE declares what DTD a document *supposedly#### respects (i.e. this document respects the HTML DTD).  
+    A DTD defines how documents of a certain type should be structured (i.e. a `button` can contain a `span` but not a `div`), whereas a DOCTYPE declares what DTD a document supposedly respects (i.e. this document respects the HTML DTD).  
 
     For webpages, the DOCTYPE declaration is required. It is used to tell user agents what version of the HTML specifications your document respects.  
-    Once a user agent has recognized a correct DOCTYPE, it will trigger the **no-quirks mode*#### matching this DOCTYPE for reading the document.  
-    If a user agent doesn't recognize a correct DOCTYPE, it will trigger the **quirks mode**.
+    Once a user agent has recognized a correct DOCTYPE, it will trigger the ```no-quirks mode*#### matching this DOCTYPE for reading the document.  
+    If a user agent doesn't recognize a correct DOCTYPE, it will trigger the ```quirks mode```.
 
     The DOCTYPE declaration for the HTML5 standards is `<!DOCTYPE html>`.
 
@@ -1024,19 +1024,19 @@ img { display: block ; }
 
 * Use `lang` attribute in your HTML.
     
-* Directing users to their native language** Allow a user to change his country/language easily without hassle.
+* Directing users to their native ```language``` Allow a user to change his country/language easily without hassle.
     
-* Text in images is not a scalable approach** Placing text in an image is still a popular way to get good-looking, non-system fonts to display on any computer. However, to translate image text, each string of text will need to have a separate image created for each language. Anything more than a handful of replacements like this can quickly get out of control.
+* Text in images is not a scalable approach``` Placing text in an image is still a popular way to get good-looking, non-system fonts to display on any computer. However, to translate image text, each string of text will need to have a separate image created for each language. Anything more than a handful of replacements like this can quickly get out of control.
     
-* Restrictive words/sentence length** Some content can be longer when written in another language. Be wary of layout or overflow issues in the design. It's best to avoid designing where the amount of text would make or break a design. Character counts come into play with things like headlines, labels, and buttons. They are less of an issue with free-flowing text such as body text or comments.
+* Restrictive words/sentence ```length``` Some content can be longer when written in another language. Be wary of layout or overflow issues in the design. It's best to avoid designing where the amount of text would make or break a design. Character counts come into play with things like headlines, labels, and buttons. They are less of an issue with free-flowing text such as body text or comments.
     
-* Be mindful of how colors are perceived** Colors are perceived differently across languages and cultures. The design should use color appropriately.
+* Be mindful of how colors are ```perceived``` Colors are perceived differently across languages and cultures. The design should use color appropriately.
     
-* Formatting dates and currencies** Calendar dates are sometimes presented in different ways. Eg. "May 31, 2012" in the U.S. vs. "31 May 2012" in parts of Europe.
+* Formatting dates and ```currencies``` Calendar dates are sometimes presented in different ways. Eg. "May 31, 2012" in the U.S. vs. "31 May 2012" in parts of Europe.
 
-* Do not concatenate translated strings** Do not do anything like `"The date today is " + date`. It will break in languages with different word order. Use a template string with parameters substitution for each language instead. For example, look at the following two sentences in English and Chinese respectively: `I will travel on {% date %}` and `{% date %} 我会出发`. Note that the position of the variable is different due to grammar rules of the language.
+* Do not concatenate translated ```strings``` Do not do anything like `"The date today is " + date`. It will break in languages with different word order. Use a template string with parameters substitution for each language instead. For example, look at the following two sentences in English and Chinese respectively: `I will travel on {% date %}` and `{% date %} 我会出发`. Note that the position of the variable is different due to grammar rules of the language.
 
-* Language reading direction** In English, we read from left-to-right, top-to-bottom, in traditional Japanese, text is read up-to-down, right-to-left.
+* Language reading ```direction``` In English, we read from left-to-right, top-to-bottom, in traditional Japanese, text is read up-to-down, right-to-left.
 ---
 #### What are data* attributes good for?
 * The HTML5 data attribute lets you assign custom data to an element. When we want to store more information/data about the element when no suitable HTML5 element or attribute exists
@@ -1098,7 +1098,7 @@ img { display: block ; }
 #### What are semantic and non-semantic elements?
 * A semantic element clearly describes its meaning to both the browser and the developer.
   
-* non-semantic elements: <div> and <span>** Tells nothing about its content. semantic elements: ```<form>, <table>, and <article>```** Clearly defines its content.
+* non-semantic elements: ```<div>``` and ```<span>``` Tells nothing about its content. semantic elements: ```<form>, <table>, and <article>``` Clearly defines its content.
 ---
 #### Define semantic markup. What are the semantic meanings for ```<section>, <article>, <aside>, <nav>, <header>, <footer>``` and when/how should each be used in structuring html markup?
 ---
@@ -1130,7 +1130,7 @@ img { display: block ; }
 ---
 #### What is the difference between cookies, sessionStorage and localStorage?
     ---
-#### Where should we place Javascript files** top OR bottom. What are the advantages and disadvantages of either method. Where would you use these (Google webfonts you need to place on top + jQuery down or top)
+#### Where should we place Javascript ```files``` top OR bottom. What are the advantages and disadvantages of either method. Where would you use these (Google webfonts you need to place on top + jQuery down or top)
         
         
 ------
@@ -1381,20 +1381,20 @@ img { display: block ; }
 ---
 #### Comparision of browsers like Chrome, Firefox, Internet explorer, Safari etc
 * Chrome: 
-        Layout rendering engine** Webkit. 
-        Jscript engine** V8
+        Layout rendering ```engine``` Webkit. 
+        Jscript engine``` V8
 
 * Firefox: 
-        Layout rendering engine** Gecko. 
-        Jscript engine** Spider monkey
+        Layout rendering ```engine``` Gecko. 
+        Jscript engine``` Spider monkey
         
 * Internet explorer: 
-        Layout rendering engine** Trident. 
-        Jscript engine** Chakra
+        Layout rendering engine``` Trident. 
+        Jscript engine``` Chakra
         
 * Safari:
-        Layout rendering engine** Webkit. 
-        Jscript engine** JavascriptCore i.e Nitro
+        Layout rendering ```engine``` Webkit. 
+        Jscript engine``` JavascriptCore i.e Nitro
 
 ---
 #### Open up your last project, explain your code and thought process.
