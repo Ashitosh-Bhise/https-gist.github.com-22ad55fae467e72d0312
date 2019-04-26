@@ -1043,9 +1043,7 @@ img { display: block ; }
 * Consider HTML5 as an open web platform. What are the building blocks of HTML5?
 
 * Describe the difference between a cookie, sessionStorage and localStorage.
-
-
- - All the above-mentioned technologies are key-value storage mechanisms on the client side. They are only able to store values as strings.
+    - All the above-mentioned technologies are key-value storage mechanisms on the client side. They are only able to store values as strings.
 
 |                                        | `cookie`                                                 | `localStorage` | `sessionStorage` |
 | -------------------------------------- | -------------------------------------------------------- | -------------- | ---------------- |
