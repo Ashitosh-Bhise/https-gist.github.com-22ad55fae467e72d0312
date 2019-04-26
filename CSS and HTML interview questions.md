@@ -104,6 +104,21 @@
 
 #### Explain CSS sprites, and how you would implement them on a page or site. How do you go about creating them? What are possible alternatives to sprites?    
     
+CSS sprites combine multiple images into one single larger image. It is a commonly-used technique for icons (Gmail uses it). How to implement it:
+
+1. Use a sprite generator that packs multiple images into one and generate the appropriate CSS for it.
+1. Each image would have a corresponding CSS class with `background-image`, `background-position` and `background-size` properties defined.
+1. To use that image, add the corresponding class to your element.
+
+**Advantages:**
+
+* Reduce the number of HTTP requests for multiple images (only one single request is required per spritesheet). But with HTTP2, loading multiple images is no longer much of an issue.
+* Advance downloading of assets that won't be downloaded until needed, such as images that only appear upon `:hover` pseudo-states. Blinking wouldn't be seen.
+
+###### References
+
+* https://css-tricks.com/css-sprites/
+
 
 ---
 
@@ -225,7 +240,7 @@
     
 * ```Fixed``` positioned relative to the viewport, or the browser window itself. regardless of scroll position.
 
-
+* ```sticky``` - Sticky positioning is a hybrid of relative and fixed positioning. The element is treated as `relative` positioned until it crosses a specified threshold, at which point it is treated as `fixed` positioned.
 
 ---
 
@@ -470,6 +485,26 @@
 #### What are the advantages/disadvantages of using CSS preprocessors?
 
 
+**Advantages:**
+
+* CSS is made more maintainable.
+* Easy to write nested selectors.
+* Variables for consistent theming. Can share theme files across different projects.
+* Mixins to generate repeated CSS.
+* Splitting your code into multiple files. CSS files can be split up too but doing so will require an HTTP request to download each CSS file.
+
+**Disadvantages:**
+
+* Requires tools for preprocessing. Re-compilation time can be slow.
+
+* Advantages of SASS/LESS: Use of variables, mixins, nesting, looping, partials and more.
+
+* Advantages POSTCSS: Use of future syntax. Ability to select only the plugins you need for a particular project. Writing plain CSS and applying the plugin to output necessary syntax that suits your needs – which in turn allows for the ability to remove or update that plugin if at any time it is not useful anymore. In other words, POSTCSS offers a lot of flexibility AND all of the features SASS/LESS offer. Versions of POSTCSS have been developed for both Grunt and Gulp.
+
+* Disadvantage POSTCSS: Keeping track of plugins for older projects could get hairy, though you have a package.json to reference.
+
+* Disdvantages of SASS/LESS: They are monolithic, and you need to learn a new language.
+
 ---
 
 #### What preprocessor do you use? (Sass, LESS, Stylus) Why do people use them? How does something like Compass relate to Sass?
@@ -481,6 +516,16 @@
 ---
 
 #### Describe what you like and dislike about the CSS preprocessors you have used.
+
+**Likes:**
+
+* Mostly the advantages mentioned above.
+* Less is written in JavaScript, which plays well with Node.
+
+**Dislikes:**
+
+* I use Sass via `node-sass`, which is a binding for LibSass written in C++. I have to frequently recompile it when switching between node versions.
+* In Less, variable names are prefixed with `@`, which can be confused with native CSS keywords like `@media`, `@import` and `@font-face` rule.
 
 
 ---
@@ -521,12 +566,34 @@ Alternatively, give `overflow: auto` or `overflow: hidden` property to the paren
 ---
 
 #### Describe BFC(Block Formatting Context) and how it works.
-    https://www.sitepoint.com/understanding-block-formatting-contexts-in-css/
+A Block Formatting Context (BFC) is part of the visual CSS rendering of a web page in which block boxes are laid out. Floats, absolutely positioned elements, `inline-blocks`, `table-cells`, `table-caption`s, and elements with `overflow` other than `visible` (except when that value has been propagated to the viewport) establish new block formatting contexts.
 
+A BFC is an HTML box that satisfies at least one of the following conditions:
+
+* The value of `float` is not `none`.
+* The value of `position` is neither `static` nor `relative`.
+* The value of `display` is `table-cell`, `table-caption`, `inline-block`, `flex`, or `inline-flex`.
+* The value of `overflow` is not `visible`.
+
+In a BFC, each box's left outer edge touches the left edge of the containing block (for right-to-left formatting, right edges touch).
+
+Vertical margins between adjacent block-level boxes in a BFC collapse. Read more on [collapsing margins](https://www.sitepoint.com/web-foundations/collapsing-margins/).
+
+###### References
+
+* https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Block_formatting_context
+* https://www.sitepoint.com/understanding-block-formatting-contexts-in-css/
 
 ---
 
 #### What are the various clearing techniques and which is appropriate for what context? How works .clearfix?
+
+
+* Empty `div` method - `<div style="clear:both;"></div>`.
+* Clearfix method - Refer to the `.clearfix` class above.
+* `overflow: auto` or `overflow: hidden` method - Parent will establish a new block formatting context and expand to contains its floated children.
+
+In large projects, I would write a utility `.clearfix` class and use them in places where I need it. `overflow: hidden` might clip children if the children is taller than the parent and is not very ideal.
 
 
 ---
@@ -538,21 +605,63 @@ Alternatively, give `overflow: auto` or `overflow: hidden` property to the paren
 
 #### How would you approach fixing browser-specific styling issues?
 
+* After identifying the issue and the offending browser, use a separate style sheet that only loads when that specific browser is being used. This technique requires server-side rendering though.
+* Use `autoprefixer` to automatically add vendor prefixes to your code.
+* Use Reset CSS or Normalize.css.
+
+
+
+---
+
+#### What are your favorite image replacement techniques and which do you use when?
+
+    - lazy loading.
+
+    - progressive image loading placeholders.
+
+---
+
+#### What techniques/processes do you use for building sites?
 
 ---
 
 #### How do you serve your pages for feature-constrained browsers? What techniques/processes do you use?
 
 
+* Graceful degradation - The practice of building an application for modern browsers while ensuring it remains functional in older browsers.
+* Progressive enhancement - The practice of building an application for a base level of user experience, but adding functional enhancements when a browser supports it.
+* Use [caniuse.com](https://caniuse.com/) to check for feature support.
+* Autoprefixer for automatic vendor prefix insertion.
+* Feature detection using [Modernizr](https://modernizr.com/).
+* Use CSS Feature queries [@support](https://developer.mozilla.org/en-US/docs/Web/CSS/@supports)
+
+
 ---
 
 #### What are the different ways to visually hide content (and make it available only for screen readers)?
 
+These techniques are related to accessibility (a11y).
+
+* `visibility: hidden`. However, the element is still in the flow of the page, and still takes up space.
+* `width: 0; height: 0`. Make the element not take up any space on the screen at all, resulting in not showing it.
+* `position: absolute; left: -99999px`. Position it outside of the screen.
+* `text-indent: -9999px`. This only works on text within the `block` elements.
+* Metadata. For example by using Schema.org, RDF, and JSON-LD.
+* WAI-ARIA. A W3C technical specification that specifies how to increase the accessibility of web pages.
+
+Even if WAI-ARIA is the ideal solution, I would go with the `absolute` positioning approach, as it has the least caveats, works for most elements and it's an easy technique.
+
+###### References
+
+* https://www.w3.org/TR/wai-aria-1.1/
+* https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA
+* http://a11yproject.com/
 
 ---
 
 #### Have you ever used a grid system, and if so, what do you prefer? Explain how a grid system works
 
+I like the `float`-based grid system because it still has the most browser support among the alternative existing systems (flex, grid). It has been used in Bootstrap for years and has been proven to work.
 
 ---
 
@@ -563,21 +672,64 @@ Alternatively, give `overflow: auto` or `overflow: hidden` property to the paren
 
 #### Are you familiar with styling SVG?
 
+Yes, there are several ways to color shapes (including specifying attributes on the object) using inline CSS, an embedded CSS section, or an external CSS file. Most SVG you'll find around the web use inline CSS, but there are advantages and disadvantages associated with each type.
+
+Basic coloring can be done by setting two attributes on the node: `fill` and `stroke`. `fill` sets the color inside the object and `stroke` sets the color of the line drawn around the object. You can use the same CSS color naming schemes that you use in HTML, whether that's color names (that is `red`), RGB values (that is `rgb(255,0,0)`), Hex values, RGBA values, etc.
+
+```html
+<rect x="10" y="10" width="100" height="100" stroke="blue" 
+  fill="purple" fill-opacity="0.5" stroke-opacity="0.8"/>
+```
+
+###### References
+
+* https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorial/Fills_and_Strokes
+
+
+---
+
+#### Can you give an example of an @media property other than screen?
+
+Yes, there are four types of @media properties (including _screen_):
+
+* `all` - for all media type devices
+* `print` - for printers
+* `speech` - for screenreaders that "reads" the page out loud
+* `screen` - for computer screens, tablets, smart-phones etc.
+
+Here is an example of `print` media type's usage:
+
+```css
+@media print {
+  body {
+    color: black;
+  }
+}
+```
+
+###### References
+
+* https://developer.mozilla.org/en-US/docs/Web/CSS/@media#Syntax
 
 ---
 
 #### How do you optimize your webpages for print?
 
+Remove and reduce colors to grayscale and black and whites if possible. Also printing gray’s can reduce the amount of black ink needed – so that’s a bonus if you want to really be nice. Add styling if you want the URLs to print out:
 
 ---
 
 #### How would you implement a web design comp that uses non-standard fonts?
 
+Use `@font-face` and define `font-family` for different `font-weight`s.
 
 ---
 
 #### Explain how a browser determines what elements match a CSS selector.
 
+This part is related to the above about [writing efficient CSS](#what-are-some-of-the-gotchas-for-writing-efficient-css). Browsers match selectors from rightmost (key selector) to left. Browsers filter out elements in the DOM according to the key selector and traverse up its parent elements to determine matches. The shorter the length of the selector chain, the faster the browser can determine if that element matches the selector.
+
+For example with this selector `p span`, browsers firstly find all the `<span>` elements and traverse up its parent all the way up to the root to find the `<p>` element. For a particular `<span>`, as soon as it finds a `<p>`, it knows that the `<span>` matches and can stop its matching.
 
 ---
 
@@ -599,6 +751,16 @@ Alternatively, give `overflow: auto` or `overflow: hidden` property to the paren
 #### Describe pseudo-elements and discuss what they are used for.
 
 
+A CSS pseudo-element is a keyword added to a selector that lets you style a specific part of the selected element(s). They can be used for decoration (`:first-line`, `:first-letter`) or adding elements to the markup (combined with `content: ...`) without having to modify the markup (`:before`, `:after`).
+
+* `:first-line` and `:first-letter` can be used to decorate text.
+* Used in the `.clearfix` hack as shown above to add a zero-space element with `clear: both`.
+* Triangular arrows in tooltips use `:before` and `:after`. Encourages separation of concerns because the triangle is considered part of styling and not really the DOM. It's not really possible to draw a triangle with just CSS styles without using an additional HTML element.
+
+###### References
+
+* https://css-tricks.com/almanac/selectors/a/after-and-before/
+
 ---
 
 #### What are the properties related to box model
@@ -613,17 +775,48 @@ Alternatively, give `overflow: auto` or `overflow: hidden` property to the paren
     ```border-box``` includes the padding and border, but not the margin in the inner dimension.
 
 
+The CSS box model describes the rectangular boxes that are generated for elements in the document tree and laid out according to the visual formatting model. Each box has a content area (e.g. text, an image, etc.) and optional surrounding `padding`, `border`, and `margin` areas.
+
+The CSS box model is responsible for calculating:
+
+* How much space a block element takes up.
+* Whether or not borders and/or margins overlap, or collapse.
+* A box's dimensions.
+
+The box model has the following rules:
+
+* The dimensions of a block element are calculated by `width`, `height`, `padding`, `border`s, and `margin`s.
+* If no `height` is specified, a block element will be as high as the content it contains, plus `padding` (unless there are floats, for which see below).
+* If no `width` is specified, a non-floated block element will expand to fit the width of its parent minus `padding`.
+* The `height` of an element is calculated by the content's `height`.
+* The `width` of an element is calculated by the content's `width`.
+* By default, `padding`s and `border`s are not part of the `width` and `height` of an element.
+
+###### References
+
+* https://www.smashingmagazine.com/2010/06/the-principles-of-cross-browser-css-coding/#understand-the-css-box-model
+
 ---
 
-#### What does  ```{ box-sizing: border-box; }``` do? What are its advantages?
+#### What does  ```* { box-sizing: border-box; }``` do? What are its advantages?
 * Make every element in the document include the padding and border in the element's inner dimensions; 
     making it easier to reason about the layout of elements on the page.
 
+* By default, elements have `box-sizing: content-box` applied, and only the content size is being accounted for.
+* `box-sizing: border-box` changes how the `width` and `height` of elements are being calculated, `border` and `padding` are also being included in the calculation.
+* The `height` of an element is now calculated by the content's `height` + vertical `padding` + vertical `border` width.
+* The `width` of an element is now calculated by the content's `width` + horizontal `padding` + horizontal `border` width.
+* Taking into account `padding`s and `border`s as part of our box model resonates better with how designers actually imagine content in grids.
+
+###### References
+
+* https://www.paulirish.com/2012/box-sizing-border-box-ftw/
 
 ---
 
 #### List as many values for the display property that you can remember.
 
+* `none`, `block`, `inline`, `inline-block`, `table`, `table-row`, `table-cell`, `list-item`.
 
 ---
 
@@ -666,15 +859,66 @@ Alternatively, give `overflow: auto` or `overflow: hidden` property to the paren
 
 #### How is responsive design different from adaptive design? What is responsive design? What is the difference between fixed and fluid layouts? What are some of the pros and cons with these designs?
 
+Both responsive and adaptive design attempt to optimize the user experience across different devices, adjusting for different viewport sizes, resolutions, usage contexts, control mechanisms, and so on.
+
+Responsive design works on the principle of flexibility - a single fluid website that can look good on any device. Responsive websites use media queries, flexible grids, and responsive images to create a user experience that flexes and changes based on a multitude of factors. Like a single ball growing or shrinking to fit through several different hoops.
+
+Adaptive design is more like the modern definition of progressive enhancement. Instead of one flexible design, adaptive design detects the device and other features and then provides the appropriate feature and layout based on a predefined set of viewport sizes and other characteristics. The site detects the type of device used and delivers the pre-set layout for that device. Instead of a single ball going through several different-sized hoops, you'd have several different balls to use depending on the hoop size.
+
+###### References
+
+* https://developer.mozilla.org/en-US/docs/Archive/Apps/Design/UI_layout_basics/Responsive_design_versus_adaptive_design
+* http://mediumwell.com/responsive-adaptive-mobile/
+* https://css-tricks.com/the-difference-between-responsive-and-adaptive-design/
 
 ---
 
 #### Have you ever worked with retina graphics? If so, when and what techniques did you use? What kind of techniques do you use to handle images for retina screens?
 
+_Retina_ is just a marketing term to refer to high resolution screens with a pixel ratio bigger than 1. The key thing to know is that using a pixel ratio means these displays are emulating a lower resolution screen in order to show elements with the same size. Nowadays we consider all mobile devices _retina_ defacto displays.
+
+Browsers by default render DOM elements according to the device resolution, except for images.
+
+In order to have crisp, good-looking graphics that make the best of retina displays we need to use high resolution images whenever possible. However using always the highest resolution images will have an impact on performance as more bytes will need to be sent over the wire.
+
+To overcome this problem, we can use responsive images, as specified in HTML5. It requires making available different resolution files of the same image to the browser and let it decide which image is best, using the html attribute `srcset` and optionally `sizes`, for instance:
+
+```html
+<div responsive-background-image>  
+  <img src="/images/test-1600.jpg"
+    sizes="
+      (min-width: 768px) 50vw,
+      (min-width: 1024px) 66vw,
+      100vw"
+    srcset="
+      /images/test-400.jpg 400w,
+      /images/test-800.jpg 800w,
+      /images/test-1200.jpg 1200w">
+</div>
+```
+
+It is important to note that browsers which don't support HTML5's `srcset` (i.e. IE11) will ignore it and use `src` instead. If we really need to support IE11 and we want to provide this feature for performance reasons, we can use a JavaScript polyfill, e.g. Picturefill (link in the references).
+
+For icons, I would also opt to use SVGs and icon fonts where possible, as they render very crisply regardless of resolution.
+
+###### References
+
+* https://css-tricks.com/responsive-images-youre-just-changing-resolutions-use-srcset/
+* http://scottjehl.github.io/picturefill/
+* https://aclaes.com/responsive-background-images-with-srcset-and-sizes/
 
 ---
 
 #### Is there any reason you'd want to use translate() instead of absolute positioning, or vice-versa? And why?
+
+
+`translate()` is a value of CSS `transform`. Changing `transform` or `opacity` does not trigger browser reflow or repaint but does trigger compositions; whereas changing the absolute positioning triggers `reflow`. `transform` causes the browser to create a GPU layer for the element but changing absolute positioning properties uses the CPU. Hence `translate()` is more efficient and will result in shorter paint times for smoother animations.
+
+When using `translate()`, the element still occupies its original space (sort of like `position: relative`), unlike in changing the absolute positioning.
+
+###### References
+
+* https://www.paulirish.com/2012/why-moving-elements-with-translate-is-better-than-posabs-topleft/
 
 
 ---
@@ -883,7 +1127,59 @@ img { display: block ; }
 
 ---
 
-#### What is mobile-first?
+#### What is mobile-first? Can you explain the difference between coding a website to be responsive versus using a mobile-first strategy
+
+Note that these two 2 approaches are not exclusive.
+
+Making a website responsive means the some elements will respond by adapting its size or other functionality according to the device's screen size, typically the viewport width, through CSS media queries, for example, making the font size smaller on smaller devices.
+
+```css
+@media (min-width: 601px) {
+  .my-class {
+    font-size: 24px;
+  }
+}
+@media (max-width: 600px) {
+  .my-class {
+    font-size: 12px;
+  }
+}
+```
+
+A mobile-first strategy is also responsive, however it agrees we should default and define all the styles for mobile devices, and only add specific responsive rules to other devices later. Following the previous example:
+
+```css
+.my-class {
+  font-size: 12px;
+}
+
+@media (min-width: 600px) {
+  .my-class {
+    font-size: 24px;
+  }
+}
+```
+
+A mobile-first strategy has 2 main advantages:
+
+* It's more performant on mobile devices, since all the rules applied for them don't have to be validated against any media queries.
+* It forces to write cleaner code in respect to responsive CSS rules.
+
+[[↑] Back to top](#css-questions)
+
+### How is responsive design different from adaptive design?
+
+Both responsive and adaptive design attempt to optimize the user experience across different devices, adjusting for different viewport sizes, resolutions, usage contexts, control mechanisms, and so on.
+
+Responsive design works on the principle of flexibility - a single fluid website that can look good on any device. Responsive websites use media queries, flexible grids, and responsive images to create a user experience that flexes and changes based on a multitude of factors. Like a single ball growing or shrinking to fit through several different hoops.
+
+Adaptive design is more like the modern definition of progressive enhancement. Instead of one flexible design, adaptive design detects the device and other features and then provides the appropriate feature and layout based on a predefined set of viewport sizes and other characteristics. The site detects the type of device used and delivers the pre-set layout for that device. Instead of a single ball going through several different-sized hoops, you'd have several different balls to use depending on the hoop size.
+
+###### References
+
+* https://developer.mozilla.org/en-US/docs/Archive/Apps/Design/UI_layout_basics/Responsive_design_versus_adaptive_design
+* http://mediumwell.com/responsive-adaptive-mobile/
+* https://css-tricks.com/the-difference-between-responsive-and-adaptive-design/
 
 
 ---
@@ -1229,6 +1525,16 @@ img { display: block ; }
 
 #### What are some rules for writing efficient CSS    
     
+Firstly, understand that browsers match selectors from rightmost (key selector) to left. Browsers filter out elements in the DOM according to the key selector and traverse up its parent elements to determine matches. The shorter the length of the selector chain, the faster the browser can determine if that element matches the selector. Hence avoid key selectors that are tag and universal selectors. They match a large number of elements and browsers will have to do more work in determining if the parents do match.
+
+[BEM (Block Element Modifier)](https://bem.info/) methodology recommends that everything has a single class, and, where you need hierarchy, that gets baked into the name of the class as well, this naturally makes the selector efficient and easy to override.
+
+Be aware of which CSS properties trigger reflow, repaint, and compositing. Avoid writing styles that change the layout (trigger reflow) where possible.
+
+###### References
+
+* https://developers.google.com/web/fundamentals/performance/rendering/
+* https://csstriggers.com/    
 
 ---
 
@@ -1365,9 +1671,13 @@ body, p {
 
 #### What's the difference between standards mode and quirks mode?
 
+* Quirks mode was to support websites built before standards became widely implemented.
+
 ---
 
 #### What's the difference between HTML and XHTML?
+
+The Extensible Hypertext Markup Language, or XHTML, has two important notes for front end developers. 1) It needs to be well formed, meaning all elements need to be closed and nested correctly or you will return errors. 2) Since it is more strict than HTML is requires less pre-processing by the browser, which may improve your sites performance.
 
 ---
 
@@ -1435,20 +1745,49 @@ body, p {
 
 ---
 
-#### What are data* attributes good for?
+#### What are ```data-``` attributes good for?
 * The HTML5 data attribute lets you assign custom data to an element. When we want to store more information/data about the element when no suitable HTML5 element or attribute exists
 
 ---
 
 #### Consider HTML5 as an open web platform. What are the building blocks of HTML5?
 
+* more semantic text markup
+
+* new form elements
+
+* new video and audio elements
+
+* javascript API
+
+* canvas and SVG
+
+* geolocation API
+
+* new data storage
+
 ---
 
 #### Describe the difference between a `cookie`, `sessionStorage` and `localStorage`.
 
+* ```cookie```: A text file saved on the users computer to store and retrieve data
+
+* ```sessionStorage```: Is memory space in a browser to save temporary data until the window or tab is closed.
+
+* ```localStorage```: Like cookie, where data can be saved and retrieved after browser sessions, but stored in memory like sessionStorage. Data is stored as plain key value pairs and can be stored as Json objects.
+
 ---
 
 #### Describe the difference between <script>, <script async> and <script defer>.
+
+Normal Execution: script:
+Parsing of the HTML code pauses while the script is executing. For slow servers and heavy scripts this means that displaying the webpage will be delayed.
+
+Deferred Execution: script defer
+Delays script execution until the HTML parser has finished. A positive effect of this attribute is that the DOM will be available for your script. However, since not every browser supports defer yet, can’t rely on it.
+
+Asynchronous Execution: script async
+HTML parsing may continue and the script will be executed as soon as it’s ready.    
 
 ---
 
@@ -1472,6 +1811,8 @@ An exception for positioning of `<script>`s at the bottom is when your script co
 ---
 
 #### What is progressive rendering?
+
+It is rendering the data as it’s being downloaded. This is particularly useful on documents that have tons of text. You can see it on a page that has a lot of text – and where the scrollbar will get shorter in length as more data comes in – increasing the vertical size of the document – yet, it would display the downloaded text immediately. As more data came down the pipe – the page would get longer. This didn’t rely on the closing body or html tag – and it certainly wouldn’t render the entire page on the server – then download – which is a standard complaint about modern frameworks. But there is a technique called “Flushing the Buffer” that can be implemented on the server. I don’t know that much about the technique, but found a few resources discussing it.
 
 ---
 
@@ -1822,14 +2163,26 @@ An exception for positioning of `<script>`s at the bottom is when your script co
 #### If you have 5 different stylesheets, how would you best integrate them into the site?
 
 
+Break them up onto to different CDN servers to leverage domain sharding.
+
+Employ the “new old” technique of adding “above the fold” css inline in the head of your document – reducing http requests and improve perceived performance.
+
+Using SASS I would break up my files into related chunks – all of which are concatenated and compressed using compass, sass with gulp or grunt in your build process.
+
+
 ---
 
 #### Can you describe the difference between progressive enhancement and graceful degradation?
 
+* Graceful degradation is when you initially serve the best possible user experience, with all modern functionality, but use feature detection to “gracefully degrade” parts of your application with a fallback or polyfill.
+
+* Progressive enhancement ensures a page works at the lowest expected abilities of browsers. So if you have a JavaScript web application that enhances a persons ability to send information to a database with features like ajax – at the very least you need to provide the ability for a person to send that same information without JavaScript enabled. In this case a simple form with full-page refresh will do what you need.
 
 ---
 
 #### How would you optimize a website's assets/resources?
+
+Concatenate and compress CSS, JavaScript and HTML files wherever possible, configure your server to deliver a Gzip files, cache resources, set longer expirations dates on http headers of resources you don’t expect to change often – such as a logo. Images can be some of the heaviest files we deliver, so compress wisely. Soon the picture element will be implemented across browsers, so we can optimize the delivery of image content. Also in the near future consider using WebP format for images – it is quite smaller in size than JPEG and PNG files. Finally, use a CDN or other domains to host your resources and leverage domain sharding.
 
 
 ---
@@ -1841,6 +2194,7 @@ An exception for positioning of `<script>`s at the bottom is when your script co
 
 #### Name 3 ways to decrease page load (perceived or actual load time).
 
+1) LocalStorage 2) Caching resources 3) dns-prefetch (sample below) 4) Keep resources on a CDN
 
 ---
 
@@ -1860,16 +2214,29 @@ An exception for positioning of `<script>`s at the bottom is when your script co
 
 #### Explain what ARIA and screenreaders are, and how to make a website accessible.
 
+Screen readers are software programs that  provide assistive technologies that allow people with disabilities (such as no sight, sound or mouse-ing ability) to use web applications. You can make your sites more accessible by following ARIA standards such as semantic HTML, alt attributes and using [role=button] in the expected ways
 
 ---
 
 #### Explain some of the pros and cons for CSS animations versus JavaScript animations.
 
+* Regarding optimization and responsiveness the debate bounces back and forth but, the concept is:
+
+    * CSS animations allows the browser to choose where the animation processing is done, CPU or the GPU. (Central or Graphics Processing Unit)
+    
+    *That said, adding many layers to a document will eventually have a performance hit.
+    
+    *JS animation means more code for the user to download and for the developer to maintain.
+    
+    *Applying multiple animation types on an element is harder with CSS since all transforming power is in one property transform
+    
+    *CSS animations being declarative are not programmable therefore limited in capability. 
 
 ---
 
 #### What does CORS stand for and what issue does it address?
 
+Cross Origin Resource Sharing. To address the fact that browsers restrict cross-origin HTTP requests initiated from within scripts. CORS gives web servers cross-domain access controls, which enable secure cross-domain data transfers.
 
 ---
 
