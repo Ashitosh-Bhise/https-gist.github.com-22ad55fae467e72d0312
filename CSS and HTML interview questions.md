@@ -1228,7 +1228,7 @@ img { display: block ; }
 
 #### How comments can be added in CSS?
 * The comments in CSS can be added with /*  and */.
-    
+
 
 ---
 
@@ -1264,17 +1264,27 @@ img { display: block ; }
 
 #### What is progressive rendering?
 
-    * Progressive rendering is the name given to techniques used to improve the performance of a webpage (in particular, improve perceived load time) to render content for display as quickly as possible.
+* Progressive rendering is the name given to techniques used to improve the performance of a webpage (in particular, improve perceived load time) to render content for display as quickly as possible.
 
-    * It used to be much more prevalent in the days before broadband internet but it is still used in modern development as mobile data connections are becoming increasingly popular (and unreliable)!
+* It used to be much more prevalent in the days before broadband internet but it is still used in modern development as mobile data connections are becoming increasingly popular (and unreliable)!
 
-    http://stackoverflow.com/questions/33651166/what-is-progressive-rendering
+http://stackoverflow.com/questions/33651166/what-is-progressive-rendering
     
 
 ---
 
 #### What is feature detection (vs browser detection)?
 
+
+---
+
+#### What is an ```iframe``` and how it works?
+
+* An ```iframe``` is an HTML document which can be embedded inside another HTML page.
+
+```css
+<iframe src="https://github.com" height="300px" width="300px"></iframe>
+```
 
 ---
 
@@ -2223,6 +2233,24 @@ https://www.sitepoint.com/how-to-choose-between-canvas-and-svg/
 ---
 
 #### What is the purpose of meta tags?
+
+* Meta tags always go inside head tag of the HTML page
+* Meta tags is always passed as name/value pairs
+* Meta tags are not displayed on the page but intended for the browser
+* Meta tags can contain information about character encoding, description, title of the document etc
+
+```css
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="description" content="I am a web page with description"> 
+  <title>Home Page</title>
+</head>
+<body>
+  
+</body>
+</html>
+```
 
 ---
 
