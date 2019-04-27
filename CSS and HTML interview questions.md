@@ -45,7 +45,7 @@
     
     * Attribute Selector: If you use any attribute other than class or id to identify an element in a stylesheet, you would be using Attribute Selectors. You can also do basic pattern matching within an attribute selector (so if you would like to do basic pattern matching for selectors using class or ID attributes, you would want to use attribute selectors).
     
-    * Pseudo-Classes: Classes that are applied to elements based on information that is not present in the markup, e.g. :first-child or :last-child. Do note that the selectors are parsed from right to left (see the demo). You cannot use section article:first-child to select the first occurrence of article, if the first child of section is h1 and not article. Likewise with the :nth-child, and :last-child pseudo-classes.
+    * Pseudo-Classes: Classes that are applied to elements based on information that is not present in the markup, e.g. :first-child or :last-child. Do note that the selectors are parsed from right to left (see the demo). You cannot use section ```article:first-child``` to select the first occurrence of article, if the first child of section is h1 and not article. Likewise with the :nth-child, and :last-child pseudo-classes.
     
     * Pseudo-Elements Pseudo-elements differ from Pseudo-Classes in that they actually create an element in the document tree. This is almost the first instance of CSS modifying the HTML document tree. You should ideally use pseudo-elements with “::” instead of “:” (but most browsers accept “:” notation for CSS 2.1 pseudo-elements). Pseudo-elements are: ```::first-line```, ```::first-letter```, ```::before```, ```::after``` (See the demo for how pseudo-elements work).
         
@@ -1362,8 +1362,28 @@ Accessibility is also known as assistive technology.
 
 ---
 
-#### What is semantic code
+#### What is semantic 
 
+Semantic HTML, or "semantically-correct HTML", is HTML where the tags used to structure content are selected and applied appropriately to the meaning of the content.
+
+For example, <b></b> (for bold), and <i></i> (for italic) should never be used, because they’re to do with formatting, not with the meaning or structure of the content. Instead, use the replacements <strong></strong> and <em></em> (meaning emphasis), which by default will turn text bold and italic (but don’t have to do so in all browsers), while adding meaning to the structure of the content
+
+
+---
+
+#### Why you would like to use semantic tag?
+
+Search Engine Optimization, accessibility, repurposing, light code. 
+
+Many visually impaired person rely on browser speech and semantic tag helps to interpret page content clearly.
+
+Search engine needs to understand page content to rank and semantic tag helps.
+
+---
+
+#### What does “semantically correct” mean?
+
+https://stackoverflow.com/questions/1294493/what-does-semantically-correct-mean/1294512#1294512
 
 ---
 
@@ -1637,6 +1657,13 @@ The universal selector has a specificity of 0, 0, 0, 0.
 
 #### What is the difference between padding and margins?
 
+---
+
+#### What is the difference between ```span``` and ```div```?
+
+```div``` is a block element and span is inline element.
+
+It is illegal to put block element inside inline element. div can have a p tag and a p tag can have a span. However, span can't have a div or p tag inside.
 
 ---
 
@@ -1648,6 +1675,12 @@ The universal selector has a specificity of 0, 0, 0, 0.
 
 #### What is cross-browser compatibility? 
 
+
+---
+
+#### What are optional closing tag? and why would u use it?
+
+```p, li, td, tr, th, html, body```, etc. you don't have to provide end tag. Whenever browser hits a new tag it automatically ends the previous tag. However, you have to be careful to escape it.
 
 ---
 
@@ -1669,6 +1702,16 @@ The universal selector has a specificity of 0, 0, 0, 0.
 
 #### What do you know about text shadows, box shadows?
 
+
+---
+
+#### How can u highlight text in html?
+
+use mark element.
+
+```css
+<p>Some part of this paragraph is <mark>highlighted</mark> by using mark element.</p>
+```
 
 ---
 
@@ -1716,7 +1759,58 @@ The universal selector has a specificity of 0, 0, 0, 0.
 ---
 
 #### What are some ways to make websites faster? Name as many different techniques as you can.
-    
+
+---
+
+#### Does the following trigger http request at the time of page load?
+
+```css
+<img src="mypic.jpg" style="visibility: hidden" alt="My photo">
+```    
+
+```css
+<div style="display: none;">
+    <img src="mypic.jpg" alt="My photo">
+</div>
+```
+
+* Yes
+
+---
+
+#### Does style2.css have to be downloaded and parsed before Paragraph 1 is rendered on the page?
+
+```css
+<head>
+    <link href="style1.css" rel="stylesheet">
+</head>
+<body>
+    <p>Paragraph 1</p>
+    <p>Paragraph 2</p>
+    <link href="style2.css" rel="stylesheet">
+</body>
+```
+
+* Yes
+
+---
+
+#### Does style1.css have to be downloaded and parsed before style2.css can be fetched?
+
+```css
+<head>
+    <link href="style1.css" rel="stylesheet">
+    <link href="style2.css" rel="stylesheet">
+</head>
+```
+
+* No
+
+---
+
+#### Can u apply css rule to a part of html document?
+
+yes. by using "scopped" in the style tag.
 
 ---
 
@@ -1863,7 +1957,7 @@ body, p {
 
 ---
 
-#### What happens when DOCTYPE is not given
+#### What happens when DOCTYPE is not given?
 * The web page is rendered in quirks mode. 
     The web browsers engines use quirks mode to support older browsers which does not follow the #### W3C spec.
     
@@ -1874,6 +1968,8 @@ body, p {
 #### What's the difference between standards mode and quirks mode?
 
 * Quirks mode was to support websites built before standards became widely implemented.
+
+* quirks mode in browser allows u to render page for as old browsers. This is for backward compatibility.
 
 ---
 
@@ -2069,6 +2165,8 @@ It is rendering the data as it’s being downloaded. This is particularly useful
 
 #### What is the difference between Canvas and SVG graphics?    
 
+https://www.sitepoint.com/how-to-choose-between-canvas-and-svg/
+
 ---
 
 #### What is the difference between a ```<span>``` and a ```<div>```?
@@ -2092,6 +2190,16 @@ It is rendering the data as it’s being downloaded. This is particularly useful
 ---
 
 #### Define semantic markup. What are the semantic meanings for ```<section>, <article>, <aside>, <nav>, <header>, <footer>``` and when/how should each be used in structuring html markup?
+
+---
+
+#### When should you use ```section```, ```div``` or ```article```?
+
+```<section>```, group of content inside is related to a single theme, and should appear as an entry in an outline of the page. It’s a chunk of related content, like a subsection of a long article, a major part of the page (eg the news section on the homepage), or a page in a webapp’s tabbed interface. A section normally has a heading (title) and maybe a footer too.
+
+```<article>```, represents a complete, or self-contained, composition in a document, page, application, or site and that is, in principle, independently distributable or reusable, e.g. in syndication. This could be a forum post, a magazine or newspaper article, a blog entry, a user-submitted comment, an interactive widget or gadget, or any other independent item of content.
+
+```<div>```, on the other hand, does not convey any meaning, aside from any found in its class, lang and title attributes.
 
 ---
 
@@ -2549,17 +2657,17 @@ Cross Origin Resource Sharing. To address the fact that browsers restrict cross-
 
 #### How does the browser rendering engine work?
 
-* In order to render content the browser has to go through a series of steps:
+In order to render content the browser has to go through a series of steps:
 
-    * Document Object Model(DOM)
-        
-    * CSS object model(CSSOM)
-        
-    * Render Tree
-        
-    * Layout
-        
-    * Paint.
+* Document Object Model(DOM)
+    
+* CSS object model(CSSOM)
+    
+* Render Tree
+    
+* Layout
+    
+* Paint.
     
 
 ---
@@ -2722,10 +2830,6 @@ Cross Origin Resource Sharing. To address the fact that browsers restrict cross-
 ---
 
 #### Have you worked with QA? How you QA/test your code?
-
-
----
-
 
 ---
 
