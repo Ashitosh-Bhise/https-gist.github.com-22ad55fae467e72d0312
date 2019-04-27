@@ -1225,7 +1225,7 @@ body {
 
 ---
 
-#### Provide CSS so that three lines are displayed``` red, then green, then blue (2):
+#### Provide CSS so that three lines are displayed red, then green, then blue (2):
 ```css
 <div class="rgb">
     <span>Red</span>
@@ -2182,7 +2182,7 @@ The Extensible Hypertext Markup Language, or XHTML, has two important notes for 
     
 * Directing users to their native ```language``` Allow a user to change his country/language easily without hassle.
     
-* Text in images is not a scalable approach``` Placing text in an image is still a popular way to get good-looking, non-system fonts to display on any computer. However, to translate image text, each string of text will need to have a separate image created for each language. Anything more than a handful of replacements like this can quickly get out of control.
+* Text in images is not a scalable approach Placing text in an image is still a popular way to get good-looking, non-system fonts to display on any computer. However, to translate image text, each string of text will need to have a separate image created for each language. Anything more than a handful of replacements like this can quickly get out of control.
     
 * Restrictive words/sentence ```length``` Some content can be longer when written in another language. Be wary of layout or overflow issues in the design. It's best to avoid designing where the amount of text would make or break a design. Character counts come into play with things like headlines, labels, and buttons. They are less of an issue with free-flowing text such as body text or comments.
     
@@ -3051,19 +3051,19 @@ The DOM (Document Object Model) is a cross-platform API that treats HTML and XML
 #### Comparision of browsers like Chrome, Firefox, Internet explorer, Safari etc
 * Chrome: 
     * Layout rendering ```engine``` Webkit. 
-    * Jscript engine``` V8
+    * JavaScript ```engine``` V8
 
 * Firefox: 
     * Layout rendering ```engine``` Gecko. 
-    * Jscript engine``` Spider monkey
+    * JavaScript ```engine``` Spider monkey
         
 * Internet explorer: 
     * Layout rendering engine``` Trident. 
-    * Jscript engine``` Chakra
+    * JavaScript ```engine``` Chakra
         
 * Safari:
     * Layout rendering ```engine``` Webkit. 
-    * Jscript engine``` JavascriptCore i.e Nitro
+    * JavaScript ```engine``` JavascriptCore i.e Nitro
 
 
 ---
