@@ -115,6 +115,10 @@ CSS sprites combine multiple images into one single larger image. It is a common
 * Reduce the number of HTTP requests for multiple images (only one single request is required per spritesheet). But with HTTP2, loading multiple images is no longer much of an issue.
 * Advance downloading of assets that won't be downloaded until needed, such as images that only appear upon `:hover` pseudo-states. Blinking wouldn't be seen.
 
+
+* When you have multiple images/ icons, browser makes separate call to the server for each one of them. sprite is a technique to combine all/ some of them (usually similar one in terms of type of image. For example, you will put jpg in one sprite) in one image. To display the icon you set height, width and background position.
+
+
 ###### References
 
 * https://css-tricks.com/css-sprites/
@@ -141,7 +145,17 @@ CSS sprites combine multiple images into one single larger image. It is a common
 
 #### What is the float property and what float do.
 * The CSS float property is used to move the image to the right or left along with the texts to be wrapped around it. It doesn't change the property of the elements used before it
-  
+
+* float pushes an element to the sides of a page with text wrapped around it. you can create entire page or a smaller area by using float. if size of a floated element changes, text around it will re-flow to accommodate the changes. You can have float left, right, none or inherit.
+
+* if you set, 'float: left;' for an image, it will move to the left until the margin, padding or border of another block-level element is reached. The normal flow will wrap around on the right side.  
+
+
+---
+
+#### How can you clear sides of a floating element?
+
+* If you clear a slide of an element, floating elements will not be accepted on that side. With 'clear' set to 'left', an element will be moved below any floating element on the left side. clear is used to stop wrap of an element around a floating element.
 
 ---
 
@@ -170,7 +184,9 @@ CSS sprites combine multiple images into one single larger image. It is a common
 
 * ```display: none``` also hides the element but will not occupy space. It will not affect the layout of the document.
     
+* display: none removes the element from the normal layout flow and allow other elements to fill in. visibility: hidden tag is rendered, it takes space in the normal flow but doesn't show it.
 
+* if u want to say it smartly, display: none causes DOM reflow where is visibility: hidden doesn't. btw, what is re-flow? answer. sorry i wont tell you, google it.
 
 ---
 
@@ -223,6 +239,14 @@ CSS sprites combine multiple images into one single larger image. It is a common
 * https://css-tricks.com/absolute-relative-fixed-positioining-how-do-they-differ/
 
 
+```absolute```, place an element exactly where you want to place it. absolute position is actually set relative to the element's parent. if no parent available then relatively place to the page itself.
+
+```relative```, is position an element relative to itself (from where the element would be placed, if u don't apply relative positioning). for example, if u set position relative to an element and set top: 10px, it will move 10px down from where it would be normally.
+
+```fixed```, element is positioned relative to viewport or the browser window itself. viewport doesn't changed if u scroll and hence fixed element will stay right in the same position.
+
+```static```, element will be positioned based on the normal flow of the document. usually, u will use position static to remove other position might be applied to an element.
+
 ---
 
 #### How is behave absolute element if it is inside fixed element/relative/absolute element
@@ -269,6 +293,11 @@ CSS sprites combine multiple images into one single larger image. It is a common
     * respect height and width
 
 
+* inline, elements do not break the flow. think of span it fits in the line. Important points about inline elements, margin/ padding will push other elements horizontally not vertically. Moreover, inline elements ignores height and width.
+
+* block, breaks the flow and dont sits inline. they are usually container like div, section, ul and also text p, h1, etc.
+
+* inline-block, will be similar to inline and will go with the flow of the page. Only differences is this this will take height and width.
 
 ---
 
@@ -295,31 +324,60 @@ CSS sprites combine multiple images into one single larger image. It is a common
 
 #### Are CSS rule names case sensitive?
 
+* No
+
+---
+
+#### Multiple Class / ID and Class Selectors
+
+* https://css-tricks.com/multiple-class-id-selectors
+
+---
+
+
+#### Why CSS selectors mixed up with cases (uppercase and lowercase) don't apply the styles?
+
+* because HTML IDs and Classes are case sensetive.
 
 ---
 
 #### Does margin-top or margin-bottom has effect on inline element?
 
+* No
 
 ---
 
 #### Does padding-top or padding-bottom has effect on inline element?
 
+* No
 
 ---
 
 #### Which one would you prefer among px, em % or pt and why?
 
 
+it depends on what you are trying to do.
+
+* ```px``` gives fine grained control and maintains alignment because 1 px or multiple of 1 px is guaranteed to look sharp. px is not cascade, this means if parent font-size is 20px and child 16px. child would be 16px.
+
+* ```em``` maintains relative size. you can have responsive fonts. em is the width of the letter 'm' in the selected typeface. However, this concept is tricky. 1em is equal to the current font-size of the element or the browser default. if u sent font-size to 16px then 1em = 16px. The common practice is to set default body font-size to 62.5% (equal to 10px). em is cascade
+
+* ```%``` sets font-size relative to the font size of the body. Hence, you have to set font-size of the body to a reasonable size. this is easy to use and does cascade. for example, if parent font-size is 20px and child font-size is 50%. child would be 10px.
+
+* ```pt```(points) are traditionally used in print. 1pt = 1/72 inch and it is fixed-size unit.
+
+
 ---
 
 #### Does padding-left or padding-right or margin-left or margin-right has effect on inline element?
 
+* Yes
 
 ---
 
 #### If you have a <p> element with font-size: 10rem, will the text be responsive when the user resizes / drags the browser window?
 
+* No
 
 ---
 
@@ -343,8 +401,21 @@ CSS sprites combine multiple images into one single larger image. It is a common
 
 ---
 
+#### In a HTML document, the pseudo class :root always refers to the <html> element
+
+* True
+
+---
+
 #### What is pseudo element? what is pseudo class?
 
+* pseudo elements helps you to add cosmetics contents. pseudo elements generates content where as pseudo class deals with state of the element. for example, you can style ```:first-letter``` of every paragraph. similarly, ```:first-line``` and fancy stuff with ```:before```, ```:after```
+
+---
+
+#### The pseudo class :checked will select inputs with type radio or checkbox, but not <option> elements.
+
+* False
 
 ---
 
@@ -444,6 +515,10 @@ CSS sprites combine multiple images into one single larger image. It is a common
     * a[href*="css"]
 
 
+---
+
+#### How does CSS actually work (under the hood of browser)?
+    https://github.com/FAQGURU/FAQGURU/blob/master/topics/en/css.md#how-does-css-actually-work-under-the-hood-of-browser
 
 ---
 
@@ -454,6 +529,19 @@ CSS sprites combine multiple images into one single larger image. It is a common
 
 #### Provide an example of content-box vs border-box box-sizing
 
+
+---
+
+
+#### How to create a zebra striped table with CSS?
+
+To create a zebra-striped table, use the nth-child() selector and add a background-color to all even (or odd) table rows:
+
+```css
+tr:nth-child(even) {
+    background-color: #f2f2f2
+}
+```
 
 ---
 
@@ -474,11 +562,20 @@ CSS sprites combine multiple images into one single larger image. It is a common
 
 #### What are the reasons to use preprocessor
 
+* you write css in high level with some special syntax (declaring variable, nested syntax, mathematical operations, etc.) and that is compiled to css. Preprocessor helps you to speed up develop, maintain, ensure best practices and also confirms concatenation, compression, etc.
 
 ---
 
-#### What is CSS preprocessor
+#### What is CSS preprocessor and why to user one?
 
+* A CSS preprocessor is a program that lets you generate CSS from the preprocessor's own unique syntax. There are many CSS preprocessors to choose from, however most CSS preprocessors will add some features that don't exist in pure CSS, such as mixin, nesting selector, inheritance selector, and so on. These features make the CSS structure more readable and easier to maintain.
+
+* Here are a few of the most popular CSS preprocessors:
+
+    * SASS (SCSS)
+    * LESS
+    * Stylus
+    * PostCSS
 
 ---
 
@@ -603,6 +700,12 @@ In large projects, I would write a utility `.clearfix` class and use them in pla
 
 ---
 
+#### Does ```overflow: hidden``` create a new block formatting context?
+
+* Yes. overflow property deals with the content if content size exceeds the allocated size for the content. You can make extra content visible, hidden, scroll or auto (viewport default behavior).
+
+---
+
 #### How would you approach fixing browser-specific styling issues?
 
 * After identifying the issue and the offending browser, use a separate style sheet that only loads when that specific browser is being used. This technique requires server-side rendering though.
@@ -667,6 +770,29 @@ I like the `float`-based grid system because it still has the most browser suppo
 
 #### Have you used or implemented media queries or mobile specific layouts/CSS?
 
+
+---
+
+#### How could you apply css rules specific to a media?
+
+* ```@media (max-width: 700px){...}``` means you want to apply rules to those media whose max-width is 700 px. this means every smaller device will have this rule.
+
+```@media (max-width: 700px) and (orientation: landscape){...}``` will apply rules for media smaller than 700px and in landscape orientation.
+
+---
+
+#### What is the use of ```@media only screen```?
+
+* hide style sheets from older user agents.
+
+https://stackoverflow.com/questions/8549529/what-is-the-difference-between-screen-and-only-screen-in-media-queries
+
+
+---
+
+#### Does the ```screen``` keyword apply to the device's physical screen or the browser's viewport?
+
+* Browser's Viewport
 
 ---
 
@@ -735,16 +861,24 @@ For example with this selector `p span`, browsers firstly find all the `<span>` 
 
 #### What are the some pseudo classed u have used?
 
+* pseudo class tells you specific state of an element. allow to style element dynamically. The most popular one is ```:hover```. Besides i have used :visited, ```:focus```, ```:nth-child```, ```nth-of-type```, ```:link```, etc.
+
+* pseudo classes is better if you don't want to mess up with javaScript however, pseudo-classes is slow to process and apply rules.
+
 
 ---
 
 #### How do you optimize css selectors?
 
+* This is very open and depend on what you are trying to achieve. If i order selectors in terms of render speed it would be like id, class, tag, siblings, child, descendant, universal, attribute, pseudo. Speed of ID and class is very close. However your code should be readable, maintainable and DRY along with highly performant.
+
+* The best practices in general are: avoid universal selectors, don't repeat yourself, remove redundant selectors, be as specific as possible, and keep learning.
 
 ---
 
 #### How can you load css resources conditionally?
 
+```@import``` allows you to load/import stylesheet by using a path (uri) representing the location of the file. You can define one or more media by comma separation for which you want to load the stylesheet. If browser dont support the media stylesheet will not be loaded.
 
 ---
 
@@ -765,6 +899,9 @@ A CSS pseudo-element is a keyword added to a selector that lets you style a spec
 
 #### What are the properties related to box model
 
+* Technically, height, width, padding and border are part of box model and margin is related to it.
+
+* Everything in a web page is a box where you can control size, position, background, etc. Each box/ content area is optionally surrounded by padding, border and margin. When you set height and width of an element, you set content height and width.
 
 ---
 
@@ -923,6 +1060,12 @@ When using `translate()`, the element still occupies its original space (sort of
 
 ---
 
+#### The translate() function can move the position of an element on the z-axis.
+
+* False
+
+---
+
 #### Do you subscribe to any particular CSS structure? (SMACSS, OOCSS)
 
 
@@ -1005,6 +1148,12 @@ body {
 
 ---
 
+#### seeAndTell
+
+    https://www.thatjsdude.com/interview/css.html#seeAndTell
+
+---
+
 #### Provide CSS so that three lines are displayed``` red, then green, then blue (2):
 ```css
 <div class="rgb">
@@ -1028,7 +1177,6 @@ div { font-weight: bold; }
 
 #### What is Declaration
 * The set of property names and values like: background: red;
-
 
 
 ---
@@ -1189,6 +1337,18 @@ Adaptive design is more like the modern definition of progressive enhancement. I
 
 ---
 
+#### What does Accessibility (a11y) mean?
+
+Accessibility (a11y) is a measure of a computer system's accessibility is to all people, including those with disabilities or impairments. It concerns both software and hardware and how they are configured in order to enable a disabled or impaired person to use that computer system successfully.
+
+Accessibility is also known as assistive technology.
+
+##### Source
+    https://www.techopedia.com/definition/10165/accessibility-a11y
+
+
+---
+
 #### What is SEO
 
 
@@ -1292,6 +1452,8 @@ Adaptive design is more like the modern definition of progressive enhancement. I
 #### Which property is used to align the text of a document?
 * The text-align property is used to align the text of a document.
 
+* ```text-align: center``` will do the horizontal alignment but vertical-align: middle will not work here. there are couple of different ways to solve this problem and one of them are positioning. You make the parent as relative position and child as absolute positioning. And then define all position parameter as sero and width 50% and height 30% (sounds messy look at the example and read ref) 
+
 
 ---
 
@@ -1341,12 +1503,48 @@ Adaptive design is more like the modern definition of progressive enhancement. I
 
 ---
 
+#### What is specificity? How do u calculate specificity?
+
+* a process of determining which css rule will be applied to an element. it actually determines which rules will take precedence.
+
+* inline style usually wins then ID then class value (or pseudo-class or attribute selector), universal selector (*) has no specificity.
+
+---
+
 #### What is selector specificity (selector importance) and how it works? How do u calculate specificity?
 * https://developer.mozilla.org/en/docs/Web/CSS/Specificity
     
 * https://www.smashingmagazine.com/2007/07/css-specificity-things-you-should-know/
     
 * https://github.com/TIY-Austin-Front-End-Engineering/css-specificity
+
+
+ID selectors have a higher specificity than attribute selectors.
+
+```css
+/*wins*/
+a#a-02 { background-image : url(n.gif); }
+a[id="a-02"] { background-image : url(n.png); }
+```
+
+Contextual selectors are more specific than a single element selector.
+The embedded style sheet is closer to the element to be styled.
+The last rule defined overrides any previous, conflicting rules.
+
+```css
+p { color: red; background: yellow }
+p { color: green } // wins
+```
+
+A class selector beats any number of element selectors.
+
+```css
+.introduction {} //wins
+html body div div h2 p {}
+```
+
+The universal selector has a specificity of 0, 0, 0, 0.
+
 
 ---
 
@@ -1356,11 +1554,15 @@ Adaptive design is more like the modern definition of progressive enhancement. I
 
 #### What do you know about transition?
 
+* transition allows to add an effect while changing from one style to another. You can set the which property you want to transition, duration, how you want to transit (linear, ease, ease-in, ease-out, cubic-bezier) and delay when transition will start. you can transition more than one property by comma separation
+
 
 ---
 
 #### What are the different css filter you can use?
     https://developer.mozilla.org/en/docs/Web/CSS/filter
+
+    * css filter allows u to render DOM element, image, or video. u can choose from: grayscale, blur, opacity, brightness, contrast.
 
 
 ---
@@ -1638,7 +1840,7 @@ body, p {
 
 ---
 
-#### HTML
+#### HTML 
 
 ---
 
