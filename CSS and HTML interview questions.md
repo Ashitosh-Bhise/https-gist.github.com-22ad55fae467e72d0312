@@ -1269,6 +1269,18 @@ img { display: block ; }
 * It used to be much more prevalent in the days before broadband internet but it is still used in modern development as mobile data connections are becoming increasingly popular (and unreliable)!
 
 http://stackoverflow.com/questions/33651166/what-is-progressive-rendering
+
+* Progressive rendering is the name given to techniques used to improve the performance of a webpage (in particular, improve perceived load time) to render content for display as quickly as possible.
+
+* It used to be much more prevalent in the days before broadband internet but it is still used in modern development as mobile data connections are becoming increasingly popular (and unreliable)!
+
+* Examples of such techniques:
+
+    * Lazy loading of images - Images on the page are not loaded all at once. JavaScript will be used to load an image when the user scrolls into the part of the page that displays the image.
+
+    * Prioritizing visible content (or above-the-fold rendering) - Include only the minimum CSS/content/scripts necessary for the amount of page that would be rendered in the users browser first to display as quickly as possible, you can then use deferred scripts or listen for the DOMContentLoaded/load event to load in other resources and content.
+
+    * Async HTML fragments - Flushing parts of the HTML to the browser as the page is constructed on the back end.
     
 
 ---
@@ -1359,6 +1371,19 @@ Accessibility is also known as assistive technology.
 ##### Source
     https://www.techopedia.com/definition/10165/accessibility-a11y
 
+---
+
+#### What is accessibility & ARIA role means in a web application?
+
+Accessibility means letting the user navigate and interact with a website by any means. Let it be a keyboard, a mouse or people with disabilities or impairments.
+
+
+* ARIA stands for Accessible Rich Internet Application.
+* ARIA is a spec from W3C.
+* ARIA is created to improve accessibility in web applications.
+* ARIA provides a extra information to screen readers via HTML attributes.
+* ARIA doesn't affect how an element is rendered in a browser.
+
 
 ---
 
@@ -1386,11 +1411,16 @@ For example, <b></b> (for bold), and <i></i> (for italic) should never be used, 
 
 #### Why you would like to use semantic tag?
 
-Search Engine Optimization, accessibility, repurposing, light code. 
+* Search Engine Optimization, accessibility, repurposing, light code. 
 
-Many visually impaired person rely on browser speech and semantic tag helps to interpret page content clearly.
+* Many visually impaired person rely on browser speech and semantic tag helps to interpret page content clearly.
 
-Search engine needs to understand page content to rank and semantic tag helps.
+* Search engine needs to understand page content to rank and semantic tag helps.
+
+
+---
+
+#### How Can I Get Indexed Better by Search Engines?
 
 ---
 
@@ -1674,7 +1704,7 @@ The universal selector has a specificity of 0, 0, 0, 0.
 
 #### What is the difference between ```span``` and ```div```?
 
-```div``` is a block element and span is inline element.
+```div``` is a block element and ```span``` is inline element.
 
 It is illegal to put block element inside inline element. div can have a p tag and a p tag can have a span. However, span can't have a div or p tag inside.
 
@@ -1694,6 +1724,20 @@ It is illegal to put block element inside inline element. div can have a p tag a
 #### What are optional closing tag? and why would u use it?
 
 ```p, li, td, tr, th, html, body```, etc. you don't have to provide end tag. Whenever browser hits a new tag it automatically ends the previous tag. However, you have to be careful to escape it.
+
+---
+
+#### What is a self closing tag?
+
+In HTML5 it is not strictly necessary to close certain HTML tags. The tags that aren’t required to have specific closing tags are called “self closing” tags.
+
+An example of a self closing tag is something like a line break (```<br />```) or the meta tag (```<meta>```). This means that the following are both acceptable:
+
+```css
+<meta charset="UTF-8">
+...
+<meta charset="UTF-8" />
+```
 
 ---
 
@@ -1967,6 +2011,7 @@ body, p {
 
     The DOCTYPE declaration for the HTML5 standards is `<!DOCTYPE html>`.
 
+* it controls whether the browsers uses "standards" or "quirks" mode to render the document.
 
 ---
 
@@ -1989,10 +2034,6 @@ body, p {
 #### What's the difference between HTML and XHTML?
 
 The Extensible Hypertext Markup Language, or XHTML, has two important notes for front end developers. 1) It needs to be well formed, meaning all elements need to be closed and nested correctly or you will return errors. 2) Since it is more strict than HTML is requires less pre-processing by the browser, which may improve your sites performance.
-
----
-
-#### Why html5 doctype does not have a DTD definition?
 
 ---
 
@@ -2089,15 +2130,15 @@ The Extensible Hypertext Markup Language, or XHTML, has two important notes for 
 
 ---
 
-#### Describe the difference between <script>, <script async> and <script defer>.
+#### Describe the difference between ```<script>```, ```<script async>``` and ```<script defer>```.
 
-Normal Execution: script:
+* Normal Execution: script:
 Parsing of the HTML code pauses while the script is executing. For slow servers and heavy scripts this means that displaying the webpage will be delayed.
 
-Deferred Execution: script defer
+* Deferred Execution: script defer
 Delays script execution until the HTML parser has finished. A positive effect of this attribute is that the DOM will be available for your script. However, since not every browser supports defer yet, can’t rely on it.
 
-Asynchronous Execution: script async
+* Asynchronous Execution: script async
 HTML parsing may continue and the script will be executed as soon as it’s ready.    
 
 ---
@@ -2136,6 +2177,8 @@ It is rendering the data as it’s being downloaded. This is particularly useful
 ---
 
 #### Why you would use a srcset attribute in an image tag? Explain the process the browser uses when evaluating the content of this attribute.
+
+https://github.com/FAQGURU/FAQGURU/blob/master/topics/en/html5.md#why-you-would-use-a-srcset-attribute-in-an-image-tag-explain-the-process-the-browser-uses-when-evaluating-the-content-of-this-attribute
 
 ---
 
@@ -2202,17 +2245,48 @@ https://www.sitepoint.com/how-to-choose-between-canvas-and-svg/
 
 ---
 
+#### What is the purpose of ```main``` element?
+
+The HTML ```<main>``` element represents the dominant content of the <body> of a document, portion of a document or application. The main content area consists of content that is directly related to or expands upon the central topic of a document, or the central functionality of an application. One important facet of ```<main>``` is that it can only be used once per page.
+
+```<main>``` doesn't contribute to the document's outline; that is, unlike elements such as ```<body>```, headings such as ```<h2>```, and such, ```<main>``` doesn't affect the DOM's concept of the structure of the page. It's strictly informative.
+
+---
+
+#### Why to use HTML5 semantic tags?
+
+As their name says, this is for semantic purposes only. It's for improving the automated processing of documents. Automated processing happens more often than you realize - each website ranking from search engines is derived from automated processing of all the website out there.
+
+```css
+// machine: okay, this structure looks like it might be a navigation element?
+<div class="some-meaningless-class"><ul><li><a href="internal_link">...</div>
+
+// machine: ah, a navigation element!
+<nav class="some-meaningless-class"><ul><li><a>...</nav>
+```
+
+---
+
 #### Define semantic markup. What are the semantic meanings for ```<section>, <article>, <aside>, <nav>, <header>, <footer>``` and when/how should each be used in structuring html markup?
+
+* ```<header>``` is used to contain introductory and navigational information about a section of the page. This can include the section heading, the author’s name, time and date of publication, table of contents, or other navigational information.
+
+* ```<article>``` is meant to house a self-contained composition that can logically be independently recreated outside of the page without losing it’s meaining. Individual blog posts or news stories are good examples.
+
+* ```<section>``` is a flexible container for holding content that shares a common informational theme or purpose.
+
+* ```<footer>``` is used to hold information that should appear at the end of a section of content and contain additional information about the section. Author’s name, copyright information, and related links are typical examples of such content.
+
 
 ---
 
 #### When should you use ```section```, ```div``` or ```article```?
 
-```<section>```, group of content inside is related to a single theme, and should appear as an entry in an outline of the page. It’s a chunk of related content, like a subsection of a long article, a major part of the page (eg the news section on the homepage), or a page in a webapp’s tabbed interface. A section normally has a heading (title) and maybe a footer too.
+* ```<section>```, group of content inside is related to a single theme, and should appear as an entry in an outline of the page. It’s a chunk of related content, like a subsection of a long article, a major part of the page (eg the news section on the homepage), or a page in a webapp’s tabbed interface. A section normally has a heading (title) and maybe a footer too.
 
-```<article>```, represents a complete, or self-contained, composition in a document, page, application, or site and that is, in principle, independently distributable or reusable, e.g. in syndication. This could be a forum post, a magazine or newspaper article, a blog entry, a user-submitted comment, an interactive widget or gadget, or any other independent item of content.
+* ```<article>```, represents a complete, or self-contained, composition in a document, page, application, or site and that is, in principle, independently distributable or reusable, e.g. in syndication. This could be a forum post, a magazine or newspaper article, a blog entry, a user-submitted comment, an interactive widget or gadget, or any other independent item of content.
 
-```<div>```, on the other hand, does not convey any meaning, aside from any found in its class, lang and title attributes.
+* ```<div>```, on the other hand, does not convey any meaning, aside from any found in its class, lang and title attributes.
 
 ---
 
@@ -2229,6 +2303,16 @@ https://www.sitepoint.com/how-to-choose-between-canvas-and-svg/
 ---
 
 #### When is it acceptable to use font tags?
+
+---
+
+#### What is Character Encoding?
+
+To display an HTML page correctly, a web browser must know which character set (character encoding) to use. This is specified in the tag:
+
+```css
+<meta charset="UTF-8">
+```
 
 ---
 
@@ -2275,10 +2359,6 @@ https://www.sitepoint.com/how-to-choose-between-canvas-and-svg/
 ---
 
 #### What is viewport?
-
----
-
-#### What are some of the building blocks of HTML5?
 
 ---
 
@@ -2525,6 +2605,24 @@ Using SASS I would break up my files into related chunks – all of which are co
 
 Concatenate and compress CSS, JavaScript and HTML files wherever possible, configure your server to deliver a Gzip files, cache resources, set longer expirations dates on http headers of resources you don’t expect to change often – such as a logo. Images can be some of the heaviest files we deliver, so compress wisely. Soon the picture element will be implemented across browsers, so we can optimize the delivery of image content. Also in the near future consider using WebP format for images – it is quite smaller in size than JPEG and PNG files. Finally, use a CDN or other domains to host your resources and leverage domain sharding.
 
+---
+
+#### What is the purpose of cache busting and how can you achieve it?
+
+Browsers have a cache to temporarily store files on websites so they don't need to be re-downloaded again when switching between pages or reloading the same page. The server is set up to send headers that tell the browser to store the file for a given amount of time. This greatly increases website speed and preserves bandwidth.
+
+However, it can cause problems when the website has been changed by developers because the user's cache still references old files. This can either leave them with old functionality or break a website if the cached CSS and JavaScript files are referencing elements that no longer exist, have moved or have been renamed.
+
+Cache busting is the process of forcing the browser to download the new files. This is done by naming the file something different to the old file.
+
+A common technique to force the browser to re-download the file is to append a query string to the end of the file.
+
+```css
+    src="js/script.js" => src="js/script.js?v=2"
+```
+
+The browser considers it a different file but prevents the need to change the file name.    
+
 
 ---
 
@@ -2556,6 +2654,12 @@ Concatenate and compress CSS, JavaScript and HTML files wherever possible, confi
 #### Explain what ARIA and screenreaders are, and how to make a website accessible.
 
 Screen readers are software programs that  provide assistive technologies that allow people with disabilities (such as no sight, sound or mouse-ing ability) to use web applications. You can make your sites more accessible by following ARIA standards such as semantic HTML, alt attributes and using [role=button] in the expected ways
+
+---
+
+#### What is the purpose of the ```alt``` attribute on images?
+
+The ```alt``` attribute provides alternative information for an image if a user cannot view it. The ```alt``` attribute should be used to describe any images except those which only serve a decorative purposes, in which case it should be left empty.
 
 ---
 
@@ -2710,6 +2814,17 @@ In order to render content the browser has to go through a series of steps:
 ---
 
 #### What is the DOM? How does the DOM work? Explain in as much detail as possible.
+
+The DOM (Document Object Model) is a cross-platform API that treats HTML and XML documents as a tree structure consisting of nodes. These nodes (such as elements and text nodes) are objects that can be programmatically manipulated and any visible changes made to them are reflected live in the document. In a browser, this API is available to JavaScript where DOM nodes can be manipulated to change their styles, contents, placement in the document, or interacted with through event listeners.
+
+
+* The DOM was designed to be independent of any particular programming language, making the structural representation of the document available from a single, consistent API.
+
+* The DOM is constructed progressively in the browser as a page loads, which is why scripts are often placed at the bottom of a page, in the <head> with a defer attribute, or inside a DOMContentLoaded event listener. Scripts that manipulate DOM nodes should be run after the DOM has been constructed to avoid errors.
+
+* document.getElementById() and document.querySelector() are common functions for selecting DOM nodes.
+
+* Setting the innerHTML property to a new value runs the string through the HTML parser, offering an easy way to append dynamic HTML content to a node.
 
 
 ---
