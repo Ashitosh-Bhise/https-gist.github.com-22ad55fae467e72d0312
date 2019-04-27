@@ -3296,7 +3296,8 @@ Now elements will be stripped of margins and padding, and `box-sizing` lets you 
 
 **Note:** If you follow the [Inherit `box-sizing`](#inherit-box-sizing) tip below you might opt to not include the `box-sizing` property in  your CSS reset.
 
-<sup>[back to table of contents](#table-of-contents)</sup>
+
+---
 
 
 ### Inherit `box-sizing`
@@ -3317,7 +3318,8 @@ html {
 
 This makes it easier to change `box-sizing` in plugins or other components that leverage other behavior.
 
-<sup>[back to table of contents](#table-of-contents)</sup>
+
+---
 
 
 ### Use `unset` Instead of Resetting All Properties
@@ -3345,7 +3347,8 @@ button {
 
 **Note:** the `all` shorthand isn't supported in IE11 and is currently under consideration for support in Edge. `unset` isn't supported in IE11.
 
-<sup>[back to table of contents](#table-of-contents)</sup>
+
+---
 
 
 ### Use `:not()` to Apply/Unapply Borders on Navigation
@@ -3380,7 +3383,8 @@ Here, the CSS selector is read as a human would describe it.
 
 #### [Demo](http://codepen.io/AllThingsSmitty/pen/LkymvO)
 
-<sup>[back to table of contents](#table-of-contents)</sup>
+
+---
 
 
 ### Add `line-height` to `body`
@@ -3397,7 +3401,8 @@ This way textual elements can inherit from `body` easily.
 
 #### [Demo](http://codepen.io/AllThingsSmitty/pen/VjbdYd)
 
-<sup>[back to table of contents](#table-of-contents)</sup>
+
+---
 
 
 ### Set `:focus` for Form Elements
@@ -3418,7 +3423,8 @@ textarea:focus {
 
 #### [Demo](https://codepen.io/AllThingsSmitty/pen/ePzoOP/)
 
-<sup>[back to table of contents](#table-of-contents)</sup>
+
+---
 
 
 ### Vertically-Center Anything
@@ -3459,7 +3465,8 @@ Want to center something else? Vertically, horizontally...anything, anytime, any
 
 #### [Demo](http://codepen.io/AllThingsSmitty/pen/GqmGqZ)
 
-<sup>[back to table of contents](#table-of-contents)</sup>
+
+---
 
 
 ### Comma-Separated Lists
@@ -3476,7 +3483,8 @@ Use the `:not()` pseudo-class and no comma will be added to the last item.
 
 **Note:** This tip may not be ideal for accessibility, specifically screen readers. And copy/paste from the browser doesn't work with CSS-generated content. Proceed with caution.
 
-<sup>[back to table of contents](#table-of-contents)</sup>
+
+---
 
 
 ### Select Items Using Negative `nth-child`
@@ -3505,7 +3513,8 @@ li:not(:nth-child(-n+3)) {
 
 #### [Demo](http://codepen.io/AllThingsSmitty/pen/WxjKZp)
 
-<sup>[back to table of contents](#table-of-contents)</sup>
+
+---
 
 
 ### Use SVG for Icons
@@ -3528,7 +3537,8 @@ SVG scales well for all resolution types and is supported in all browsers [back 
 }
 ```
 
-<sup>[back to table of contents](#table-of-contents)</sup>
+
+---
 
 
 ### Use the "Lobotomized Owl" Selector
@@ -3547,7 +3557,8 @@ For more on the "lobotomized owl" selector, read [Heydon Pickering's post](http:
 
 #### [Demo](http://codepen.io/AllThingsSmitty/pen/grRvWq)
 
-<sup>[back to table of contents](#table-of-contents)</sup>
+
+---
 
 
 ### Use `max-height` for Pure CSS Sliders
@@ -3569,7 +3580,8 @@ Implement CSS-only sliders using `max-height` with overflow hidden:
 
 The element expands to the `max-height` value on hover and the slider displays as a result of the overflow.
 
-<sup>[back to table of contents](#table-of-contents)</sup>
+
+---
 
 
 ### Equal-Width Table Cells
@@ -3586,7 +3598,8 @@ Pain-free table layouts.
 
 #### [Demo](http://codepen.io/AllThingsSmitty/pen/jALALm)
 
-<sup>[back to table of contents](#table-of-contents)</sup>
+
+---
 
 
 ### Get Rid of Margin Hacks With Flexbox
@@ -3606,7 +3619,8 @@ When working with column gutters you can get rid of `nth-`, `first-`, and `last-
 
 Now column gutters always appear evenly-spaced.
 
-<sup>[back to table of contents](#table-of-contents)</sup>
+
+---
 
 
 ### Use Attribute Selectors with Empty Links
@@ -3623,7 +3637,8 @@ That's pretty convenient.
 
 #### [Demo](http://codepen.io/AllThingsSmitty/pen/zBzXRx)
 
-<sup>[back to table of contents](#table-of-contents)</sup>
+
+---
 
 
 ### Style "Default" Links
@@ -3639,7 +3654,8 @@ a[href]:not([class]) {
 
 Now links that are inserted via a CMS, which don't usually have a `class` attribute, will have a distinction without generically affecting the cascade.
 
-<sup>[back to table of contents](#table-of-contents)</sup>
+
+---
 
 
 ### Consistent Vertical Rhythm
@@ -3654,7 +3670,8 @@ Use a universal selector (`*`) within an element to create a consistent vertical
 
 Consistent vertical rhythm provides a visual aesthetic that makes content far more readable.
 
-<sup>[back to table of contents](#table-of-contents)</sup>
+
+---
 
 
 ### Intrinsic Ratio Boxes
@@ -3682,7 +3699,8 @@ Using 20% for padding makes the height of the box equal to 20% of its width. No 
 
 #### [Demo](http://codepen.io/AllThingsSmitty/pen/jALZvE)
 
-<sup>[back to table of contents](#table-of-contents)</sup>
+
+---
 
 
 ### Style Broken Images
@@ -3720,7 +3738,8 @@ img::after {
 
 Learn more about styling for this pattern in [Ire Aderinokun](https://github.com/ireade/)'s [original post](http://bitsofco.de/styling-broken-images/).
 
-<sup>[back to table of contents](#table-of-contents)</sup>
+
+---
 
 
 ### Use `rem` for Global Sizing; Use `em` for Local Sizing
@@ -3751,7 +3770,8 @@ aside .module {
 
 Now each module becomes compartmentalized and easier to style, more maintainable, and flexible.
 
-<sup>[back to table of contents](#table-of-contents)</sup>
+
+---
 
 
 ### Hide Autoplay Videos That Aren't Muted
@@ -3766,7 +3786,8 @@ video[autoplay]:not([muted]) {
 
 Once again, we're taking advantage of using the [`:not()`](#use-not-to-applyunapply-borders-on-navigation) pseudo-class.
 
-<sup>[back to table of contents](#table-of-contents)</sup>
+
+---
 
 
 ### Use `:root` for Flexible Type
@@ -3789,7 +3810,8 @@ body {
 
 #### [Demo](http://codepen.io/AllThingsSmitty/pen/XKgOkR)
 
-<sup>[back to table of contents](#table-of-contents)</sup>
+
+---
 
 
 ### Set `font-size` on Form Elements for a Better Mobile Experience
@@ -3807,7 +3829,8 @@ textarea {
 
 :dancer:
 
-<sup>[back to table of contents](#table-of-contents)</sup>
+
+---
 
 
 ### Use Pointer Events to Control Mouse Events
