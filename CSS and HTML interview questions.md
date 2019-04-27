@@ -641,17 +641,17 @@ tr:nth-child(even) {
 #### What are the advantages/disadvantages of using CSS preprocessors?
 
 
-**Advantages:**
+*Advantages:*
 
-* CSS is made more maintainable.
-* Easy to write nested selectors.
-* Variables for consistent theming. Can share theme files across different projects.
-* Mixins to generate repeated CSS.
-* Splitting your code into multiple files. CSS files can be split up too but doing so will require an HTTP request to download each CSS file.
+    * CSS is made more maintainable.
+    * Easy to write nested selectors.
+    * Variables for consistent theming. Can share theme files across different projects.
+    * Mixins to generate repeated CSS.
+    * Splitting your code into multiple files. CSS files can be split up too but doing so will require an HTTP request to download each CSS file.
 
-**Disadvantages:**
+*Disadvantages:*
 
-* Requires tools for preprocessing. Re-compilation time can be slow.
+    * Requires tools for preprocessing. Re-compilation time can be slow.
 
 * Advantages of SASS/LESS: Use of variables, mixins, nesting, looping, partials and more.
 
@@ -777,9 +777,9 @@ In large projects, I would write a utility `.clearfix` class and use them in pla
 
 #### What are your favorite image replacement techniques and which do you use when?
 
-    - lazy loading.
+* lazy loading.
 
-    - progressive image loading placeholders.
+* progressive image loading placeholders.
 
 ---
 
@@ -1269,10 +1269,10 @@ body {
 #### What is Universal Selector
 
 * The universal selector matches any element within the context in which it’s placed in a selector. 
-    In the example below, the #### character is the universal selector:
+    In the example below, the ```*``` character is the universal selector:
 ```css
 /*  the asterisk character is the universal selector */
-.navigation ul #### {
+.navigation *ul {
   width: 100px;
   float: left;
 }
@@ -1408,7 +1408,7 @@ A mobile-first strategy has 2 main advantages:
 * It's more performant on mobile devices, since all the rules applied for them don't have to be validated against any media queries.
 * It forces to write cleaner code in respect to responsive CSS rules.
 
-[[↑] Back to top](#css-questions)
+----
 
 ### How is responsive design different from adaptive design?
 
@@ -1690,7 +1690,7 @@ The universal selector has a specificity of 0, 0, 0, 0.
 #### What are the different css filter you can use?
     https://developer.mozilla.org/en/docs/Web/CSS/filter
 
-    * css filter allows u to render DOM element, image, or video. u can choose from: grayscale, blur, opacity, brightness, contrast.
+* css filter allows u to render DOM element, image, or video. u can choose from: grayscale, blur, opacity, brightness, contrast.
 
 
 ---
@@ -2057,7 +2057,7 @@ p {
 ```
 
 ```css
-/*#### Output ```/
+/* Output */
 body, p {
     width: 100%;
     height: 100%;
@@ -2100,12 +2100,12 @@ body, p {
 #### What does a DOCTYPE do?
 
 * DOCTYPE is an abbreviation for ```DOCument TYPE```.  
-    A DOCTYPE is always associated to a ```DTD*####``` for ```Document Type Definition```.  
+    A DOCTYPE is always associated to a ```DTD``` for ```Document Type Definition```.  
 
     A DTD defines how documents of a certain type should be structured (i.e. a `button` can contain a `span` but not a `div`), whereas a DOCTYPE declares what DTD a document supposedly respects (i.e. this document respects the HTML DTD).  
 
     For webpages, the DOCTYPE declaration is required. It is used to tell user agents what version of the HTML specifications your document respects.  
-    Once a user agent has recognized a correct DOCTYPE, it will trigger the ```no-quirks mode*#### matching this DOCTYPE for reading the document.  
+    Once a user agent has recognized a correct DOCTYPE, it will trigger the ```no-quirks mode``` matching this DOCTYPE for reading the document.  
     If a user agent doesn't recognize a correct DOCTYPE, it will trigger the ```quirks mode```.
 
     The DOCTYPE declaration for the HTML5 standards is `<!DOCTYPE html>`.
@@ -2116,7 +2116,7 @@ body, p {
 
 #### What happens when DOCTYPE is not given?
 * The web page is rendered in quirks mode. 
-    The web browsers engines use quirks mode to support older browsers which does not follow the #### W3C spec.
+    The web browsers engines use quirks mode to support older browsers which does not follow the W3C spec.
     
     In quirks mode CSS class and id names are case insensitive. In standards mode they are case sensitive.
 
