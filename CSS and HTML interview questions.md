@@ -86,6 +86,53 @@ An overall block is given to class selector while id selectors take only a singl
 
 ---
 
+#### What is CSS BEM
+
+The BEM methodology is a naming convention for CSS classes in order to keep CSS more maintainable by defining namespaces to solve scoping issues. BEM stands for Block Element Modifier which is an explanation for its structure. A Block is a standalone component that is reusable across projects and acts as a "namespace" for sub components (Elements). Modifiers are used as flags when a Block or Element is in a certain state or is different in structure or style.
+
+```css
+/* block component */
+.block {
+}
+
+/* element */
+.block__element {
+}
+
+/* modifier */
+.block__element--modifier {
+}
+
+```
+
+Here is an example with the class names on markup:
+
+```css
+<nav class="navbar">
+  <a href="/" class="navbar__link navbar__link--active"></a>
+  <a href="/" class="navbar__link"></a>
+  <a href="/" class="navbar__link"></a>
+</nav>
+
+```
+
+In this case, navbar is the Block, ```navbar__link``` is an Element that makes no sense outside of the navbar component, and ```navbar__link--active``` is a Modifier that indicates a different state for the ```navbar__link``` Element.
+
+Since Modifiers are verbose, many opt to use ```is-*``` flags instead as modifiers.
+
+```css
+<a href="/" class="navbar__link is-active"></a>
+```
+
+These must be chained to the Element and never alone however, or there will be scope issues.
+
+```css
+.navbar__link.is-active {
+}
+
+```
+---
+
 #### How do you organize CSS files?
 
 
@@ -109,9 +156,9 @@ Responsive Web Design. This technique is used to display the designed page perfe
     
 CSS sprites combine multiple images into one single larger image. It is a commonly-used technique for icons (Gmail uses it). How to implement it:
 
-1. Use a sprite generator that packs multiple images into one and generate the appropriate CSS for it.
-1. Each image would have a corresponding CSS class with `background-image`, `background-position` and `background-size` properties defined.
-1. To use that image, add the corresponding class to your element.
+* Use a sprite generator that packs multiple images into one and generate the appropriate CSS for it.
+* Each image would have a corresponding CSS class with `background-image`, `background-position` and `background-size` properties defined.
+* To use that image, add the corresponding class to your element.
 
 **Advantages:**
 
@@ -130,8 +177,17 @@ CSS sprites combine multiple images into one single larger image. It is a common
 ---
 
 #### What are the benefits of CSS sprites?
-* If a web page has large no. of images that takes a longer time to load because each image separately sends out an http request. The concept of CSS sprites is used to reduce the loading time for a web page because it combines the various small images into one image. It reduces the number of http requests and hence the loading time. 
+If a web page has large no. of images that takes a longer time to load because each image separately sends out an http request. The concept of CSS sprites is used to reduce the loading time for a web page because it combines the various small images into one image. It reduces the number of http requests and hence the loading time. 
     
+CSS sprites combine multiple images into one image, limiting the number of HTTP requests a browser has to make, thus improving load times. Even under the new HTTP/2 protocol, this remains true.
+
+Under HTTP/1.1, at most one request is allowed per TCP connection. With HTTP/1.1, modern browsers open multiple parallel connections (between 2 to 8) but it is limited. With HTTP/2, all requests between the browser and the server are multiplexed on a single TCP connection. This means the cost of opening and closing multiple connections is mitigated, resulting in a better usage of the TCP connection and limits the impact of latency between the client and server. It could then become possible to load tens of images in parallel on the same TCP connection.
+
+However, according to benchmark results, although HTTP/2 offers 50% improvement over HTTP/1.1, in most cases the sprite set is still faster to load than individual images.
+
+To utilize a spritesheet in CSS, one would use certain properties, such as background-image, background-position and background-size to ultimately alter the background of an element.
+
+
 
 ---
 
@@ -158,7 +214,7 @@ CSS sprites combine multiple images into one single larger image. It is a common
 
 #### How can you clear sides of a floating element?
 
-* If you clear a slide of an element, floating elements will not be accepted on that side. With 'clear' set to 'left', an element will be moved below any floating element on the left side. clear is used to stop wrap of an element around a floating element.
+If you clear a slide of an element, floating elements will not be accepted on that side. With 'clear' set to 'left', an element will be moved below any floating element on the left side. clear is used to stop wrap of an element around a floating element.
 
 ---
 
@@ -216,7 +272,7 @@ W3C stands for World Wide Web Consortium.
 ---
 
 #### How does ```z-index``` relate to positioning
-* The ```z-index``` property specifies the stack order of elements. An element with a higher ```z-index```/stack order is always rendered in front of an element with a lower ```z-index```/stack order on the screen. ```z-index``` will only work on elements that have a specified position (position:absolute, position:relative, or position:fixed).
+The ```z-index``` property specifies the stack order of elements. An element with a higher ```z-index```/stack order is always rendered in front of an element with a lower ```z-index```/stack order on the screen. ```z-index``` will only work on elements that have a specified position (position:absolute, position:relative, or position:fixed).
 
 
 ---
@@ -227,13 +283,13 @@ W3C stands for World Wide Web Consortium.
 ---
 
 #### What are CSS frameworks? What CSS frameworks have you used
-* It is a pre-planned libraries, which allows easier and more standards-compliant webpage styling, using CSS language.
+It is a pre-planned libraries, which allows easier and more standards-compliant webpage styling, using CSS language.
         
     
 ---
 
 #### Who maintains the CSS specifications?
-* W3C (World Wide Web Consortium) maintains the CSS specifications.        
+W3C (World Wide Web Consortium) maintains the CSS specifications.        
     
 
 ---
@@ -389,16 +445,16 @@ it depends on what you are trying to do.
 
 * A CSS pseudo-element is used to style specified parts of an element.
 
-    For example, it can be used to:
-    
-        Style the first letter, or line, of an element
-        Insert content before, or after, the content of an element
-    
-    ```css
-    p::first-line {
-        color: #ff0000;
-        font-variant: small-caps;
-    }
+For example, it can be used to:
+
+    Style the first letter, or line, of an element
+    Insert content before, or after, the content of an element
+
+```css
+p::first-line {
+    color: #ff0000;
+    font-variant: small-caps;
+}
     ```
 
 
@@ -789,6 +845,18 @@ I like the `float`-based grid system because it still has the most browser suppo
 * hide style sheets from older user agents.
 
 https://stackoverflow.com/questions/8549529/what-is-the-difference-between-screen-and-only-screen-in-media-queries
+
+
+---
+
+#### Can you name the four types of ```@media``` properties?
+
+
+* ```all```, which applies to all media type devices
+* ```print```, which only applies to printers
+* ```screen```, which only applies to screens (desktops, tablets, mobile etc.)
+* ```speech```, which only applies to screenreaders
+
 
 
 ---
@@ -1294,6 +1362,8 @@ http://stackoverflow.com/questions/33651166/what-is-progressive-rendering
 
 * An ```iframe``` is an HTML document which can be embedded inside another HTML page.
 
+* The IFrame HTML element is often used to insert content from another source, such as an advertisement, into a Web page.
+
 ```css
 <iframe src="https://github.com" height="300px" width="300px"></iframe>
 ```
@@ -1409,13 +1479,19 @@ For example, <b></b> (for bold), and <i></i> (for italic) should never be used, 
 
 ---
 
-#### Why you would like to use semantic tag?
+#### Why you would like to use semantic tag. Why Semantic HTML is Important?
 
 * Search Engine Optimization, accessibility, repurposing, light code. 
 
 * Many visually impaired person rely on browser speech and semantic tag helps to interpret page content clearly.
 
 * Search engine needs to understand page content to rank and semantic tag helps.
+
+* semantic code aids accessibility. Specially, many people whose eyes are not good rely on speech browsers to read pages to them. These programs cannot interpret pages very well unless they are clearly explained.
+
+* Help Search engines to better understand pages. Search engine need to understand what your content is about when rank you properly on search engines. Semantic code tends to improve your placement on search engines, as it is easier for the "search engine spiders" to understand.
+
+* It’s easier to read and edit, which saves time and money during maintenance.
 
 
 ---
@@ -1455,17 +1531,6 @@ https://stackoverflow.com/questions/1294493/what-does-semantically-correct-mean/
 ---
 
 #### Enlist image types used in web, their properties and usage
-
-
----
-
-#### What is the purpose of em measurement unit?
-
-
----
-
-#### What is the purpose of pt measurement unit?
-
 
 ---
 
@@ -1698,6 +1763,21 @@ The universal selector has a specificity of 0, 0, 0, 0.
 
 ---
 
+#### What is the difference between ```em``` and ```rem``` units?
+
+Both em and rem units are based on the font-size CSS property. The only difference is where they inherit their values from.
+
+* ```em``` units inherit their value from the font-size of the parent element
+* ```rem``` units inherit their value from the font-size of the root element (html)
+
+In most browsers, the font-size of the root element is set to 16px by default.
+
+---
+
+#### What are Benefits of using ```em``` and ```rem``` units
+
+---
+
 #### What is the difference between padding and margins?
 
 ---
@@ -1892,6 +1972,25 @@ Be aware of which CSS properties trigger reflow, repaint, and compositing. Avoid
 ---
 
 ### Sass
+
+---
+
+#### SASS basic concepts
+
+* Variables: Variables in SASS start with $ sign
+
+* Nesting: CSS lacks visual hierarchy while working with child selectors. You have to write selectors and their combinations in separate lines. Nesting provides a visual hierarchy as in the HTML and increases the readability.
+
+* mixins: mixins are used to include a bunch of properties or group declarations together. It allows for the easy reuse of blocks of code. Use include to
+
+* Inheritance: extends are useful for sharing a generic definition with selectors rather than copying it in.
+
+* If/Else Statements and loops
+
+* import: separating your codes in small pieces is helpful for expressing your declarations and increasing maintainability and control over the codebase.
+
+* Math operations: can be used for standard arithmetic or unit conversions.
+
 
 ---
 
@@ -2170,6 +2269,26 @@ It is rendering the data as it’s being downloaded. This is particularly useful
 
 #### What is Critical Rendering Path
 
+* Constructing the DOM Tree
+* Constructing the CSSOM Tree
+* Running JavaScript - parser blocking resource
+* Creating the Render Tree
+* Generating the Layout
+* Painting
+
+---
+
+#### SSR VS CSR
+
+* We are using server side rendering for two reasons:
+    * performance benefit for our customers
+    * Consistent SEO performance
+
+* The main difference is that for SSR your server’s response to the browser is the HTML of your page that is ready to be rendered, while for CSR the browser gets a pretty empty document with links to your javascript. That means for SSR your browser will start rendering the HTML from your server without having to wait for all the JavaScript to be downloaded and executed.
+    
+* for SSR, the user can start viewing the page while all of that is happening. For the CSR world, you need to wait for all of the above to happen and then have the virtual dom moved to the browser dom for the page to be viewable.
+
+
 ---
 
 #### Have you used different HTML templating languages before? what did you like about them?
@@ -2347,6 +2466,9 @@ To display an HTML page correctly, a web browser must know which character set (
 
 * Defer: Defer downloads the script file during HTML parsing and will only execute it after the HTML parser has completed. Not all browsers support this.
     
+* the async attribute is used to indicate to the browser that the script file can be executed asynchronously. The HTML parser does not need to pause at the point it reaches the script tag to fetch and execute, the execution can happen whenever the script becomes ready after being fetched in parallel with the document parsing.
+
+* The defer attribute tells the browser to only execute the script file once the HTML document has been fully parsed.     
 
 ---
 
@@ -2717,6 +2839,98 @@ Cross Origin Resource Sharing. To address the fact that browsers restrict cross-
 
 #### Ways to decrease page load?
 
+
+---
+
+####  Ways to improve website performance
+
+* Minimize HTTP Requests
+    * Sites are mainly slow because of too many (or too large) HTTP requests. We can eliminate unnecessary request;
+        * combined files: js to a file, css to a file
+        * CSS sprites: CSS Sprites are the preferred method for reducing the number of image requests. Combine your background images into a single image and use the CSS background-image and background-position properties to display the desired image segment.
+
+* Use a Content Delivery Network CDN
+
+    * A CDN is essentially many optimized servers around the world that deliver web content to users based on their geographic location. This means big performance improvements for site users. Because, say, if a person accessing your site in India, they will be retrieving web content from a server nearby
+
+* Optimize Images:
+
+    * image sizes make a huge difference to site speed. The larger content/images, the slower the site. we could:
+        * Changing the resolution: reducing the “quality” of the image (and thereby the file size)
+        * Compressing the picture: increasing the efficiency of image data storage
+        * Cropping the picture: when cropping, you are cutting out unneeded areas and thus making the image smaller in size
+
+* Put Scripts at the Bottom:
+
+    * Javascript files can load after the rest of your page. The simplest solution is to place your external Javascript files at the bottom of your page, just before the close of your body tag. Now more of your site can load before your scripts. Another method that allows even more control is to use the defer or async attributes when placing external .js files on your site.
+        
+        * Async tags load the scripts while the rest of the page loads, but this means scripts can be loaded out of order. Basically, lighter files load first. This might be fine for some scripts, but can be disastrous for others.
+        
+        * The defer attribute loads your scripts after your content has finished loading. It also runs the scripts in order. Just make sure your scripts run so late without breaking your site.
+
+* Add an Expires or a Cache-Control Header
+
+    * Web page designs are getting richer and richer, which means more scripts, stylesheets, images, and Flash in the page. A first-time visitor to your page may have to make several HTTP requests, but by using the Expires header you make those components cacheable. This avoids unnecessary HTTP requests on subsequent page views. Expires headers are most often used with images, but they should be used on all components including scripts, stylesheets, and Flash components.
+
+* Gzip Components
+
+    * Compression reduces response times by reducing the size of the HTTP response. Gzipping generally reduces the response size by about 70%.
+
+* Put Stylesheets at the Top:
+
+    * This is because putting stylesheets in the HEAD allows the page to render progressively.
+
+* Avoid CSS Expressions
+
+* Use GET for AJAX Requests:
+
+    * Ajax is that it provides instantaneous feedback to the user because it requests information asynchronously from the backend web server
+
+* Make JavaScript and CSS External:
+
+    *  Using external files in the real world generally produces faster pages because the JavaScript and CSS files are cached by the browser. JavaScript and CSS that are inlined in HTML documents get downloaded every time the HTML document is requested. This reduces the number of HTTP requests that are needed, but increases the size of the HTML document. On the other hand, if the JavaScript and CSS are in external files cached by the browser, the size of the HTML document is reduced without increasing the number of HTTP requests.
+
+* Use get to ajax request:
+
+    *  POST is implemented in the browsers as a two-step process: sending the headers first, then sending data. So it's best to use GET, which only takes one TCP packet to send (unless you have a lot of cookies).
+
+* No 404s:
+
+    * HTTP requests are expensive so making an HTTP request and getting a useless response (i.e. 404 Not Found) is totally unnecessary and will slow down the user experience without any benefit.
+
+* Reduce Cookie Size:
+
+    * HTTP cookies are used for a variety of reasons such as authentication and personalization. Information about cookies is exchanged in the HTTP headers between web servers and browsers. It's important to keep the size of cookies as low as possible to minimize the impact on the user's response time.
+
+* Reduce DNS Lookups
+
+* Minify JavaScript and CSS
+
+* Avoid Redirects
+
+* Remove Duplicate Scripts
+
+* Configure Etags
+
+* Make Ajax Cacheable
+
+* Post-load Components
+
+* Preload Components
+
+* Reduce the Number of DOM Elements
+
+* Minimize the Number of iframes
+
+* Minimize DOM Access
+
+* Optimize CSS Sprites
+
+* Don't Scale Images in HTML
+
+* Make favicon.ico Small and Cacheable
+
+* Avoid Empty Image src
 
 ---
 
