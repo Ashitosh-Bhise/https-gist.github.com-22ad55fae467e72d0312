@@ -40,15 +40,15 @@
 #### What is Selector? 
 The way you declare which elements the styles should apply to. There are different kinds of selectors:
 
-* Class: The most commonly used selector. E.g. “.cloudy” to select an element with classname cloudy. There can be more than 1 element with the same classname.
+* ```Class```: The most commonly used selector. E.g. “.cloudy” to select an element with classname cloudy. There can be more than 1 element with the same classname.
 
-* ID: Use this sparingly. You cannot reuse an ID within the same page and used only to identify an element uniquely. E.g. ```<div id=lovelyweather></div>```
+* ```ID```: Use this sparingly. You cannot reuse an ID within the same page and used only to identify an element uniquely. E.g. ```<div id=lovelyweather></div>```
 
-* Attribute Selector: If you use any attribute other than class or id to identify an element in a stylesheet, you would be using Attribute Selectors. You can also do basic pattern matching within an attribute selector (so if you would like to do basic pattern matching for selectors using class or ID attributes, you would want to use attribute selectors).
+* ```Attribute Selector```: If you use any attribute other than class or id to identify an element in a stylesheet, you would be using Attribute Selectors. You can also do basic pattern matching within an attribute selector (so if you would like to do basic pattern matching for selectors using class or ID attributes, you would want to use attribute selectors).
 
-* Pseudo-Classes: Classes that are applied to elements based on information that is not present in the markup, e.g. :first-child or :last-child. Do note that the selectors are parsed from right to left (see the demo). You cannot use section ```article:first-child``` to select the first occurrence of article, if the first child of section is h1 and not article. Likewise with the :nth-child, and :last-child pseudo-classes.
+* ```Pseudo-Classes```: Classes that are applied to elements based on information that is not present in the markup, e.g. :first-child or :last-child. Do note that the selectors are parsed from right to left (see the demo). You cannot use section ```article:first-child``` to select the first occurrence of article, if the first child of section is h1 and not article. Likewise with the :nth-child, and :last-child pseudo-classes.
 
-* Pseudo-Elements Pseudo-elements differ from Pseudo-Classes in that they actually create an element in the document tree. This is almost the first instance of CSS modifying the HTML document tree. You should ideally use pseudo-elements with “::” instead of “:” (but most browsers accept “:” notation for CSS 2.1 pseudo-elements). Pseudo-elements are: ```::first-line```, ```::first-letter```, ```::before```, ```::after``` (See the demo for how pseudo-elements work).
+* ```Pseudo-Elements```: Pseudo-elements differ from Pseudo-Classes in that they actually create an element in the document tree. This is almost the first instance of CSS modifying the HTML document tree. You should ideally use pseudo-elements with “::” instead of “:” (but most browsers accept “:” notation for CSS 2.1 pseudo-elements). Pseudo-elements are: ```::first-line```, ```::first-letter```, ```::before```, ```::after``` (See the demo for how pseudo-elements work).
         
 
 ---
@@ -116,7 +116,7 @@ Here is an example with the class names on markup:
 
 ```
 
-In this case, navbar is the Block, ```navbar__link``` is an Element that makes no sense outside of the navbar component, and ```navbar__link--active``` is a Modifier that indicates a different state for the ```navbar__link``` Element.
+In this case, ```navbar``` is the Block, ```navbar__link``` is an Element that makes no sense outside of the navbar component, and ```navbar__link--active``` is a Modifier that indicates a different state for the ```navbar__link``` Element.
 
 Since Modifiers are verbose, many opt to use ```is-*``` flags instead as modifiers.
 
@@ -131,6 +131,9 @@ These must be chained to the Element and never alone however, or there will be s
 }
 
 ```
+
+###### References
+    * https://css-tricks.com/bem-101/
 ---
 
 #### How do you organize CSS files?
@@ -147,14 +150,14 @@ These must be chained to the Element and never alone however, or there will be s
 ---
 
 #### What is RWD (Responsive web design) ?
-Responsive Web Design. This technique is used to display the designed page perfectly on every screen size and device. For example: Mobile, Tablet, desktop, laptop etc. You don't need to create a different page for each device. 
+This technique is used to display the designed page perfectly on every screen size and device. For example: Mobile, Tablet, desktop, laptop etc. You don't need to create a different page for each device. 
     
 
 ---
 
 #### Explain CSS sprites, and how you would implement them on a page or site. How do you go about creating them? What are possible alternatives to sprites?    
     
-CSS sprites combine multiple images into one single larger image. It is a commonly-used technique for icons (Gmail uses it). How to implement it:
+CSS sprites combine multiple images into one single larger image. It is a commonly-used technique for icons. How to implement it:
 
 * Use a sprite generator that packs multiple images into one and generate the appropriate CSS for it.
 * Each image would have a corresponding CSS class with `background-image`, `background-position` and `background-size` properties defined.
@@ -162,22 +165,34 @@ CSS sprites combine multiple images into one single larger image. It is a common
 
 **Advantages:**
 
-* Reduce the number of HTTP requests for multiple images (only one single request is required per spritesheet). But with HTTP2, loading multiple images is no longer much of an issue.
+* Reduce the number of ```HTTP``` requests for multiple images (only one single request is required per spritesheet). But with ```HTTP2```, loading multiple images is no longer much of an issue.
 * Advance downloading of assets that won't be downloaded until needed, such as images that only appear upon `:hover` pseudo-states. Blinking wouldn't be seen.
 
 
 * When you have multiple images/ icons, browser makes separate call to the server for each one of them. sprite is a technique to combine all/ some of them (usually similar one in terms of type of image. For example, you will put jpg in one sprite) in one image. To display the icon you set height, width and background position.
+
+**Alternatives:**
+
+* Data URIs - allow you to embed the image data directly into a stylesheet. This avoids additional HTTP requests for images, making it essentially the same thing as a sprite, without the fancy positioning.
+
+* Icon Fonts
+
+* SVGs
 
 
 ###### References
 
 * https://css-tricks.com/css-sprites/
 
+* https://css-tricks.com/spriting-img/
+
+* http://css-tricks.com/data-uris/
+
 
 ---
 
 #### What are the benefits of CSS sprites?
-If a web page has large no. of images that takes a longer time to load because each image separately sends out an http request. The concept of CSS sprites is used to reduce the loading time for a web page because it combines the various small images into one image. It reduces the number of http requests and hence the loading time. 
+If a web page has large no. of images that takes a longer time to load because each image separately sends out an ```HTTP``` request. The concept of CSS sprites is used to reduce the loading time for a web page because it combines the various small images into one image. It reduces the number of ```HTTP``` requests and hence the loading time. 
     
 CSS sprites combine multiple images into one image, limiting the number of HTTP requests a browser has to make, thus improving load times. Even under the new HTTP/2 protocol, this remains true.
 
@@ -185,7 +200,7 @@ Under HTTP/1.1, at most one request is allowed per TCP connection. With HTTP/1.1
 
 However, according to benchmark results, although HTTP/2 offers 50% improvement over HTTP/1.1, in most cases the sprite set is still faster to load than individual images.
 
-To utilize a spritesheet in CSS, one would use certain properties, such as background-image, background-position and background-size to ultimately alter the background of an element.
+To utilize a spritesheet in CSS, one would use certain properties, such as ```background-image```, ```background-position``` and ```background-size``` to ultimately alter the background of an element.
 
 
 
@@ -231,26 +246,26 @@ If you clear a slide of an element, floating elements will not be accepted on th
 
 ---
 
-#### What do you understand by W3C
-W3C stands for World Wide Web Consortium.
+#### Who maintains the CSS specifications? What do you understand by W3C?
+W3C stands for World Wide Web Consortium. The mission of the W3C is to lead the Web to its full potential by developing relevant protocols and guidelines.This is achieved primarily by creating and publishing Web standards. By adopting the Web standards created by the W3C, hardware manufacturers and software developers can ensure their equipment and programs work with the latest Web technologies. For example, most Web browsers incorporate several W3C standards, which allows them to interpret the latest versions of HTML and CSS code. When browsers conform to the W3C standards, it also helps Web pages appear consistent across different browsers.
 
 
 ---
 
-#### Explain the difference between "visibility: hidden;" and "display: none;"? What are the pros and cons of using “display:none”?
+#### Explain the difference between ```visibility: hidden;``` and ```display: none;```? What are the pros and cons of using ```display:none```?
 
 * ```visibility: hidden``` simply hides the element but it will occupy space and affect the layout of the document.
 
-* ```display: none``` also hides the element but will not occupy space. It will not affect the layout of the document.
-    
-* display: none removes the element from the normal layout flow and allow other elements to fill in. visibility: hidden tag is rendered, it takes space in the normal flow but doesn't show it.
-
-* if u want to say it smartly, display: none causes DOM reflow where is visibility: hidden doesn't. btw, what is re-flow? answer. sorry i wont tell you, google it.
+* ```display: none``` removes the element from the normal layout flow (causes DOM reflow). It will not affect the layout of the document nor occupy space.
 
 ---
 
-#### Describe ```z-index``` and how stacking context is formed.
-* An element with greater stack order is always in front of an element with a lower stack order. ```z-index``` only works on positioned elements. The default stack order of non-positioned elements is their order in the document.
+#### What is re-flow?
+
+---
+
+#### How does ```z-index``` relate to positioning? Describe ```z-index``` and how stacking context is formed?
+* The ```z-index``` property specifies the stack order of elements. An element with a higher ```z-index``` stack order is always rendered in front of an element with a lower ```z-index``` stack order on the screen. ```z-index``` only works on positioned elements ```position: absolute```, ```position: relative```, or ```position: fixed```. The default stack order of non-positioned elements is their order in the document.
     
 
 ---
@@ -267,13 +282,6 @@ W3C stands for World Wide Web Consortium.
    * Number: Orders the stack order.
    * Initial: Sets this property to its default value (0).
    * Inherit: Inherits this property from its parent element.
-    
-
----
-
-#### How does ```z-index``` relate to positioning
-The ```z-index``` property specifies the stack order of elements. An element with a higher ```z-index```/stack order is always rendered in front of an element with a lower ```z-index```/stack order on the screen. ```z-index``` will only work on elements that have a specified position (position:absolute, position:relative, or position:fixed).
-
 
 ---
 
@@ -284,80 +292,57 @@ The ```z-index``` property specifies the stack order of elements. An element wit
 
 #### What are CSS frameworks? What CSS frameworks have you used
 It is a pre-planned libraries, which allows easier and more standards-compliant webpage styling, using CSS language.
-        
-    
----
-
-#### Who maintains the CSS specifications?
-W3C (World Wide Web Consortium) maintains the CSS specifications.        
-    
 
 ---
 
-#### How works absolute/relative/fixed/static position? 
-* https://css-tricks.com/absolute-relative-fixed-positioining-how-do-they-differ/
+#### How works absolute / relative / fixed / static position? 
 
+```absolute```, place an element exactly where you want to place it. absolute position is actually set relative to the element's parent. if no parent available then relatively place to the page itself (it will default all the way back up to the <html> element).
 
-```absolute```, place an element exactly where you want to place it. absolute position is actually set relative to the element's parent. if no parent available then relatively place to the page itself.
-
-```relative```, is position an element relative to itself (from where the element would be placed, if u don't apply relative positioning). for example, if u set position relative to an element and set top: 10px, it will move 10px down from where it would be normally.
+```relative```, means "relative to itself". Setting position: relative; on an element and no other positioning attributes, it will no effect on it's positioning. It allows the use of ```z-index``` on the element and it limits the scope of absolutely positioned child elements. Any child element will be absolutely positioned within that block.
 
 ```fixed```, element is positioned relative to viewport or the browser window itself. viewport doesn't changed if u scroll and hence fixed element will stay right in the same position.
 
-```static```, element will be positioned based on the normal flow of the document. usually, u will use position static to remove other position might be applied to an element.
+* ```static``` default for every single page element. The only reason you would ever set an element to position: static is to forcefully-remove some positioning that got applied to an element outside of your control.
+
+
+* ```sticky``` - Sticky positioning is a hybrid of relative and fixed positioning. The element is treated as `relative` positioned until it crosses a specified threshold, at which point it is treated as `fixed` positioned.
+
+###### References
+
+    * https://css-tricks.com/absolute-relative-fixed-positioining-how-do-they-differ/
 
 ---
 
 #### How is behave absolute element if it is inside fixed element/relative/absolute element
-    
-
----
-
-#### What's the difference between a relative, fixed, absolute and statically positioned element?
-    
-* ```Static``` default for every single page element. The only reason you would ever set an element to position: static is to forcefully-remove some positioning that got applied to an element outside of your control.
-    
-* ```Relative``` means "relative to itself". Setting position: relative; on an element and no other positioning attributes, it will no effect on it's positioning. It allows the use of ```z-index``` on the element and it limits the scope of absolutely positioned child elements. Any child element will be absolutely positioned within that block.
-    
-* ```Absolute``` positions the element exactly where you want it rrelative to the next parent element with relative (or absolute) positioning. If there is no such parent, it will default all the way back up to the <html> element.
-    
-* ```Fixed``` positioned relative to the viewport, or the browser window itself. regardless of scroll position.
-
-* ```sticky``` - Sticky positioning is a hybrid of relative and fixed positioning. The element is treated as `relative` positioned until it crosses a specified threshold, at which point it is treated as `fixed` positioned.
 
 ---
 
 #### What are the pros and cons of using absolute positioning?
 
-
 ---
 
 #### The difference between block / inline / inline-block element
     
-* Elements with display: inline-block are like display: inline elements, but they can have a width and a height. 
-    That means that you can use an inline-block element as a block while flowing it within text or other elements.
+* Elements with ```display: inline-block``` are like ```display: inline elements```, but they can have a width and a height. 
+    That means that you can use an ```inline-block``` element as a block while flowing it within text or other elements.
     
-* Block elements:
-        respect all of those
-        force a line break after the block element
+* ```block```:
+    * respect all of those
+    * force a line break after the block element
+    * breaks the flow
         
-* Inline elements:
+* ```inline```:
     * respect left & right margins and padding, but not top & bottom
     * cannot have a width and height set
+    * margin and padding will push other elements horizontally not vertically
     * allow other elements to sit to their left and right.
+    * elements do not break the flow
         
-* Inline-block elements:
+* ```inline-block```:
     * allow other elements to sit to their left and right
     * respect top & bottom margins and padding
     * respect height and width
-
-
-* inline, elements do not break the flow. think of span it fits in the line. Important points about inline elements, margin/ padding will push other elements horizontally not vertically. Moreover, inline elements ignores height and width.
-
-* block, breaks the flow and dont sits inline. they are usually container like div, section, ul and also text p, h1, etc.
-
-* inline-block, will be similar to inline and will go with the flow of the page. Only differences is this this will take height and width.
-
 ---
 
 #### List CSS selectors and their priorities
